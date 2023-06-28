@@ -1,0 +1,71 @@
+.deliveryInfo{
+  padding: 24px;
+  background: #2C2A2A;
+  border-radius: 24px;
+  min-width: 660px;
+  margin-right: 24px;
+  margin-top: 24px;
+  h3{
+    color: white;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    margin: 0;
+  }
+  form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    div{
+      input{
+        width: 290px;
+        height: 48px;
+        padding: 0 12px;
+        outline: none;
+        background: rgba($color: white, $alpha: 5%);
+        border: 1px solid rgba($color: white, $alpha: 5%);
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        transition: .3s;
+        &:focus{
+          border: 1px solid white;
+          transition: .3s;
+          &::placeholder{
+            transform: translateY(-14px);
+            transition: .3s;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .address{
+    margin-top: 32px;
+    h3{
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+    p{
+      margin: 8px 0 16px 0;
+      color: rgba($color: white, $alpha: 60%);
+      font-size: 16px;
+    }
+    input{
+      width: 620px;
+      height: 48px;
+      padding: 0 16px;
+      border-radius: 12px;
+      border: 0;
+      background: rgba($color: white, $alpha: 10%);
+      outline: none;
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+  }
+}

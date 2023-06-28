@@ -1,0 +1,23 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .title{
+        width: 1116px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 0 24px 0 40px;
+        position: relative;
+        p{
+            position: absolute;
+            left: 0;
+            color: rgba($color: white, $alpha: 60%);
+            cursor: pointer;
+        }
+        h1{
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}

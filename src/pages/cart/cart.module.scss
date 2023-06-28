@@ -1,0 +1,13 @@
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .cart{
+        width: 1116px;
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        margin-top: 12px;
+    }
+}

@@ -1,8 +1,13 @@
 import React from 'react'
+import MainRoutes from './routes'
+
+import './App.scss'
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <MainRoutes />
+    </div>
   )
 }
 
