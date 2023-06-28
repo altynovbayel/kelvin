@@ -1,5 +1,9 @@
-import Main from "./Main"
+import Cart from "./cart";
+import More from "./more";
+import Order from "./order";
 
 export const Pages = {
-  Main 
+    Cart,
+    More,
+    Order
 }

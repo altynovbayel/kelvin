@@ -1,0 +1,52 @@
+.delivering{
+  padding: 24px;
+  background: #2C2A2A;
+  border-radius: 24px;
+  min-width: 660px;
+  margin-right: 24px;
+  h3{
+    color: white;
+    font-family: 20px;
+    font-weight: 700;
+  }
+  form{
+    width: 612px;
+    label{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      border-radius: 12px;
+      border: 1px solid #2C2A2A;
+      margin: 8px 0;
+      cursor: pointer;
+      &.active{
+        border: 1px solid #00BB00;
+        background: #141212;
+      }
+      .left{
+        display: flex;
+        align-items: center;
+        input[type='radio']{
+          border-color: #00BB00;
+        }
+        input[type='radio']:checked{
+          accent-color: #00BB00;
+        }
+        img{
+          margin: 0 8px;
+        }
+        h3{
+          font-size: 16px;
+        }
+      }
+      .right{
+        h3{
+          color: white;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
