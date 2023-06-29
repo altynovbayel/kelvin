@@ -1,0 +1,38 @@
+.banner {
+  .top_text {
+    width: 95%;
+
+    h1 {
+      text-align: right;
+      color: #fff;
+      font-size: 81px;
+      font-family: Manrope;
+      font-weight: 700;
+      line-height: 88px;
+
+      span {
+        margin-left: 245px;
+      }
+    }
+  }
+
+  .banner_title {
+    width: 95%;
+    height: 558px;
+    margin-left: auto;
+    background-image: url('../../img/banner.png');
+    background-repeat: no-repeat;
+    background-position: right;
+
+    .banner_subtitle {
+      width: 300px;
+      p {
+        color: #FFF;
+        font-size: 24px;
+        font-family: Manrope;
+        font-weight: 700;
+        line-height: 28px;
+      }
+    }
+  }
+}
