@@ -33,7 +33,7 @@ const Order = () => {
           </div>
         </div>
         <div className={c.right}>
-          <Components.MakingOrder />
+          <Components.Paying />
           <Components.Promocode />  
         </div>
       </div>

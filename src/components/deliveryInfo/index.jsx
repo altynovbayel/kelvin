@@ -1,6 +1,5 @@
 import React from 'react'
 import c from './deliveryInfo.module.scss'
-import { YMaps, Map } from 'react-yandex-maps'
 import { Components } from '..'
 
 const DeliveryInfo = () => {
