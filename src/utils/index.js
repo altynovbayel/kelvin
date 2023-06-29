@@ -1,4 +1,5 @@
 import { Pages } from "../pages";
+import Main from "../pages/Main";
 
 export const PUBLIC_ROUTES = [
     {id: 1, path: "/", element: <Pages.Main/>},

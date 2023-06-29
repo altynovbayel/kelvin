@@ -1,8 +1,21 @@
 import React from 'react'
 import c from './deliveryInfo.module.scss'
-
+import { Components } from '..'
+import { IMaskInput, IMaskMixin } from 'react-imask';
 
 const DeliveryInfo = () => {
+//   let phoneMask = IMask(
+//     document.getElementById('phone'), {
+//       mask: '+{7}(000)000-00-00'
+//     });
+
+  const PhoneMask = "+{7}(0000)00-0000";
+  const phoneMask = [
+    {
+      mask: PhoneMask,
+    }
+  ];
+
   return (
     <div className={c.deliveryInfo}>
       <h3>Ваши данные для доставки</h3>
@@ -26,9 +39,10 @@ const DeliveryInfo = () => {
           />
         </div>
         <div>
-          <input 
-            type="text" 
-            placeholder='Телефон *'
+          <IMaskInput
+            className="form-control"
+            mask={phoneMask}
+            placeholder="Телефон *"
           />
         </div>
       </form>
