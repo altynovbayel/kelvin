@@ -2,12 +2,12 @@ import React from 'react'
 import MainRoutes from './routes'
 
 import './App.scss'
-import Header from './components/Header'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div>
-      <Header/>
+      <Navbar />
       <MainRoutes />
     </div>
   )

@@ -1,10 +1,10 @@
 import React from 'react'
-import c from './Header.module.scss'
+import c from './Navbar.module.scss'
 import logo from '../../img/logo.svg'
 import cartLogo from '../../img/cart.svg'
 import { navList } from '../../utils'
 
-const Header = () => {
+const Navbar = () => {
   const [activeNav, setActiveNav] = React.useState(false)
   return (
     <div className={c.header}>
@@ -53,4 +53,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Navbar
