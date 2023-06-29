@@ -3,9 +3,13 @@ import c from './Navbar.module.scss'
 import logo from '../../img/logo.svg'
 import cartLogo from '../../img/cart.svg'
 import { navList } from '../../utils'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = React.useState(false)
+
+  const Navigate = useNavigate()
+
   return (
     <div className={c.header}>
       <div className={c.container}>
@@ -43,7 +47,10 @@ const Navbar = () => {
           <button>
             Перейти к товарам
           </button>
-          <div className={c.cart}>
+          <div 
+            className={c.cart}
+            onClick={() => Navigate('/cart/')}
+          >
             <span className={c.count}>2</span>
             <img src={cartLogo} alt="cart" />
           </div>
