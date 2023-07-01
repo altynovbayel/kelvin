@@ -1,6 +1,9 @@
 .banner {
+  margin-top: 115px;
+
   .top_text {
-    width: 95%;
+    width: 98%;
+    margin-right: auto;
 
     h1 {
       text-align: right;
@@ -17,15 +20,17 @@
   }
 
   .banner_title {
-    width: 95%;
+    width: 1440px;
+    margin-right: auto;
+    margin-left: 35px;
     height: 558px;
-    margin-left: auto;
-    background-image: url('../../img/banner.png');
+    background-image: url('../../img/banner-2.svg');
     background-repeat: no-repeat;
     background-position: right;
-
+    background-size: cover;
     .banner_subtitle {
       width: 300px;
+
       p {
         color: #FFF;
         font-size: 24px;

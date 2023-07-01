@@ -1,6 +1,5 @@
 import React from 'react'
 import c from './Banner.module.scss'
-import bannerImg from '../../img/banner-img.svg'
 
 const Banner = () => {
   return (
