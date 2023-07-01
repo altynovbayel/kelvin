@@ -21,6 +21,10 @@
       border: 1px solid #2C2A2A;
       margin: 8px 0;
       cursor: pointer;
+      
+      &:hover{
+        background: #141212;
+      }
       &.active{
         border: 1px solid #00BB00;
         background: #141212;
@@ -28,12 +32,39 @@
       .left{
         display: flex;
         align-items: center;
+        // input[type='radio']::before {
+        //   width: 12px;
+        //   height: 12px;
+        //   border-radius: 15px;
+        //   position: relative;
+        //   background-color: #363636;
+        //   content: '';
+        //   display: inline-block;
+        //   visibility: visible;
+        //   border: 2px solid white;
+        // }
+        // input[type='radio']:checked::before {
+        //   width: 12px;
+        //   height: 12px;
+        //   border-radius: 15px;
+        //   position: relative;
+        //   background-color: #00BB00;
+        //   content: '';
+        //   display: inline-block;
+        //   visibility: visible;
+        //   border: 2px inherit white;
+        //   accent-color: #00BB00;
+        // }
         input[type='radio']{
-          border-color: #00BB00;
+          border: 1px solid rgba($color: #FFFFFF, $alpha: 60%);
+          background-color: #363636;
         }
         input[type='radio']:checked{
           accent-color: #00BB00;
         }
+
+
+         
         img{
           margin: 0 8px;
         }

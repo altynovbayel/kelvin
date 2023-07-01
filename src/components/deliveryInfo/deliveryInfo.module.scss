@@ -18,10 +18,12 @@
     gap: 8px;
     margin-top: 16px;
     div{
+      position: relative;
       input{
         width: 290px;
         height: 48px;
         padding: 0 12px;
+        padding-top: 5px;
         outline: none;
         background: rgba($color: white, $alpha: 5%);
         border: 1px solid rgba($color: white, $alpha: 5%);
@@ -30,14 +32,31 @@
         font-weight: bold;
         color: white;
         transition: .3s;
+        visibility: visible;
         &:focus{
           border: 1px solid white;
           transition: .3s;
-          &::placeholder{
-            transform: translateY(-14px);
-            transition: .3s;
-            font-size: 12px;
-          }
+        }
+      }
+      span{
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba($color: white, $alpha: 60%);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        transition: .3s;
+        &.active{
+          position: absolute;
+          left: 12px;
+          top: 14px;
+          font-size: 11px;
+          font-weight: 600;
+          color: rgba($color: white, $alpha: 60%);
+          line-height: 18px;
+          transition: .3s;
         }
       }
     }
@@ -54,18 +73,43 @@
       color: rgba($color: white, $alpha: 60%);
       font-size: 16px;
     }
-    input{
-      width: 620px;
-      height: 48px;
-      padding: 0 16px;
-      border-radius: 12px;
-      border: 0;
-      background: rgba($color: white, $alpha: 10%);
-      outline: none;
-      font-size: 16px;
-      color: white;
-      font-weight: bold;
-      letter-spacing: 0.5px;
+    .inputForm{
+      position: relative;
+      input{
+        width: 620px;
+        height: 48px;
+        padding: 0 16px;
+        padding-top: 5px;
+        border-radius: 12px;
+        border: 0;
+        background: rgba($color: white, $alpha: 10%);
+        outline: none;
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+      span{
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba($color: white, $alpha: 60%);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        transition: .3s;
+        &.active{
+          position: absolute;
+          left: 16px;
+          top: 14px;
+          font-size: 11px;
+          font-weight: 600;
+          color: rgba($color: white, $alpha: 60%);
+          line-height: 18px;
+          transition: .3s;
+        }
+      }
     }
   }
 }
