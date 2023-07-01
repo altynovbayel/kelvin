@@ -19,8 +19,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 56px;
-    div:nth-child(even){
-
+    > div:nth-child(even){
+      margin-top: 50px;
     }
   }
 }
