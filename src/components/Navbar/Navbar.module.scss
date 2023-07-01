@@ -1,8 +1,11 @@
 .header {
   max-width: 95%;
-  padding: 0 48px;
   margin: 35px auto;
-
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 100;
   .container {
     display: flex;
     justify-content: space-between;

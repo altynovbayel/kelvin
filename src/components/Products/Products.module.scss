@@ -1,0 +1,26 @@
+.products {
+  width: 83%;
+  margin: 100px auto;
+
+  .title {
+    text-align: center;
+    margin-bottom: 72px;
+    h1 {
+      color: #FFF;
+      font-size: 32px;
+      font-family: Manrope;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px;
+      margin: 0;
+    }
+  }
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+    div:nth-child(even){
+
+    }
+  }
+}

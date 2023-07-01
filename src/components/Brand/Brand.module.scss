@@ -1,0 +1,59 @@
+.brand {
+  max-width: 95%;
+  margin: 110px auto;
+  .line{
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-bottom: 30px;
+  }
+  .container {
+    .brand_text {
+      background: url('../../img/brand.png') no-repeat;
+
+      p {
+        margin: 0;
+        padding: 0;
+        color: #FFF;
+        text-align: right;
+        font-size: 96px;
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 128px;
+        text-transform: uppercase;
+
+        span {
+          margin-right: 344px;
+        }
+      }
+
+    }
+  }
+
+  .brand_shine {
+    width: 260px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .shine_text {
+      p {
+        span {
+          color: rgba(255, 255, 255, 0.60);
+        }
+        color: #FFF;
+        font-size: 16px;
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+  }
+}
