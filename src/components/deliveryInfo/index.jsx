@@ -92,9 +92,6 @@ const DeliveryInfo = () => {
             className="form-control"
             mask={phoneMask}
             id='phoneInput'
-            style={{
-              fontSize: '16px'
-            }}
             onChange={e => {
               if(e.target.value.length !== 0 ){
                 setActive({
@@ -142,7 +139,7 @@ const DeliveryInfo = () => {
           }}
         >
           <iframe 
-            src="https://yandex.ru/map-widget/v1/?ll=37.385534%2C55.584227&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDA5NBIa0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAiCg2GeBZCFQEGX0I%2C&z=8" width="650" height="400" frameBorder="1" allowFullScreen={true}
+            src="https://yandex.ru/map-widget/v1/?ll=37.385534%2C55.584227&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDA5NBIa0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAiCg2GeBZCFQEGX0I%2C&z=8" width="660" height="400" frameBorder="1" allowFullScreen={true}
             style={{position:'relative', borderRadius: '12px', marginTop: '8px', border: 'none'}}
           ></iframe>
         </div>

@@ -1,30 +1,30 @@
 .delivering{
-  padding: 24px;
   background: #2C2A2A;
   border-radius: 24px;
-  min-width: 660px;
-  margin-right: 24px;
+  width: 660px;
+  padding: 24px;
   h3{
     color: white;
     font-family: 20px;
     font-weight: 700;
+    margin: 0;
   }
   form{
-    width: 612px;
+    width: 640px;
+    margin-top: 16px;
     label{
       width: 100%;
+      height: 46px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
+      padding: 0 8px;
       border-radius: 12px;
       border: 1px solid #2C2A2A;
       margin: 8px 0;
       cursor: pointer;
+      background: #252323;
       
-      &:hover{
-        background: rgba(#141212, 30%);
-      }
       &.active{
         border: 1px solid #00BB00;
         background: #141212;
@@ -56,17 +56,16 @@
         //   accent-color: #00BB00;
         // }
         input[type='radio']{
-          border: 1px solid rgba($color: #FFFFFF, $alpha: 60%);
-          background-color: #363636;
-        }
-        input[type='radio']:checked{
-          accent-color: #00BB00;
+          display: none;
         }
 
+        .icon{
+          margin: 0;
+        }
 
          
         img{
-          margin: 0 8px;
+          margin: 8px;
         }
         h3{
           font-size: 16px;
@@ -76,6 +75,7 @@
         h3{
           color: white;
           font-size: 16px;
+          margin-right: 8px;
         }
       }
     }

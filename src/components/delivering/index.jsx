@@ -1,6 +1,7 @@
 import React from 'react'
 import c from './delivering.module.scss'
 import { ImagesDelivering } from './image'
+import { Icons } from './icons/'
 
 
 const Delivering = () => {
@@ -25,6 +26,11 @@ const Delivering = () => {
               defaultChecked={type === 'mail' ? true : false}
             /> 
             <img 
+              src={type === 'mail' ? Icons.active : Icons.disactive} 
+              alt="Почта России" 
+              className={c.icon}
+            /> 
+            <img 
               src={ImagesDelivering.mail} 
               alt="Почта России" 
             /> 
@@ -45,6 +51,11 @@ const Delivering = () => {
               name='radio'
               value='yandex'
               defaultChecked={type === 'yandex' ? true : false}
+            /> 
+            <img 
+              src={type === 'yandex' ? Icons.active : Icons.disactive} 
+              alt="Яндекс ПВЗ" 
+              className={c.icon}
             /> 
             <img 
               src={ImagesDelivering.yandex} 
