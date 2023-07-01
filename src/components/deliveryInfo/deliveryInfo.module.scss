@@ -21,9 +21,9 @@
       position: relative;
       input{
         width: 290px;
-        height: 48px;
+        height: 32px;
         padding: 0 12px;
-        padding-top: 5px;
+        padding-top: 14px;
         outline: none;
         background: rgba($color: white, $alpha: 5%);
         border: 1px solid rgba($color: white, $alpha: 5%);
@@ -49,8 +49,9 @@
         line-height: 18px;
         transition: .3s;
         &.active{
+          transform: translateY(-32%);
           position: absolute;
-          left: 12px;
+          left: 13px;
           top: 14px;
           font-size: 11px;
           font-weight: 600;
@@ -77,9 +78,9 @@
       position: relative;
       input{
         width: 620px;
-        height: 48px;
+        height: 34px;
         padding: 0 16px;
-        padding-top: 5px;
+        padding-top: 14px;
         border-radius: 12px;
         border: 0;
         background: rgba($color: white, $alpha: 10%);
@@ -100,6 +101,7 @@
         line-height: 18px;
         transition: .3s;
         &.active{
+          transform: translateY(-32%);
           position: absolute;
           left: 16px;
           top: 14px;

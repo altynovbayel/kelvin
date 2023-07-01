@@ -92,6 +92,9 @@ const DeliveryInfo = () => {
             className="form-control"
             mask={phoneMask}
             id='phoneInput'
+            style={{
+              fontSize: '16px'
+            }}
             onChange={e => {
               if(e.target.value.length !== 0 ){
                 setActive({
