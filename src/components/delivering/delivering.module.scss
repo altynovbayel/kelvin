@@ -23,7 +23,7 @@
       cursor: pointer;
       
       &:hover{
-        background: #141212;
+        background: rgba(#141212, 30%);
       }
       &.active{
         border: 1px solid #00BB00;
