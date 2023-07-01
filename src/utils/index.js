@@ -11,22 +11,22 @@ export const PUBLIC_ROUTES = [
 export const navList = [
   {
     id: 1,
-    title: 'Главная',
+    title: 'RĒFĒRENCES',
   },
   {
     id: 2,
-    title: 'Товары',
+    title: 'SERVICES',
   },
   {
     id: 3,
-    title: 'Контакты',
+    title: 'ĒQUIPE',
   },
   {
     id: 4,
-    title: 'Заказать',
+    title: 'PRENDRE RDV',
   },
   {
     id: 5,
-    title: 'Корзина',
+    title: 'CONTACT',
   },
 ]

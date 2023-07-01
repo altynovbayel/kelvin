@@ -22,7 +22,7 @@ const Delivering = () => {
               id="mail" 
               name='radio'   
               value="mail"
-              checked={type === 'mail' ? true : false}
+              defaultChecked={type === 'mail' ? true : false}
             /> 
             <img 
               src={ImagesDelivering.mail} 
@@ -44,7 +44,7 @@ const Delivering = () => {
               id="yandex" 
               name='radio'
               value='yandex'
-              checked={type === 'yandex' ? true : false}
+              defaultChecked={type === 'yandex' ? true : false}
             /> 
             <img 
               src={ImagesDelivering.yandex} 

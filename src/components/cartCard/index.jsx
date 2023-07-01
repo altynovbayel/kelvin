@@ -19,8 +19,8 @@ const CartCard = ({id, image, title, size, price, count}) => {
             <div className={c.up}>
                 <h3>
                     {
-                        title.length > 30 ? 
-                        `${title.slice(0, 30)}...` : 
+                        title.length > 56 ? 
+                        `${title.slice(0, 56)}...` : 
                         title
                     }
                 </h3>
@@ -32,7 +32,10 @@ const CartCard = ({id, image, title, size, price, count}) => {
                 <h3>{price} ₽</h3>
                 <div className={c.floor}>
                     <div className={c.count}>
-                        <button>
+                        <button
+                            disabled={count >= 1 ? true : false }
+                            className={count >= 1 ? c.disabled : '' }
+                        >
                             <BiMinus />
                         </button>
                         <span>{count}</span>
