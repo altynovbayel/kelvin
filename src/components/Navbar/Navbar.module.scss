@@ -6,6 +6,7 @@
   left: 0;
   top: 0;
   z-index: 100;
+
   .container {
     display: flex;
     justify-content: space-between;
@@ -44,6 +45,7 @@
           overflow: hidden;
           position: relative;
           text-align: center;
+
           p {
             cursor: pointer;
             padding: 0;
@@ -58,6 +60,7 @@
 
         .active_menu {
           cursor: pointer;
+
           div {
             width: 120px;
             height: 2px;
@@ -93,6 +96,7 @@
         padding: 20px 0;
         z-index: 10;
         transition: 3s;
+
         li {
           color: #fff;
           font-size: 35px;
@@ -158,7 +162,8 @@
         width: 40px;
         height: 40px;
         border-radius: 32px;
-        background: rgba(255, 255, 255, 0.20);
+        background: transparent;
+        border: 1px solid #fff;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -168,7 +173,6 @@
         .count {
           position: absolute;
           top: -5px;
-          color: white;
           width: 20px;
           height: 20px;
           border-radius: 20px;
@@ -177,6 +181,14 @@
           justify-content: center;
           align-items: center;
           right: -5px;
+
+          span {
+            color: #000;
+            font-size: 14px;
+            font-family: Manrope;
+            font-weight: 600;
+            line-height: 24px;
+          }
         }
       }
     }

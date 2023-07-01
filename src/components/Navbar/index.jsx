@@ -51,7 +51,11 @@ const Navbar = () => {
             className={c.cart}
             onClick={() => Navigate('/cart/')}
           >
-            <span className={c.count}>2</span>
+            <div className={c.count}>
+              <span>
+                2
+              </span>
+            </div>
             <img src={cartLogo} alt="cart" />
           </div>
         </div>
