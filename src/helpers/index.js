@@ -13,3 +13,20 @@ export const GetProducts = () => {
     products
   }
 } 
+
+
+
+
+
+export const GetPromocodes = () => {
+  const [ promocodes, setPromocodes ] = React.useState(null)
+
+  React.useEffect(() => {
+    API.getPromocodes()
+      .then(res => setPromocodes(res.data))
+  }, [])
+
+  return{
+    promocodes
+  }
+}

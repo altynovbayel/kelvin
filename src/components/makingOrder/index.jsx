@@ -4,29 +4,33 @@ import { useNavigate } from 'react-router-dom'
 
 const MakingOrder = () => {
   const Navigate = useNavigate()
+  const [ summa, setSumma ] = React.useState('0')
+  const [ dep, setDep ] = React.useState(null)
+
+  React.useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
+    setSumma(String(cart?.reduce((acc, obj) => acc + obj.count * obj.price, 0)))
+    
+    setTimeout(() => {
+        setDep(Math.random())
+    }, 100);
+  }, [dep])
 
   return (
     <div className={c.makingOrder}>
         <button onClick={() => Navigate('/order/')}>Перейти к оформлению</button>
         <div className={c.down}>
-            <div className={c.line}></div>
-            <div className={c.cart}>
-                <h3>Ваша корзина</h3>
-                <div className={c.prices}>
-                    <p>
-                        <span>Товары</span>
-                        11 980 ₽
-                    </p>
-                    <p>
-                        <span>Скидка</span>
-                        0%
-                    </p>
-                </div>
-            </div>
-            <div className={c.line}></div>
             <h3>
                 <span>Общая стоимость</span>
-                11 980 ₽
+                {
+                    summa?.length === 4 ? 
+                    `${summa?.slice(0, 1)} ${summa?.slice(1, summa?.length)}` 
+                    : summa?.length === 5 ?
+                    `${summa?.slice(0, 2)} ${summa?.slice(2, summa?.length )}` 
+                    : summa?.length === 6 ?
+                    `${summa?.slice(0, 3)} ${summa?.slice(3, summa?.length )}` : 
+                    summa?.slice(0, summa?.length - 3 )
+                } ₽
             </h3>
         </div>
     </div>

@@ -2,7 +2,41 @@ import React from 'react'
 import c from './cartCard.module.scss'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 
-const CartCard = ({id, image, title, size, price, count}) => {
+const CartCard = ({id, image, title, size, price, count, obj}) => {
+    const [ active, setActive ] = React.useState(false)
+    const [ activeCart, setActiveCart ] = React.useState(false)
+    const [ dep, setDep ] = React.useState('')
+
+    const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
+    const check = cart?.find(item => item?.id === obj?.id)
+    const index = cart?.findIndex(obj => obj.id === id);
+
+    React.useEffect(() => {
+        setTimeout(() => {
+        const check = cart?.find(item => item?.id === obj?.id)
+        check ? setActive(true) : setActive(false)
+        setDep(Math.random())
+        }, 100)
+    }, [dep])
+
+    const increment = () => {
+        !check ? cart?.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
+        localStorage.setItem('kelvin_cart', JSON.stringify(cart))
+    }  
+
+    const decrement = () => {
+        !check ? cart?.push({...obj, count: 1}) : cart[index].count = cart[index].count - 1;
+        localStorage.setItem('kelvin_cart', JSON.stringify(cart))
+    }  
+
+    const deleteItem = () => {
+        const index = cart?.findIndex(item => item.id === obj.id);
+        if (index !== -1) {
+          cart?.splice(index, 1);
+        }
+        localStorage.setItem('kelvin_cart', JSON.stringify(cart));
+    }
+      
   return (
     <div className={c.card}>
         
@@ -31,22 +65,37 @@ const CartCard = ({id, image, title, size, price, count}) => {
                     </p>
                 </div>
                 <div className={c.down}>
-                    <h3>{price} ₽</h3>
+                    <h3>
+                    {
+                        price.slice(0, price.length - 3 ).length === 4 ? 
+                        `${price.slice(0, 1)} ${price.slice(1, price.length - 3 )}` 
+                        : price.slice(0, price.length - 3 ).length === 5 ?
+                        `${price.slice(0, 2)} ${price.slice(2, price.length - 3 )}` 
+                        : price.slice(0, price.length - 3 ).length === 6 ?
+                        `${price.slice(0, 3)} ${price.slice(3, price.length - 3 )}` : 
+                        price.slice(0, price.length - 3 )
+                    }
+                     ₽</h3>
                     <div className={c.floor}>
                         <div className={c.count}>
                             <button
-                                disabled={count >= 1 ? true : false }
-                                className={count >= 1 ? c.disabled : '' }
+                                disabled={count <= 1 ? true : false }
+                                className={count <= 1 ? c.disabled : '' }
+                                onClick={() => decrement()}
                             >
                                 <BiMinus />
                             </button>
                             <span>{count}</span>
-                            <button>
+                            <button
+                                onClick={() => increment()}
+                            >
                                 <BiPlus />
                             </button>
                             
                         </div>
-                        <p>
+                        <p
+                            onClick={() => deleteItem()}
+                        >
                             Удалить
                         </p>
                     </div>

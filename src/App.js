@@ -10,6 +10,13 @@ axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 
 
 function App() {
+  const cart = localStorage.getItem('kelvin_cart')
+
+  React.useEffect(() => {
+    !cart && localStorage.setItem('kelvin_cart', JSON.stringify([]))
+    localStorage.setItem('discount', 0)
+  }, [])
+
   return (
     <div>
       <Navbar />

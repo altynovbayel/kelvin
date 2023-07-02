@@ -7,6 +7,10 @@ import { Icons } from './icons/'
 const Delivering = () => {
   const [ type, setType ] = React.useState('mail')
 
+  React.useEffect(() => {
+    localStorage.setItem('typeDeliver', type)
+  }, [type])
+
   return (
     <div className={c.delivering}>
       <h3>Способ доставки</h3>

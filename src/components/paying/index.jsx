@@ -2,9 +2,9 @@ import React from 'react'
 import c from './makingOrder.module.scss'
 import { useNavigate } from 'react-router-dom'
 
-const Paying = () => {
-  const Navigate = useNavigate()
-
+const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
+  const withPercent = Number(summaWithDelivering) / 100 * Number(discount)
+  const allSumma = String(summaWithDelivering - withPercent)
   return (
     <div className={c.makingOrder}>
         <button
@@ -19,22 +19,38 @@ const Paying = () => {
             <div className={c.prices}>
                 <p>
                     <span>Товары</span>
-                    11 980 ₽
+                    {
+                        summa?.length === 4 ? 
+                        `${summa?.slice(0, 1)} ${summa?.slice(1, summa?.length)}` 
+                        : summa?.length === 5 ?
+                        `${summa?.slice(0, 2)} ${summa?.slice(2, summa?.length )}` 
+                        : summa?.length === 6 ?
+                        `${summa?.slice(0, 3)} ${summa?.slice(3, summa?.length )}` : 
+                        summa?.slice(0, summa?.length - 3 )
+                    } ₽
                 </p>
                 <p>
                     <span>Доставка</span>
-                    0 ₽
+                    {delivering} ₽
                 </p>
                 <p>
                     <span>Скидка</span>
-                    0 %
+                    {discount} %
                 </p>
             </div>
         </div>
         <div className={c.line}></div>
         <h3>
             <span>Общая стоимость</span>
-            11 980 ₽
+            {
+                allSumma?.length === 4 ? 
+                `${allSumma?.slice(0, 1)} ${allSumma?.slice(1, allSumma?.length)}` 
+                : allSumma?.length === 5 ?
+                `${allSumma?.slice(0, 2)} ${allSumma?.slice(2, allSumma?.length )}` 
+                : allSumma?.length === 6 ?
+                `${allSumma?.slice(0, 3)} ${allSumma?.slice(3, allSumma?.length )}` : 
+                allSumma?.slice(0, allSumma?.length - 3 )
+            } ₽
         </h3>
     </div>
   )

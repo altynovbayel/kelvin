@@ -4,7 +4,7 @@ import ProductCard from '../ProductCard'
 import { GetProducts } from '../../helpers'
 
 const Products = () => {
-  // const { products } = GetProducts()
+  const { products } = GetProducts()
 
   return (
     <div className={c.products}>
@@ -12,19 +12,22 @@ const Products = () => {
         <h1>ВСЕ ТОВАРЫ</h1>
       </div>
       <div className={c.container}>
-        {/* {
-          products?.map(item => (
+        {
+          products?.map((item, i) => (
             <ProductCard
+              key={i}
+              id={item.id}
               image={item.product_images[0].image}
               title={item.title}
               price={item.price}
+              obj={item}
             />
           ))
-        } */}
+        }
+        {/* <ProductCard/>
         <ProductCard/>
         <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
+        <ProductCard/> */}
       </div>
     </div>
   )

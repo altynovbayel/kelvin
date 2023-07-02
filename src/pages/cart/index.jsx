@@ -1,31 +1,51 @@
 import React from 'react'
 import c from './cart.module.scss'
 import { Components } from '../../components'
+import deliver from '../../img/deliver.svg'
 
 const Cart = () => {
+  
+  const [ cart, setCart ] = React.useState(null)
+
+  React.useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
+    setTimeout(() => {
+      setCart(cart)
+    }, 100)
+  }, [cart])
+
   return (
     <div className={c.container}>
       <Components.Title text={'корзина'}/>
       <div className={c.cart}>
         <div className={c.cards}>
-          <Components.CartCard 
-            id={1}
-            image={'https://basket-05.wb.ru/vol980/part98008/98008424/images/big/1.jpg'}
-            title={'HOODIE STORE Худи мужское оверсайз с капюшоном модное зип на молнии'}
-            size={'52 / XL'}
-            price={5590}
-            count={1}
-          />
-          <Components.CartCard 
-            id={1}
-            image={'https://basket-05.wb.ru/vol980/part98008/98008424/images/big/1.jpg'}
-            title={'HOODIE STORE Худи мужское оверсайз с капюшоном модное зип на молнии'}
-            size={'52 / XL'}
-            price={5590}
-            count={1}
-          />
+          {
+            cart?.length !== 0 ?
+            cart?.map((item, i) => (
+              <Components.CartCard 
+                key={i}
+                id={item.id}
+                image={item.product_images[0].image}
+                title={item.title}
+                size={item.size}
+                price={item.price}
+                count={item.count}
+                obj={item}
+              />
+            )) :
+            <h3>Ничего нет</h3>
+          }
         </div>
-        <Components.MakingOrder />
+        
+        <div className={c.right}>
+          <Components.MakingOrder />
+          <div className={c.info}>
+            <span>
+              <img src={deliver} alt="deliver" />
+              Бесплатная доставка от 12 000 ₽
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   )
