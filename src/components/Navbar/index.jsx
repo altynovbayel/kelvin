@@ -3,12 +3,20 @@ import c from './Navbar.module.scss'
 import logo from '../../img/logo.svg'
 import cartLogo from '../../img/cart.svg'
 import { navList } from '../../utils'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = React.useState(false)
 
   const Navigate = useNavigate()
+
+  const checkMenu = () => {
+    if(activeNav){
+      setActiveNav(false)
+    }else{
+      setActiveNav(true)
+    }
+  }
 
   return (
     <div className={c.header}>
@@ -32,7 +40,7 @@ const Navbar = () => {
           </div>
           <div 
             className={c.menu} 
-            onClick={() => setActiveNav(!activeNav)}
+            onClick={checkMenu}
           >
             <div></div>
             <p>Меню</p>
