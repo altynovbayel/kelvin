@@ -3,7 +3,7 @@ import c from './Navbar.module.scss'
 import logo from '../../img/logo.svg'
 import cartLogo from '../../img/cart.svg'
 import { navList } from '../../utils'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = React.useState(false)
@@ -17,24 +17,19 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className={c.navbar}>
-          <ul className={activeNav ? c.navlist : c.disActive}>
-            <div 
-              className={c.active_menu} 
-              onClick={() => setActiveNav(!activeNav)}
-            >
-              <div></div>
-              <p>Меню</p>
-            </div>
-            {
-              navList.map(item => (
-                <li key={item.id}>
-                  <p>
-                    {item.title}
-                  </p>
-                </li>
-              ))
-            }
-          </ul>
+          <div className={activeNav ? c.navlist : c.disActive}>
+            <ul >
+              {
+                navList.map(item => (
+                  <li key={item.id}>
+                    <p>
+                      {item.title}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
           <div 
             className={c.menu} 
             onClick={() => setActiveNav(!activeNav)}
