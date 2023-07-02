@@ -5,6 +5,13 @@ import MakingOrder from "./makingOrder";
 import Paying from "./paying";
 import Promocode from "./promocode";
 import Title from "./title";
+import Banner from "./Banner";
+import AboutBlock from "./AboutBlock";
+import Brand from "./Brand";
+import Products from "./Products";
+import Facts from "./Facts";
+
+
 
 export const Components = {
     CartCard,
@@ -13,5 +20,10 @@ export const Components = {
     Delivering,
     DeliveryInfo,
     Promocode,
-    Paying
+    Paying,
+    Banner,
+    AboutBlock,
+    Brand,
+    Products,
+    Facts,
 }
