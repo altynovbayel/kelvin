@@ -13,7 +13,6 @@
     align-items: center;
 
     .navbar {
-
       ul {
         margin: 0;
         padding: 0;
@@ -22,59 +21,49 @@
       .navlist {
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(15px);
-        width: 100%;
+        width: 98%;
+        border-radius: 20px;
         height: auto;
         position: fixed;
-        left: 0;
-        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20px;
         opacity: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
         padding: 20px 0;
         z-index: 10;
-        transition: 1s;
-
-        li {
-          color: #fff;
-          font-size: 35px;
-          height: 50px;
-          width: 15%;
-          overflow: hidden;
-          position: relative;
-          text-align: center;
-
-          p {
-            cursor: pointer;
-            padding: 0;
-            margin: 0;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            transition: 1.5s ease-in-out;
-          }
+        transition: 1s ease;
+        @media (max-width: 790px) {
+          top: initial;
+          bottom: 20px;
         }
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          z-index: 10;
+          margin-top: 100px;
 
-        .active_menu {
-          cursor: pointer;
-
-          div {
-            width: 120px;
-            height: 2px;
-            background-color: #FFF;
-          }
-
-          p {
-            color: #FFF;
-            font-size: 16px;
-            font-weight: 800;
-            line-height: 20px;
-            text-transform: uppercase;
+          li {
+            color: #fff;
+            font-size: 35px;
+            height: 50px;
+            width: 50%;
+            overflow: hidden;
+            position: relative;
             text-align: center;
-            margin-top: 4px;
+
+            p {
+              cursor: pointer;
+              padding: 0;
+              margin: 0;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              transition: .5s ease-in-out;
+            }
           }
         }
       }
@@ -82,52 +71,97 @@
       .disActive {
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(15px);
-        width: 100%;
+        width: 98%;
         height: auto;
         position: fixed;
-        left: 0;
-        top: -1000px;
+        top: -500px;
         opacity: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        padding: 20px 0;
         z-index: 10;
-        transition: 3s;
+        transition: 1s ease;
+        padding: 20px 0;
+        left: 50%;
+        transform: translateX(-50%);
+        @media (max-width: 790px) {
+          top: initial;
+          bottom: -500px;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          z-index: 10;
 
-        li {
-          color: #fff;
-          font-size: 35px;
-          height: 30px;
-          width: 15%;
-          overflow: hidden;
-          position: relative;
-          text-align: center;
+          li {
+            color: #fff;
+            font-size: 35px;
+            height: 30px;
+            width: 15%;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
 
-          p {
-            cursor: pointer;
-            padding: 0;
-            margin: 0;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: -40px;
-            transition: .5s ease;
+            p {
+              cursor: pointer;
+              padding: 0;
+              margin: 0;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: -40px;
+              transition: .5s ease;
+            }
           }
         }
+
       }
 
       .menu {
         cursor: pointer;
-        margin-left: 100px;
+        position: fixed;
+        z-index: 11;
+        top: 40px;
+        margin-left: 50px;
+        @media (max-width: 790px) {
+          bottom: 0;
+          top: initial;
+        }
+        &:hover {
+          div {
+
+            &::after,
+            &::before {
+              width: 130px;
+            }
+          }
+        }
 
         div {
-          width: 120px;
-          height: 2px;
-          background-color: #FFF;
+          position: relative;
+
+          &::after,
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 4px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+            border-radius: 12px;
+          }
+
+          &::after {
+            right: 0;
+          }
+
+          &::before {
+            left: 0;
+          }
+
         }
+
 
         p {
           color: #FFF;
