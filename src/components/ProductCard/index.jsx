@@ -3,7 +3,7 @@ import c from './ProductCard.module.scss'
 import url from '../../img/product.png'
 import arrow from '../../img/arrow-right.svg'
 
-const ProductCard = () => {
+const ProductCard = ({image, title, price}) => {
   return (
     <div className={c.card}>
       <div className={c.card_inner}>

@@ -10,8 +10,20 @@
         gap: 24px;
         margin-top: 12px;
         @media (max-width: 1268px) {
+            width: 100%;
             align-items: center;
             flex-direction: column;
+        }
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+        .cards{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            @media (max-width: 1024px) {
+                width: 100%;
+            } 
         }
     }
 }

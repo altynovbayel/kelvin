@@ -5,6 +5,9 @@
   width: 660px;
   margin-right: 24px;
   margin-top: 24px;
+  @media (max-width: 1024px) {
+    margin-right: 0;
+  }
   h3{
     color: white;
     font-size: 20px;

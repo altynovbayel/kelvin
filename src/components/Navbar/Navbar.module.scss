@@ -122,10 +122,11 @@
         position: fixed;
         z-index: 11;
         top: 40px;
-        margin-left: 50px;
+        left: 50%;
         @media (max-width: 790px) {
           bottom: 0;
           top: initial;
+          transform: translateX(-50%);
         }
         &:hover {
           div {
@@ -190,6 +191,9 @@
         line-height: 32px;
         background-color: transparent;
         padding: 4px 16px;
+        @media (max-width: 425px) {
+          display: none;
+        }
       }
 
       .cart {

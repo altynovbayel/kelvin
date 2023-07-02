@@ -10,16 +10,25 @@
         align-items: flex-end;
         margin: 0 24px 0 40px;
         position: relative;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
         p{
             position: absolute;
             left: 0;
             color: rgba($color: white, $alpha: 60%);
             cursor: pointer;
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
         h1{
             color: white;
             text-transform: uppercase;
             margin-right: 50px;
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
         }
     }
 }

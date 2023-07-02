@@ -3,103 +3,191 @@
     max-height: 298px;
     border-radius: 24px;
     background: rgba($color: #fff, $alpha: 10%);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 24px;
     margin-bottom: 12px;
-    .left{
-        width: 204px;
-        height: 250px;
-        img{
+    padding: 24px;
+    position: relative;
+    @media (max-width: 768px) {
+        width: 90%;
+        padding: 18px;
+    }
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        @media (max-width: 634px) {
+            align-items: flex-start;
+        }
+        .left{
             width: 204px;
             height: 250px;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 24px;
-            margin: 0;
-            padding: 0;
-        }
-    }
-    .right{
-        height: 250px;
-        margin-left: 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-direction: column;
-        .up{
-            overflow: hidden;
-            h3,
-            p{
+            @media (max-width: 634px) {
+                height: 200px;
+            }
+            @media (max-width: 550px) {
+                height: 143px;
+            }
+            img{
+                width: 204px;
+                height: 250px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 24px;
                 margin: 0;
                 padding: 0;
-                font-weight: bold;
-            }
-            h3{
-                font-size: 24px;
-                color: white;
-            }
-            p{
-                font-size: 20px;
-                color: white;
-                margin-top: 8px;
-                span{
-                    color: rgba($color: white, $alpha: 60%);
+                @media (max-width: 634px) {
+                    width: 160px;
+                    height: 200px;
+                }
+                @media (max-width: 550px) {
+                    width: 100px;
+                    height: 143px;
+                    border-radius: 12px;
                 }
             }
-        
         }
-        .down{
-            width: 100%;
-            h3{
-                color: white;
-                font-size: 24px;
-                letter-spacing: 0.6px;
-                margin: 0;
-                
+        .right{
+            height: 250px;
+            margin-left: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            @media (max-width: 634px) {
+                height: 200px;
             }
-            .floor{
-                width: 100%;
-                margin-top: 8px;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                .count{
-                    display: flex;
-                    align-items: center;
-                    button{
-                        width: 72px;
-                        height: 56px;
-                        color: white;
-                        background: #141212;
-                        font-size: 24px;
-                        border-radius: 32px;
-                        border: 0;
-                        cursor: pointer;
-                        
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        &.disabled{
-                            background: rgba($color: #141212, $alpha: 30%);
-                            color: rgba($color: white, $alpha: 30%);
-                        }
-                    }
-                    span{
-                        margin: 0 16px;
-                        color: white;
+            @media (max-width: 550px) {
+                height: 143px;
+            }
+            .up{
+                overflow: hidden;
+                h3,
+                p{
+                    margin: 0;
+                    padding: 0;
+                    font-weight: bold;
+                }
+                h3{
+                    font-size: 24px;
+                    color: white;
+                    -webkit-text-stroke-width: 10%;
+                    @media (max-width: 768px) {
                         font-size: 20px;
-                        font-weight: bold;
                     }
                 }
                 p{
+                    font-size: 20px;
+                    color: white;
+                    margin-top: 8px;
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                    }
+                    span{
+                        color: rgba($color: white, $alpha: 60%);
+                    }
+                }
+            
+            }
+            .down{
+                width: 100%;
+                h3{
+                    color: white;
+                    font-size: 24px;
+                    letter-spacing: 0.6px;
                     margin: 0;
-                    color: rgba($color: white, $alpha: 60%);
-                    cursor: pointer;
+                    @media (max-width: 768px) {
+                        font-size: 20px;
+                    }
+                    
+                }
+                .floor{
+                    width: 100%;
+                    margin-top: 8px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    @media (max-width: 634px) {
+                        display: none;
+                    }
+                    .count{
+                        display: flex;
+                        align-items: center;
+                        button{
+                            width: 72px;
+                            height: 56px;
+                            color: white;
+                            background: #141212;
+                            font-size: 24px;
+                            border-radius: 32px;
+                            border: 0;
+                            cursor: pointer;
+                            
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+    
+                            &.disabled{
+                                background: rgba($color: #141212, $alpha: 30%);
+                                color: rgba($color: white, $alpha: 30%);
+                            }
+                        }
+                        span{
+                            margin: 0 16px;
+                            color: white;
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+                    }
+                    p{
+                        margin: 0;
+                        color: rgba($color: white, $alpha: 60%);
+                        cursor: pointer;
+                    }
                 }
             }
+        }
+    }
+    .floor{
+        width: 93%;
+        margin-top: 16px;
+        display: none;
+        justify-content: space-between;
+        align-items: flex-end;
+        @media (max-width: 634px) {
+            display: flex;
+        }
+        .count{
+            display: flex;
+            align-items: center;
+            button{
+                width: 56px;
+                height: 40px;
+                color: white;
+                background: #141212;
+                font-size: 24px;
+                border-radius: 32px;
+                border: 0;
+                cursor: pointer;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.disabled{
+                    background: rgba($color: #141212, $alpha: 30%);
+                    color: rgba($color: white, $alpha: 30%);
+                }
+            }
+            span{
+                margin: 0 16px;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+        p{
+            margin: 0;
+            color: rgba($color: white, $alpha: 60%);
+            cursor: pointer;
         }
     }
 }
