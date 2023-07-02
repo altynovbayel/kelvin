@@ -18,7 +18,7 @@ const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
   }, [dep])
 
   const postToCart = () => {
-    !check ? cart?.push({...obj, count: 1, image: image, defaultPrice: obj.price}) : cart[index].count = cart[index].count + 1;
+    !check ? cart?.push({...obj, count: 1, image: image}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('kelvin_cart', JSON.stringify(cart))
   }
 
@@ -42,13 +42,13 @@ const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
         <div className={c.price}>
           <p>
             {
-              defaultPrice?.slice(0, defaultPrice?.length - 3 ).length === 4 ? 
-              `${defaultPrice?.slice(0, 1)} ${defaultPrice?.slice(1, defaultPrice?.length - 3 )}` 
-              : defaultPrice?.slice(0, defaultPrice.length - 3 ).length === 5 ?
-              `${defaultPrice?.slice(0, 2)} ${defaultPrice?.slice(2, defaultPrice?.length - 3 )}` 
-              : defaultPrice?.slice(0, defaultPrice.length - 3 ).length === 6 ?
-              `${defaultPrice?.slice(0, 3)} ${defaultPrice?.slice(3, defaultPrice?.length - 3 )}` : 
-              defaultPrice?.slice(0, defaultPrice?.length - 3 )
+              price?.slice(0, price?.length - 3 ).length === 4 ? 
+              `${price?.slice(0, 1)} ${price?.slice(1, price?.length - 3 )}` 
+              : price?.slice(0, price.length - 3 ).length === 5 ?
+              `${price?.slice(0, 2)} ${price?.slice(2, price?.length - 3 )}` 
+              : price?.slice(0, price.length - 3 ).length === 6 ?
+              `${price?.slice(0, 3)} ${price?.slice(3, price?.length - 3 )}` : 
+              price?.slice(0, price?.length - 3 )
             } руб.
           </p>
         </div>
