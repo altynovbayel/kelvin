@@ -2,9 +2,33 @@ import React from 'react'
 import { BsPercent } from 'react-icons/bs'
 import c from './promocode.module.scss'
 import { BiSolidChevronDown, BiSolidChevronUp } from 'react-icons/bi'
+import { GetPromocodes } from '../../helpers'
+import { useForm } from 'react-hook-form'
 
 const Promocode = () => {
   const [ active, setActive ] = React.useState(false)
+
+  const { promocodes } = GetPromocodes()
+
+
+  const {
+    register,
+    handleSubmit,
+    reset
+  } = useForm()
+
+  const getDiscount = (code) => {
+    const dis = promocodes?.find(item => item.code === code)
+    if(dis) {
+      const discount = dis?.discount?.slice(0, dis.discount.length - 3)
+      localStorage.setItem('discount', discount)
+      alert('Промокод рабочий!')
+    }else{
+      alert('Промокод устарелый, или неправильно указанный!')
+      localStorage.setItem('discount', 0)
+    }
+    reset()
+  }  
 
   return (
     <div className={c.promocode}>
@@ -25,13 +49,18 @@ const Promocode = () => {
       </div>
       {
         active ? 
-        <div className={c.active}>
+        <form 
+          className={c.active}
+          onSubmit={handleSubmit(data => getDiscount(data.code))}
+        >
           <input 
             type="text"
             placeholder='Промокод'
+            maxLength={6}
+            {...register('code')}
           />
-          <button>Применить промокод</button>
-        </div> : 
+          <button type='submit'>Применить промокод</button>
+        </form> : 
         null
       }
     </div>

@@ -6,6 +6,9 @@
   padding: 0 24px;
   margin-top: 16px;
   cursor: pointer;
+  @media (max-width: 1252px) {
+    width: 90%;
+  }
   li{
     width: 32px;
     height: 32px;

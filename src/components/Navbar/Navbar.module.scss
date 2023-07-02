@@ -11,6 +11,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .logo{
+      cursor: pointer;
+    }
 
     .navbar {
       ul {
@@ -136,7 +139,6 @@
         @media (max-width: 790px) {
           bottom: 0;
           top: initial;
-          transform: translateX(-50%);
         }
 
         &:hover {

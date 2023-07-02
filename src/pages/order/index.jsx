@@ -4,6 +4,26 @@ import { Components } from '../../components'
 import { useLocation } from 'react-router-dom'
 
 const Order = () => {
+  const [ cart, setCart ] = React.useState(null)
+  const [ summa, setSumma ] = React.useState(null)
+  const [ discount, setDiscount ] = React.useState(0)
+  const [ deliverType, setDeliverType ] = React.useState('mail')
+  const [ dep, setDep ] = React.useState(null)
+
+  React.useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
+    const deliverType = localStorage.getItem('typeDeliver')
+    const discount = localStorage.getItem('discount')
+    setCart(cart)
+    setSumma(String(cart?.reduce((acc, obj) => acc + obj.count * obj.price, 0)))
+    setDeliverType(deliverType)
+    setDiscount(discount)
+    
+    setTimeout(() => {
+      setDep(Math.random())
+    }, 100);
+  }, [dep])
+
   return (
     <div className={c.container}>
       <Components.Title text={'оформление заказа'}/>
@@ -14,27 +34,32 @@ const Order = () => {
           <div className={c.goods}>
             <h1>Мои товары</h1>
             <div className={c.cards}>
-              <Components.CartCard 
-                id={1}
-                image={'https://basket-05.wb.ru/vol980/part98008/98008424/images/big/1.jpg'}
-                title={'HOODIE STORE Худи мужское оверсайз с капюшоном модное зип на молнии'}
-                size={'52 / XL'}
-                price={5590}
-                count={1}
-              />
-              <Components.CartCard 
-                id={1}
-                image={'https://basket-05.wb.ru/vol980/part98008/98008424/images/big/1.jpg'}
-                title={'HOODIE STORE Худи мужское оверсайз с капюшоном модное зип на молнии'}
-                size={'52 / XL'}
-                price={5590}
-                count={1}
-              />
+              {
+                cart?.length !== 0 ?
+                cart?.map((item, i) => (
+                  <Components.CartCard 
+                    key={i}
+                    id={item.id}
+                    image={item.product_images[0].image}
+                    title={item.title}
+                    size={item.size}
+                    price={item.price}
+                    count={item.count}
+                    obj={item}
+                  />
+                )) :
+                <h3>Ничего нет</h3>
+              }
             </div>
           </div>
         </div>
         <div className={c.right}>
-          <Components.Paying />
+          <Components.Paying 
+            summa={summa}
+            summaWithDelivering={deliverType === 'mail' ? summa : String(Number(summa) + 340)}
+            delivering={deliverType === 'mail' ? 0 : 340}
+            discount={Number(discount)}
+          />
           <Components.Promocode />  
         </div>
       </div>

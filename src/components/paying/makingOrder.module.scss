@@ -8,6 +8,9 @@
         width: 660px;
         align-items: center;
     }
+    @media (max-width: 1252px) {
+        width: 100%;
+    }
     button{
         width: 384px;
         height: 56px;

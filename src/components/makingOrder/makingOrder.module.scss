@@ -12,6 +12,7 @@
         width: 90%;
         flex-direction: column-reverse;
     }
+    
     button{
         width: 384px;
         height: 56px;
@@ -33,48 +34,48 @@
     }
     .down{
         width: 100%;
-        .line{
-            width: 384px;
-            height: 1px;
-            background: rgba($color: white, $alpha: 10%);
-            margin-bottom: 16px;
-            @media (max-width: 1268px) {
-                width: 100%;
-            }
-            &:nth-child(1){
-                @media (max-width: 768px) {
-                    display: none;
-                }
-            }
-        } 
-        .cart{
-            width: 384px;
-            @media (max-width: 1268px) {
-                width: 100%;
-            }
-            h3{
-                color: white;
-                font-weight: 700;
-                font-size: 20px;
-                margin: 0;
-                margin-bottom: 18px;
-                font-weight: 500;
-            }
-            p{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-weight: bold;
-                color: white;
-                padding: 0;
-                margin: 12px 0;
-                font-weight: 500;
-                span{
-                    color: rgba($color: white, $alpha: 60%);
-                }
-            }
-        }
+        // .line{
+        //     width: 384px;
+        //     height: 1px;
+        //     background: rgba($color: white, $alpha: 10%);
+        //     margin-bottom: 16px;
+        //     @media (max-width: 1268px) {
+        //         width: 100%;
+        //     }
+        //     &:nth-child(1){
+        //         @media (max-width: 768px) {
+        //             display: none;
+        //         }
+        //     }
+        // } 
+        // .cart{
+        //     width: 384px;
+        //     @media (max-width: 1268px) {
+        //         width: 100%;
+        //     }
+        //     h3{
+        //         color: white;
+        //         font-weight: 700;
+        //         font-size: 20px;
+        //         margin: 0;
+        //         margin-bottom: 18px;
+        //         font-weight: 500;
+        //     }
+        //     p{
+        //         width: 100%;
+        //         display: flex;
+        //         align-items: center;
+        //         justify-content: space-between;
+        //         font-weight: bold;
+        //         color: white;
+        //         padding: 0;
+        //         margin: 12px 0;
+        //         font-weight: 500;
+        //         span{
+        //             color: rgba($color: white, $alpha: 60%);
+        //         }
+        //     }
+        // }
         h3{
             @media (max-width: 1268px) {
                 width: 100%;
