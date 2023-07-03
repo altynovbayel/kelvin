@@ -1,15 +1,33 @@
 .brand {
   max-width: 95%;
-  margin: 110px auto;
-  .line{
+  margin: 110px auto 0;
+
+  .line {
     width: 100%;
     height: 2px;
     background-color: rgba(255, 255, 255, 0.05);
     margin-bottom: 30px;
   }
+
   .container {
     .brand_text {
       background: url('../../img/brand.png') no-repeat;
+
+      @media (max-width: 1243px) {
+        padding-top: 250px;
+      }
+
+      @media (max-width: 634px) {
+        background-size: contain;
+      }
+
+      @media (max-width: 500px) {
+        padding-top: 200px;
+      }
+
+      @media (max-width: 375px) {
+        padding-top: 170px;
+      }
 
       p {
         margin: 0;
@@ -23,11 +41,35 @@
         line-height: 128px;
         text-transform: uppercase;
 
-        span {
+        @media (max-width: 1360px) {
+          font-size: 70px;
+        }
+
+        @media (max-width: 634px) {
+          font-size: 40px;
+          line-height: 48px;
+        }
+
+        .mr {
           margin-right: 344px;
+
+          @media (max-width: 634px) {
+            margin-right: 0;
+          }
+        }
+
+        .grey {
+          @media (max-width: 1243px) {
+            color: rgba(255, 255, 255, 0.60);
+          }
         }
       }
 
+      .text_left {
+        @media (max-width: 634px) {
+          text-align: left;
+        }
+      }
     }
   }
 
@@ -36,7 +78,11 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    
+
+    @media (max-width: 375px) {
+      margin-top: 32px;
+    }
+
     img {
       width: 48px;
       height: 48px;
@@ -47,6 +93,7 @@
         span {
           color: rgba(255, 255, 255, 0.60);
         }
+
         color: #FFF;
         font-size: 16px;
         font-family: Manrope;

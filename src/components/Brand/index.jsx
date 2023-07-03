@@ -8,9 +8,9 @@ const Brand = () => {
       <div className={c.line}></div>
       <div className={c.container}>
         <div className={c.brand_text}>
-          <p>бренд <span></span></p> 
+          <p>бренд <span className={c.mr}></span></p> 
           <p>который</p>
-          <p>ценят за уникальность</p>
+          <p className={c.text_left}><span className={c.grey}>ценят за</span> уникальность</p>
         </div>
       </div>
       <div className={c.brand_shine}>

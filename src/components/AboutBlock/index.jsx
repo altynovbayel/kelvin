@@ -12,7 +12,7 @@ const AboutBlock = () => {
           КАЧЕСТВА, СТИЛЯ И МОДЫ 
         </p>
         <span className={c.text_down}>
-          kirill domanskiy – <br /> основатель бренда kelvin
+          kirill domanskiy – <br /> <span className={c.gray}>основатель бренда kelvin</span>
         </span>
       </div>
       <div className={c.left}>
