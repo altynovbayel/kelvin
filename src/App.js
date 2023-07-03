@@ -16,7 +16,7 @@ function App() {
     !cart && localStorage.setItem('kelvin_cart', JSON.stringify([]))
     localStorage.setItem('discount', 0)
   }, [])
-
+  
   return (
     <div>
       <Navbar />

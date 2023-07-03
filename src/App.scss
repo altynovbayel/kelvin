@@ -8,7 +8,8 @@ body {
   margin: 0;
   background: #141212;
   padding-bottom: 50px;
-
+  scroll-behavior: smooth;
+  
   &::-webkit-scrollbar {
     display: none;
   }
