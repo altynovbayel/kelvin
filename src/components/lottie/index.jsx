@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import furniture from "./furniture.json";
 
 const style = {
-  height: 900,
+  height: 800,
 };
 
 const interactivity = {
@@ -11,7 +11,7 @@ const interactivity = {
   actions: [
     {
       visibility: [0, 0.2],
-      type: "stop",
+      type: "seek",
       frames: [0],
     },
     {
