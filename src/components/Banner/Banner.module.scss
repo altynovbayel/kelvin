@@ -13,21 +13,47 @@
       font-weight: 700;
       line-height: 88px;
 
+      @media (max-width: 897px) {
+        font-size: 42px;
+        font-style: normal;
+        line-height: 50px;
+      }
+
+      @media (max-width: 440px) {
+        font-size: 32px;
+        font-style: normal;
+        line-height: 40px;
+      }
+
       span {
         margin-left: 245px;
+        @media (max-width: 897px) {
+          margin-left: 130px;
+        }
       }
     }
   }
 
   .banner_title {
-    width: 1440px;
-    margin-right: auto;
+    width: 95vw;
     margin-left: 35px;
     height: 558px;
     background-image: url('../../img/banner-2.svg');
     background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
+    background-position: center;
+    background-size: contain;
+    @media (max-width: 897px) {
+      height: 450px;
+    }
+    @media (max-width: 670px) {
+      margin-left: 20px;
+      height: 360px;
+    }
+    @media (max-width: 400px) {
+      margin-left: 10px;
+    }
+    
+    
     .banner_subtitle {
       width: 300px;
 

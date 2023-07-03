@@ -7,10 +7,10 @@ const Main = () => {
   return (
     <div className={c.main}>
       <Components.Banner/>
-      <Components.AboutBlock/>
-      <Components.Brand/>
+      {/* <Components.AboutBlock/> */}
+      {/* <Components.Brand/>
       <Components.Products/>
-      <Components.Facts/>
+      <Components.Facts/> */}
     </div>
   )
 }
