@@ -33,7 +33,9 @@ const Cart = () => {
                 obj={item}
               />
             )) :
-            <h3>Ничего нет</h3>
+            <div className={c.nothing}>
+              <h2>Ничего нет ;(</h2>
+            </div>
           }
         </div>
         

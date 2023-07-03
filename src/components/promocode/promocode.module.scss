@@ -1,14 +1,33 @@
 .promocode{
-  background: rgba($color: white, $alpha: 10%);
+  // background: rgba($color: white, $alpha: 10%);
+  // border-radius: 24px;
+  // display: flex;
+  // flex-direction: column;
+  // padding: 0 24px;
+  // margin-top: 16px;
+  max-height: 298px;
   border-radius: 24px;
-  display: flex;
-  flex-direction: column;
+  background: rgba($color: #fff, $alpha: 10%);
+  margin-bottom: 12px;
   padding: 0 24px;
-  margin-top: 16px;
+  position: relative;
+  margin-top: 12px;
   cursor: pointer;
-  @media (max-width: 1252px) {
+  @media (max-width: 1268px) {
+    width: 660px;
+  }
+  @media (max-width: 768px) {
     width: 90%;
   }
+  @media (max-width: 767px) {
+    width: 94%;
+  }
+  @media (max-width: 542px) {
+      width: 88%;
+  }
+  // @media (max-width: 1252px) {
+  //   width: 90%;
+  // }
   li{
     width: 32px;
     height: 32px;
@@ -44,7 +63,7 @@
     flex-direction: column;
     padding: 0 0 24px 0;
     input{
-      width: 90%;
+      width: 88%;
       height: 56px;
       padding: 0 24px;
       background: rgba($color: white, $alpha: 10%);
@@ -60,6 +79,7 @@
       height: 56px;
       border-radius: 50px;
       margin-top: 16px;
+      background-color: white;
       color: #141212;
       font-size: 16px;
       font-weight: bold;

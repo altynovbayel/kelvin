@@ -1,8 +1,7 @@
 import React from 'react'
 import c from './order.module.scss'
 import { Components } from '../../components'
-import { useLocation } from 'react-router-dom'
-
+  
 const Order = () => {
   const [ cart, setCart ] = React.useState(null)
   const [ summa, setSumma ] = React.useState(null)

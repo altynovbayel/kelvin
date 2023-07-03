@@ -105,18 +105,23 @@ const CartCard = ({id, image, title, size, price, count, obj}) => {
         <div className={c.floor}>
             <div className={c.count}>
                 <button
-                    disabled={count >= 1 ? true : false }
-                    className={count >= 1 ? c.disabled : '' }
+                    disabled={count <= 1 ? true : false }
+                    className={count <= 1 ? c.disabled : '' }
+                    onClick={() => decrement()}
                 >
                     <BiMinus />
                 </button>
                 <span>{count}</span>
-                <button>
+                <button
+                    onClick={() => increment()}
+                >
                     <BiPlus />
                 </button>
                 
             </div>
-            <p>
+            <p
+                onClick={() => deleteItem()}
+            >
                 Удалить
             </p>
         </div>
