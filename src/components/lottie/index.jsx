@@ -28,6 +28,7 @@ const interactivity = {
 };
 
 const LottieAnimation = () => {
+  
   return (
     <div>
       <Lottie

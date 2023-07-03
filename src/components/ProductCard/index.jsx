@@ -1,6 +1,5 @@
 import React from 'react'
 import c from './ProductCard.module.scss'
-import url from '../../img/product.png'
 import arrow from '../../img/arrow-right.svg'
 
 const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
