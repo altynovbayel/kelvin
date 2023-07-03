@@ -5,6 +5,8 @@ import { IMaskInput, IMaskMixin } from 'react-imask';
 
 const DeliveryInfo = () => {
 
+  const width = window.innerWidth
+
   const [ active, setActive ] = React.useState({
     first: false,
     second: false,
@@ -138,10 +140,15 @@ const DeliveryInfo = () => {
             overflow: 'hidden'
           }}
         >
-          <iframe 
-            src="https://yandex.ru/map-widget/v1/?ll=37.385534%2C55.584227&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDA5NBIa0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAiCg2GeBZCFQEGX0I%2C&z=8" width="660" height="400" frameBorder="1" allowFullScreen={true}
-            style={{position:'relative', borderRadius: '12px', marginTop: '8px', border: 'none'}}
-          ></iframe>
+          {
+            width >= 426 ?
+            <iframe 
+              src="https://yandex.ru/map-widget/v1/?ll=37.385534%2C55.584227&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDA5NBIa0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAiCg2GeBZCFQEGX0I%2C&z=8" width="660" height="400" frameBorder="1" allowFullScreen={true}
+              style={{position:'relative', borderRadius: '12px', marginTop: '8px', border: 'none'}}
+              className={c.map}
+            ></iframe> :
+            null
+          }
         </div>
       </div>
     </div>

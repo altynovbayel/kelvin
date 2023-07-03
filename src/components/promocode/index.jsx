@@ -19,10 +19,14 @@ const Promocode = () => {
 
   const getDiscount = (code) => {
     const dis = promocodes?.find(item => item.code === code)
-    if(dis) {
-      const discount = dis?.discount?.slice(0, dis.discount.length - 3)
+    const discount = dis?.discount?.slice(0, dis.discount.length - 3)
+
+    if(dis && dis.is_active) {
       localStorage.setItem('discount', discount)
       alert('Промокод рабочий!')
+    }else if(dis.is_active !== true){
+      alert('Промокод устарелый, или неправильно указанный!')
+      localStorage.setItem('discount', 0)
     }else{
       alert('Промокод устарелый, или неправильно указанный!')
       localStorage.setItem('discount', 0)

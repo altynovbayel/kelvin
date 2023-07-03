@@ -8,8 +8,15 @@
         width: 660px;
         align-items: center;
     }
-    @media (max-width: 1252px) {
+    @media (max-width: 768px) {
         width: 100%;
+        flex-direction: column-reverse;
+    }
+    @media (max-width: 767px) {
+        width: 94%;
+    }
+    @media (max-width: 542px) {
+        width: 88%;
     }
     button{
         width: 384px;

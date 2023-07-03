@@ -1,5 +1,6 @@
 import React from 'react'
 import c from './Banner.module.scss'
+import banner from '../../img/banner-2.svg'
 
 const Banner = () => {
   return (
@@ -15,6 +16,7 @@ const Banner = () => {
         <div className={c.banner_subtitle}>
           <p>Делаем качественно, красиво и с душой</p>
         </div>
+        <img src={banner} alt="" />
       </div>
     </div>  
   )
