@@ -2,17 +2,31 @@ import React from 'react'
 import c from './Main.module.scss'
 import { Components } from '../../components'
 import LottieAnimation from '../../components/lottie'
+import { motion } from 'framer-motion'
 
 
 const Main = () => {
+  const [ scrollPixel, setScrollPixel ] = React.useState(0)
+
+  window.onscroll = () => {
+    setScrollPixel(window.scrollY); // Value of scroll Y in px
+  };
   return (
     <div className={c.main}>
       <Components.Banner/>
-      <Components.AboutBlock/>
-      <LottieAnimation />
-      <Components.Brand/>
-      <Components.Products/>
-      <Components.Facts/>
+      <motion.div
+        style={{
+          position: 'relative',
+          top: `-${scrollPixel+200}px`
+        }} 
+        className={c.scroll}
+      >
+        <Components.AboutBlock/>
+        <LottieAnimation />
+        <Components.Brand/>
+        <Components.Products/>
+        <Components.Facts/>
+      </motion.div>
       
     </div>
   )

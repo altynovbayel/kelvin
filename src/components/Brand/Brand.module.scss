@@ -1,6 +1,7 @@
 .brand {
   max-width: 95%;
   margin: 0 auto;
+  position: relative;
 
   .line {
     width: 100%;
@@ -10,6 +11,7 @@
   }
 
   .container {
+    position: relative;
     .brand_text {
       background: url('../../img/brand.png') no-repeat;
 
@@ -29,38 +31,41 @@
         padding-top: 170px;
       }
 
-      p {
-        margin: 0;
-        padding: 0;
-        color: #FFF;
-        text-align: right;
-        font-size: 96px;
-        font-family: Manrope;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 128px;
-        text-transform: uppercase;
-
-        @media (max-width: 1360px) {
-          font-size: 70px;
-        }
-
-        @media (max-width: 634px) {
-          font-size: 40px;
-          line-height: 48px;
-        }
-
-        .mr {
-          margin-right: 344px;
-
-          @media (max-width: 634px) {
-            margin-right: 0;
+      div{
+        overflow: hidden;
+        p {
+          margin: 0;
+          padding: 0;
+          color: #FFF;
+          text-align: right;
+          font-size: 96px;
+          font-family: Manrope;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 128px;
+          text-transform: uppercase;
+  
+          @media (max-width: 1360px) {
+            font-size: 70px;
           }
-        }
-
-        .grey {
-          @media (max-width: 1243px) {
-            color: rgba(255, 255, 255, 0.60);
+  
+          @media (max-width: 634px) {
+            font-size: 40px;
+            line-height: 48px;
+          }
+  
+          .mr {
+            margin-right: 344px;
+  
+            @media (max-width: 634px) {
+              margin-right: 0;
+            }
+          }
+  
+          .grey {
+            @media (max-width: 1243px) {
+              color: rgba(255, 255, 255, 0.60);
+            }
           }
         }
       }

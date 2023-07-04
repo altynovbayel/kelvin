@@ -9,7 +9,7 @@ body {
   background: #141212;
   padding-bottom: 50px;
   scroll-behavior: smooth;
-  
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     display: none;
   }

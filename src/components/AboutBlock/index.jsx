@@ -2,12 +2,15 @@ import React from 'react'
 import c from './AboutBlock.module.scss'
 
 const AboutBlock = () => {
+
   return (
     <div className={c.about}>
-      <div className={c.right}>
+      <div 
+        className={c.right}
+      >
         <p>
           <span className={c.ml}></span>
-          kelvin – <span className={c.gray}>это смеСЬ</span> ИННОВАЦИЙ,
+          kelvin – <span className={c.gray}>это смесь</span> ИННОВАЦИЙ,
           <br />
           КАЧЕСТВА, СТИЛЯ И МОДЫ 
         </p>
@@ -15,7 +18,9 @@ const AboutBlock = () => {
           kirill domanskiy – <br /> <span className={c.gray}>основатель бренда kelvin</span>
         </span>
       </div>
-      <div className={c.left}>
+      <div
+        className={c.left}
+      >
         <p className={c.p1}>
           <span className={c.gray}>Добро пожаловать в мир</span> kelvin – где стиль встречает инновации. Выражайте свою утонченность 
           и уникальность <span className={c.gray}>через наши изысканные коллекции. </span>

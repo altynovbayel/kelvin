@@ -21,15 +21,19 @@ const Promocode = () => {
     const dis = promocodes?.find(item => item.code === code)
     const discount = dis?.discount?.slice(0, dis.discount.length - 3)
 
-    if(dis && dis.is_active) {
-      localStorage.setItem('discount', discount)
-      alert('Промокод рабочий!')
-    }else if(dis.is_active !== true){
-      alert('Промокод устарелый, или неправильно указанный!')
-      localStorage.setItem('discount', 0)
+    if(code.length === 6) {
+      if(dis && dis?.is_active) {
+        localStorage.setItem('discount', discount)
+        alert('Промокод рабочий!')
+      }else if(dis?.is_active !== true){
+        alert('Промокод устарелый, или неправильно указанный!')
+        localStorage.setItem('discount', 0)
+      }else{
+        alert('Промокод устарелый, или неправильно указанный!')
+        localStorage.setItem('discount', 0)
+      }
     }else{
-      alert('Промокод устарелый, или неправильно указанный!')
-      localStorage.setItem('discount', 0)
+      alert('Введите 6-значный промокод')
     }
     reset()
   }  
