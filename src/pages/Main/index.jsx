@@ -17,7 +17,7 @@ const Main = () => {
       <motion.div
         style={{
           position: 'relative',
-          top: `-${scrollPixel+200}px`
+          top: `-${scrollPixel+100}px`
         }} 
         className={c.scroll}
       >
