@@ -30,3 +30,22 @@ export const GetPromocodes = () => {
     promocodes
   }
 }
+
+export const GetSingleProducts = (id) => {
+  const [product, setProduct] = React.useState(null)
+
+  React.useEffect(() => {
+    API.getSingleProduct(id)
+      .then(res => setProduct(res.data))
+  }, [])
+
+  return {
+    product
+  }
+} 
+
+export const ScrollTop = () => {
+  window.scrollTo({
+    top: 0
+  })
+}
