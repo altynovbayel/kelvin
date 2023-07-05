@@ -7,8 +7,17 @@ import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = React.useState(false)
+  const [ dep, setDep ] = React.useState('')
 
   const Navigate = useNavigate()
+
+  const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setDep(Math.random())
+    }, 100)
+  }, [dep])
 
   const checkMenu = () => {
     if(activeNav){
@@ -56,7 +65,7 @@ const Navbar = () => {
           >
             <div className={c.count}>
               <span>
-                2
+                {cart.length}
               </span>
             </div>
             <img src={cartLogo} alt="cart" />
