@@ -159,6 +159,10 @@
         margin: 0 auto;
       }
 
+      @media (max-width: 375px) {
+        width: 95%;
+      }
+
       .info_title {
         color: #fff;
 
