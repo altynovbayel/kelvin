@@ -1,11 +1,12 @@
 import { Pages } from "../pages";
-import Main from "../pages/Main";
+
 
 export const PUBLIC_ROUTES = [
     {id: 1, path: "/", element: <Pages.Main/>},
     {id: 2, path: "/cart/", element: <Pages.Cart />},
     {id: 3, path: "/more/:id", element: <Pages.More />},
     {id: 4, path: "/order/", element: <Pages.Order />},
+    {id: 5, path: "/products/", element: <Pages.Products /> },
 ];
 
 export const navList = [

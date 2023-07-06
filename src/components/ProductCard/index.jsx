@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
   const [ dep, setDep ] = React.useState('')
   const navigate =  useNavigate()
-  const navigateToMore = () => navigate(`more/${id}`)
 
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const check = cart?.find(item => item?.id === obj?.id)
@@ -26,7 +25,7 @@ const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
 
   return (
     <div className={c.card}>
-      <div className={c.card_inner} onClick={navigateToMore}>
+      <div className={c.card_inner} onClick={() => navigate(`/more/${id}`)}>
         <img src={image} alt="" />
         <p>{title}</p>
       </div>

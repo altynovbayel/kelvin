@@ -56,7 +56,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className={c.products}>
-          <button>
+          <button onClick={() => Navigate('/products')}>
             Перейти к товарам
           </button>
           <div 
