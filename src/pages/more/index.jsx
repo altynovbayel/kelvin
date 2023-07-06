@@ -18,6 +18,7 @@ const More = () => {
   const {id} = useParams()
   const {product} = GetSingleProducts(id)
   const [activeDropdown, setActiveDropdown] = React.useState(false)
+  const [activeImg, setActiveImg] = React.useState(0)
   const [ dep, setDep ] = React.useState('')
   const navigate =  useNavigate()
   const navigateToCart = () => navigate(`/cart/`)
@@ -58,7 +59,7 @@ const More = () => {
 
   React.useEffect(() => ScrollTop() , [])
 
-  // console.log(check);
+  // console.log(activeImg);
   if(!product) return <h1>Loading...</h1>
   return (
     <div className={c.more}>
@@ -77,9 +78,9 @@ const More = () => {
             className={c.my_swiper}
           >
             {
-              product?.product_images.map(item => (
+              product?.product_images.map((item, key) => (
                 <SwiperSlide key={item.id} >
-                  <img className={c.slide_img} src={item.image} alt="" />
+                  <img className={c.slide_img} src={item.image} alt="" onClick={() => setActiveImg(key)}/>
                 </SwiperSlide>
               ))
             }
@@ -90,7 +91,7 @@ const More = () => {
           </div>
         </div>
         <div className={c.active_img}>
-          <img src={product?.product_images[0].image} alt="" />
+          <img src={product?.product_images[activeImg].image} alt="" />
         </div>
         <div className={c.mobile_slider}>
           <Swiper
@@ -117,11 +118,7 @@ const More = () => {
             <div className={c.title}>
               <h1>{product?.title}</h1>
             </div>
-            <div className={c.desc}>
-              <p>
-                {product?.description}
-              </p>
-            </div>
+            
           </div>
           <div className={c.price}>
             <h1>
