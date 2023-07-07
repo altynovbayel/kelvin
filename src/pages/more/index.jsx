@@ -5,7 +5,7 @@ import {BsCircleFill} from 'react-icons/bs'
 import { GetSingleProducts, ScrollTop } from '../../helpers'
 import setka from '../../img/setka.svg'
 import model from '../../img/model.svg'
-import {IoIosArrowDown} from 'react-icons/io'
+import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import { Navigation, Pagination} from 'swiper/modules';
 import {HiMinusSm, HiPlus} from 'react-icons/hi'
@@ -144,7 +144,10 @@ const More = () => {
             <div className={c.dropdown} onClick={() => setActiveDropdown(!activeDropdown)}>
               <div>{product?.size}</div>
               <span>
-                <IoIosArrowDown />
+                
+                {
+                  activeDropdown ? <IoIosArrowUp/> : <IoIosArrowDown />
+                }
               </span>
             </div>
             <div className={activeDropdown ? c.active_dropdown : c.disactive_dropdown}>
