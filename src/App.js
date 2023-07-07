@@ -11,7 +11,7 @@ axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 
 
 function App() {
-  const cart = localStorage.getItem('kelvin_cart')
+  const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
 
   React.useEffect(() => {
     !cart && localStorage.setItem('kelvin_cart', JSON.stringify([]))
