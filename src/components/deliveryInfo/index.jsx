@@ -2,7 +2,6 @@ import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { Components } from '..'
 import { IMaskInput, IMaskMixin } from 'react-imask';
-import { YMaps, Map, useYMaps, Placemark, SearchControl } from 'react-yandex-maps';
 
 const DeliveryInfo = () => {
   const [ location, setLocation ] = React.useState([])
@@ -150,7 +149,7 @@ const DeliveryInfo = () => {
             height: '302px'
           }}
         >
-          {
+          {/* {
             width >= 426 ?
             <YMaps>
               <Map 
@@ -166,7 +165,7 @@ const DeliveryInfo = () => {
               </Map>
             </YMaps> :
             null
-          }
+          } */}
         </div>
       </div>
     </div>
