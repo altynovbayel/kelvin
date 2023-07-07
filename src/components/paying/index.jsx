@@ -25,8 +25,8 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
                         : summa?.length === 5 ?
                         `${summa?.slice(0, 2)} ${summa?.slice(2, summa?.length )}` 
                         : summa?.length === 6 ?
-                        `${summa?.slice(0, 3)} ${summa?.slice(3, summa?.length )}` : 
-                        summa?.slice(0, summa?.length - 3 )
+                        `${summa?.slice(0, 3)} ${summa?.slice(3, summa?.length )}` 
+                        : summa
                     } ₽
                 </p>
                 <p>
@@ -49,7 +49,7 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
                 `${allSumma?.slice(0, 2)} ${allSumma?.slice(2, allSumma?.length )}` 
                 : allSumma?.length === 6 ?
                 `${allSumma?.slice(0, 3)} ${allSumma?.slice(3, allSumma?.length )}` : 
-                allSumma?.slice(0, allSumma?.length - 3 )
+                allSumma
             } ₽
         </h3>
     </div>

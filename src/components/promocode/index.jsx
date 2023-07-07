@@ -55,22 +55,18 @@ const Promocode = () => {
           </span>
         </div>
       </div>
-      {
-        active ? 
-        <form 
-          className={c.active}
-          onSubmit={handleSubmit(data => getDiscount(data.code))}
-        >
-          <input 
-            type="text"
-            placeholder='Промокод'
-            maxLength={6}
-            {...register('code')}
-          />
-          <button type='submit'>Применить промокод</button>
-        </form> : 
-        null
-      }
+      <form 
+        className={active ? c.active : c.disactive}
+        onSubmit={handleSubmit(data => getDiscount(data.code))}
+      >
+        <input 
+          type="text"
+          placeholder='Промокод'
+          maxLength={6}
+          {...register('code')}
+        />
+        <button type='submit'>Применить промокод</button>
+      </form>  
     </div>
   )
 }

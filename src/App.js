@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import './App.scss'
 
 import axios from 'axios'
+import { GetMapApi, getMapApi } from './api'
 
 axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 

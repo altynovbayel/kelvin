@@ -43,16 +43,22 @@
         padding-top: 14px;
         outline: none;
         background: rgba($color: white, $alpha: 5%);
-        border: 1px solid rgba($color: white, $alpha: 5%);
         border-radius: 12px;
         font-size: 14px;
         font-weight: 500;
         color: white;
-        transition: .3s;
+        transition: .2s;
+        border: 1px solid rgba($color: white, $alpha: 0%);
         visibility: visible;
         &:focus{
           border: 1px solid white;
           transition: .3s;
+        }
+        &:hover{
+          border: 1px solid rgba($color: white, $alpha: 20%);
+        }
+        &.active{
+          border: 1px solid white;
         }
         @media (max-width: 748px) {
           width: 94%;
@@ -114,6 +120,20 @@
         font-size: 16px;
         color: white;
         font-weight: 500;
+        color: white;
+        transition: .2s;
+        border: 1px solid rgba($color: white, $alpha: 0%);
+        visibility: visible;
+        &:focus{
+          border: 1px solid white;
+          transition: .3s;
+        }
+        &:hover{
+          border: 1px solid rgba($color: white, $alpha: 20%);
+        }
+        &.active{
+          border: 1px solid white;
+        }
         letter-spacing: 0.5px;
         @media (max-width: 748px) {
           width: 94%;

@@ -8,8 +8,7 @@
 
   .container {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 24px;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -60,6 +59,10 @@
         height: 39px;
         width: 100%;
         left: 0;
+        transition: .2s;
+        &:hover{
+          box-shadow: 0px 4px 48px 0px #FFFFFF14;
+        }
       }
 
       :global(.swiper-button-prev:after) {
@@ -77,6 +80,10 @@
         height: 39px;
         width: 100%;
         right: 0;
+        transition: .2s;
+        &:hover{
+          box-shadow: 0px 4px 48px 0px #FFFFFF14;
+        }
       }
 
       :global(.swiper-button-next:after) {
@@ -87,7 +94,7 @@
     }
 
     .active_img {
-      width: 660px;
+      width: 800px;
       height: 850px;
 
       @media (max-width: 1024px) {

@@ -2,8 +2,11 @@ import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { Components } from '..'
 import { IMaskInput, IMaskMixin } from 'react-imask';
+import { YMaps, Map, useYMaps, Placemark, SearchControl } from 'react-yandex-maps';
 
 const DeliveryInfo = () => {
+  const [ location, setLocation ] = React.useState([])
+  const mapState = { center: location, zoom: 9 };
 
   const width = window.innerWidth
 
@@ -15,10 +18,10 @@ const DeliveryInfo = () => {
     fifth: false
   })
 
-//   let phoneMask = IMask(
-//     document.getElementById('phone'), {
-//       mask: '+{7}(000)000-00-00'
-//     });
+
+  navigator.geolocation.getCurrentPosition(location => {
+    setLocation([location.coords.latitude, location.coords.longitude])
+  })
 
   const PhoneMask = "+{7} (000) 000-00-00";
   const phoneMask = [
@@ -26,7 +29,7 @@ const DeliveryInfo = () => {
       mask: PhoneMask,
     }
   ];
-  
+    
 
   return (
     <div className={c.deliveryInfo}>
@@ -35,6 +38,7 @@ const DeliveryInfo = () => {
         <div>
           <input 
             type="text" 
+            className={active.first ? c.active : null}
             onChange={e => {
               if(e.target.value.length !== 0 ){
                 setActive({
@@ -54,6 +58,7 @@ const DeliveryInfo = () => {
         <div>
           <input 
             type="text" 
+            className={active.second ? c.active : null}
             onChange={e => {
               if(e.target.value.length !== 0 ){
                 setActive({
@@ -73,6 +78,7 @@ const DeliveryInfo = () => {
         <div>
           <input 
             type="email" 
+            className={active.third ? c.active : null}
             onChange={e => {
               if(e.target.value.length !== 0 ){
                 setActive({
@@ -91,7 +97,7 @@ const DeliveryInfo = () => {
         </div>
         <div>
           <IMaskInput
-            className="form-control"
+            className={active.fourth ? c.active : null}
             mask={phoneMask}
             id='phoneInput'
             onChange={e => {
@@ -118,6 +124,7 @@ const DeliveryInfo = () => {
         <div className={c.inputForm}>
           <input 
             type="text"
+            className={active.fifth ? c.active : null}
             onChange={e => {
               if(e.target.value.length !== 0 ){
                 setActive({
@@ -137,16 +144,27 @@ const DeliveryInfo = () => {
         <div 
           style={{
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            borderRadius: '24px',
+            width: '100%',
+            height: '302px'
           }}
         >
           {
             width >= 426 ?
-            <iframe 
-              src="https://yandex.ru/map-widget/v1/?ll=37.385534%2C55.584227&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDA5NBIa0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAiCg2GeBZCFQEGX0I%2C&z=8" width="660" height="400" frameBorder="1" allowFullScreen={true}
-              style={{position:'relative', borderRadius: '12px', marginTop: '8px', border: 'none'}}
-              className={c.map}
-            ></iframe> :
+            <YMaps>
+              <Map 
+                style={{height: '302px', marginTop: '8px'}}  
+                state={{
+                  center: location,
+                  zoom: 10,
+                }}
+              >
+                <Placemark
+                  geometry={location}
+                />
+              </Map>
+            </YMaps> :
             null
           }
         </div>

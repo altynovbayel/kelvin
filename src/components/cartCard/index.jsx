@@ -1,6 +1,7 @@
 import React from 'react'
 import c from './cartCard.module.scss'
 import { BiMinus, BiPlus } from 'react-icons/bi'
+import { useNavigate } from 'react-router-dom'
 
 const CartCard = ({id, image, title, size, price, count, obj}) => {
     const [ active, setActive ] = React.useState(false)
@@ -37,6 +38,8 @@ const CartCard = ({id, image, title, size, price, count, obj}) => {
         localStorage.setItem('kelvin_cart', JSON.stringify(cart));
     }
       
+    const navigate = useNavigate()
+
   return (
     <div className={c.card}>
         
@@ -49,6 +52,7 @@ const CartCard = ({id, image, title, size, price, count, obj}) => {
                         'https://yt3.ggpht.com/a/AATXAJx-k8pMwgN2y_GuIhcHXN0gUEAPSXQJM3AuzR-n=s900-c-k-c0xffffffff-no-rj-mo'
                     }
                     alt="image"
+                    onClick={() => navigate(`/more/${id}`)}
                 />
             </div>
             <div className={c.right}>
