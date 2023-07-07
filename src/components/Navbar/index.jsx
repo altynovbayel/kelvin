@@ -65,7 +65,7 @@ const Navbar = () => {
           >
             <div className={c.count}>
               <span>
-                {cart?.length}
+                {cart ? cart?.length : 0}
               </span>
             </div>
             <img src={cartLogo} alt="cart" />
