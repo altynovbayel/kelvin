@@ -1,26 +1,28 @@
 import React from 'react'
 import c from './Brand.module.scss'
 import shine from '../../img/shine.png'
-import { motion, useViewportScroll } from 'framer-motion'
+import { motion, useMotionValue, useScroll, useSpring, useTransform, useViewportScroll } from 'framer-motion'
 
 const Brand = () => {
-  const { scrollYProgress } = useViewportScroll()
+  const x = useMotionValue(0)
+  const y = useSpring(0)
   
+  const z = useTransform(
+    [x, y],
+    ([latestX, latestY]) => latestX * latestY
+  )
   return (
     <div className={c.brand}>
       <div className={c.line}></div>
       <div className={c.container}>
         <div className={c.brand_text}>
-          <div>
-            <p
-              style={{
-                position: 'relative',
-                bottom: scrollYProgress - 1000,
-                right: 0
-              }}
+          <div
+          >
+            <motion.p
+              style={{z, x, y}}
             >
               бренд
-            <span className={c.mr}></span></p> 
+            <span className={c.mr}></span></motion.p> 
           </div>
           <div>
             <p>который</p>

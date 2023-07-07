@@ -5,7 +5,6 @@ import Navbar from './components/Navbar'
 import './App.scss'
 
 import axios from 'axios'
-import { GetMapApi, getMapApi } from './api'
 
 axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 
@@ -14,7 +13,6 @@ function App() {
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
 
   React.useEffect(() => {
-    localStorage.clear()
     !cart && localStorage.setItem('kelvin_cart', JSON.stringify([]))
     localStorage.setItem('discount', 0) 
   }, [])
