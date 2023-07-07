@@ -14,10 +14,8 @@ function App() {
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
 
   React.useEffect(() => {
-    if(!cart && cart?.length === 0 ){
-      localStorage.setItem('kelvin_cart', JSON.stringify([]))
-      localStorage.setItem('discount', 0) 
-    }
+    localStorage.setItem('kelvin_cart', JSON.stringify([]))
+    localStorage.setItem('discount', 0) 
   }, [])
   
   return (
