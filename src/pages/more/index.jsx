@@ -9,6 +9,7 @@ import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import { Navigation, Pagination} from 'swiper/modules';
 import {HiMinusSm, HiPlus} from 'react-icons/hi'
+import checkImg from '../../img/check.svg'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,6 +21,7 @@ const More = () => {
   const [activeDropdown, setActiveDropdown] = React.useState(false)
   const [activeImg, setActiveImg] = React.useState(0)
   const [ dep, setDep ] = React.useState('')
+  const [choosenSize, setChoosenSize] = React.useState(null)
   const navigate =  useNavigate()
   const navigateToCart = () => navigate(`/cart/`)
 
@@ -143,21 +145,19 @@ const More = () => {
             </div>
             <div className={c.dropdown} onClick={() => setActiveDropdown(!activeDropdown)}>
               <div>{product?.size}</div>
-              <span>
-                
-                {
-                  activeDropdown ? <IoIosArrowUp/> : <IoIosArrowDown />
-                }
+              <span className={activeDropdown ? c.active_dropdown_arrow : ''}>
+                <IoIosArrowDown />
               </span>
             </div>
             <div className={activeDropdown ? c.active_dropdown : c.disactive_dropdown}>
-              <div>{product?.size}</div>
-              <div>{product?.size}</div>
-              <div>{product?.size}</div>
-              <div>{product?.size}</div>
-              <div>{product?.size}</div>
-              <div>{product?.size}</div>
-
+              {
+                Array(6).fill(1).map((_, id) => (
+                  <div onClick={() => setChoosenSize(id)}>
+                    {product?.size}
+                    {id === choosenSize ? <img src={checkImg}/> : ''}
+                  </div>
+                ))
+              }
             </div>
             <div className={c.model}>
               <div className={c.model_text}>

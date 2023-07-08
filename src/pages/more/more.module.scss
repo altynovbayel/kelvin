@@ -326,6 +326,12 @@
               width: 32px;
               height: 32px;
               color: #FFF;
+              transition: .5s;
+            }
+          }
+          .active_dropdown_arrow{
+            svg{
+              transform: rotate(180deg);
             }
           }
         }
@@ -335,7 +341,7 @@
           width: 100%;
           height: auto;
           background: #2C2A2A;
-          top: 50%;
+          top: 60%;
           transition: .5s;
           left: 0;
           border-radius: 0 0 12px 12px;
@@ -354,6 +360,8 @@
             padding: 12px 0 12px 8px;
             transition: .5s;
             border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
             &:hover {
               background: rgba(255, 255, 255, 0.10);
             }
