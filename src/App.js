@@ -12,6 +12,7 @@ axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 
 function App() {
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
+  const location = JSON.parse(localStorage.getItem('location'))
 
   const lenis = new Lenis()
 
@@ -27,7 +28,7 @@ function App() {
     !cart && localStorage.setItem('kelvin_cart', JSON.stringify([]))
     localStorage.setItem('discount', 0) 
 
-    navigator.geolocation.getCurrentPosition(location => {
+    !location && navigator.geolocation.getCurrentPosition(location => {
       localStorage.setItem('location', JSON.stringify([location.coords.latitude, location.coords.longitude]))
     })
   }, [])

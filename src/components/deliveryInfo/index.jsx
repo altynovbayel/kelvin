@@ -2,7 +2,8 @@ import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { Components } from '..'
 import { IMaskInput, IMaskMixin } from 'react-imask';
-import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
+import { Map, Placemark, SearchControl, YMaps } from '@pbe/react-yandex-maps';
+import icon from './icon.svg'
 
 const DeliveryInfo = () => {
   const location = JSON.parse(localStorage.getItem('location'))
@@ -123,6 +124,7 @@ const DeliveryInfo = () => {
           <input 
             type="text"
             className={active.fifth ? c.active : null}
+            id={'suggest'}
             onChange={e => {
               if(e.target.value.length !== 0 ){
                 setActive({
@@ -158,14 +160,14 @@ const DeliveryInfo = () => {
                   zoom: 10
                 }}
               >
-                <Placemark
-                  geometry={location}
-                  options={{
-                    iconLayout: 'default#image',
-                    iconImageHref: 'icon.svg',
-                    iconImageSize: [98, 60]
-                  }} 
-                />
+                  <Placemark
+                    geometry={location}
+                    options={{
+                      iconLayout: 'default#image',
+                      iconImageHref: icon,
+                      iconImageSize: [98, 60]
+                    }} 
+                  />
               </Map>
             </YMaps> :
             null

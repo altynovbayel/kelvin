@@ -27,7 +27,6 @@
     "smooth-scrollbar": "^8.8.4",
     "swiper": "^10.0.3",
     "web-vitals": "^2.1.4",
-    "yandex-maps": "^0.0.1",
     "ymaps": "^0.2.1"
   },
   "scripts": {
