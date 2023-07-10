@@ -1,8 +1,11 @@
 .header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   position: fixed;
   right: 0;
   left: 0;
-  top: 0;
+  top: 15px;
   z-index: 100;
   // backdrop-filter: blur(76px);
 
@@ -10,8 +13,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 95%;
-    margin: 35px auto;
+    width: 95%;
+    max-width: 1116px;
 
     .logo {
       cursor: pointer;

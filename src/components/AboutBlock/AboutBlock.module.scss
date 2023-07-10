@@ -12,6 +12,10 @@
   position: relative;
   border-radius: 24px;
 
+  @media (min-width: 1440px) {
+    margin: 200px 0;
+  }
+
   @media (max-width: 1360px) {
     gap: 40px;
   }

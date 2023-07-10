@@ -9,10 +9,21 @@
         align-items: center;
     }
     @media (max-width: 768px) {
-        width: 90%;
+        width: 432px;
         flex-direction: column-reverse;
     }
-    
+    @media (max-width: 513px) {
+        width: 346px;
+    }
+
+    @media (max-width: 375px) {
+        width: 300px;
+    }
+    @media (max-width: 320px) {
+        width: 250px;
+    }
+
+
     button{
         width: 384px;
         height: 56px;
