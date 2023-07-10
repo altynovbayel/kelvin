@@ -18,12 +18,13 @@ import 'swiper/css/pagination';
 const More = () => {
   const {id} = useParams()
   const {product} = GetSingleProducts(id)
+  const navigate =  useNavigate()
+  const navigateToCart = () => navigate(`/cart/`)
+
   const [activeDropdown, setActiveDropdown] = React.useState(false)
   const [activeImg, setActiveImg] = React.useState(0)
   const [ dep, setDep ] = React.useState('')
   const [choosenSize, setChoosenSize] = React.useState(null)
-  const navigate =  useNavigate()
-  const navigateToCart = () => navigate(`/cart/`)
 
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const check = cart?.find(item => item?.id === product?.id)
@@ -66,6 +67,7 @@ const More = () => {
   return (
     <div className={c.more}>
       <div className={c.container}>
+        
         <div className={c.slider}>
           <Swiper 
             direction={'vertical'} 
@@ -92,9 +94,11 @@ const More = () => {
             <button className="swiper-button-next"></button>
           </div>
         </div>
+
         <div className={c.active_img}>
           <img src={product?.product_images[activeImg].image} alt="" />
         </div>
+
         <div className={c.mobile_slider}>
           <Swiper
             pagination={true} 
@@ -111,6 +115,7 @@ const More = () => {
             }
           </Swiper>
         </div>
+
         <div className={c.info}>
           <div className={c.info_title}>
             <div className={c.new_text}>
@@ -203,6 +208,7 @@ const More = () => {
             </span>
           </div>
         </div>
+
       </div>
     </div>
   )
