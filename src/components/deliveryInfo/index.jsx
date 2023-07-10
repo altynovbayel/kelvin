@@ -1,8 +1,7 @@
 import React from 'react'
 import c from './deliveryInfo.module.scss'
-import { Components } from '..'
-import { IMaskInput, IMaskMixin } from 'react-imask';
-import { Map, Placemark, SearchControl, YMaps } from '@pbe/react-yandex-maps';
+import { IMaskInput } from 'react-imask';
+import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
 import icon from './icon.svg'
 
 const DeliveryInfo = () => {
