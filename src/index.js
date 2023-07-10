@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <YMaps query={{apikey: '24bdf04b-f3e4-42c6-ade0-3e212ff6cbc0'}}>
+      <YMaps query={{apikey: '5367b11a-af40-47aa-bdb9-cd54ea1bb253'}}>
         <App /> 
       </YMaps>
     </BrowserRouter>

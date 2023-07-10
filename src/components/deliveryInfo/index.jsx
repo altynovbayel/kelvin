@@ -2,10 +2,13 @@ import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { Components } from '..'
 import { IMaskInput, IMaskMixin } from 'react-imask';
-import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
+import { Map, Placemark, SearchControl, YMaps } from '@pbe/react-yandex-maps';
+import icon from './icon.svg'
 
 const DeliveryInfo = () => {
   const location = JSON.parse(localStorage.getItem('location'))
+  const [ searchMap, setSearchMap ] = React.useState('') 
+  const [ locationResult, setLocationResult ] = React.useState(null) 
 
   const width = window.innerWidth
 
@@ -17,8 +20,11 @@ const DeliveryInfo = () => {
     fifth: false
   })
 
-
-
+  window.ymaps.geocode(searchMap).then((res) => {
+    const firstGeoObject = res.geoObjects.get(0);
+    const coords = firstGeoObject.geometry.getCoordinates();
+    setLocationResult(coords);
+  });
 
   const PhoneMask = "+{7} (000) 000-00-00";
   const phoneMask = [
@@ -121,7 +127,9 @@ const DeliveryInfo = () => {
           <input 
             type="text"
             className={active.fifth ? c.active : null}
+            id={'suggest'}
             onChange={e => {
+              setSearchMap(e.target.value)
               if(e.target.value.length !== 0 ){
                 setActive({
                   ...active,
@@ -152,18 +160,18 @@ const DeliveryInfo = () => {
               <Map 
                 style={{height: '302px', marginTop: '8px'}}  
                 defaultState={{
-                  center: location,
+                  center: locationResult,
                   zoom: 10
                 }}
               >
-                <Placemark
-                  geometry={location}
-                  options={{
-                    iconLayout: 'default#image',
-                    iconImageHref: 'icon.svg',
-                    iconImageSize: [98, 60]
-                  }} 
-                />
+                  <Placemark
+                    geometry={locationResult}
+                    options={{
+                      iconLayout: 'default#image',
+                      iconImageHref: icon,
+                      iconImageSize: [98, 60]
+                    }} 
+                  />
               </Map>
             </YMaps> :
             null
