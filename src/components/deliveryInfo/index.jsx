@@ -20,12 +20,6 @@ const DeliveryInfo = () => {
     fifth: false
   })
 
-  window.ymaps.geocode(searchMap).then((res) => {
-    const firstGeoObject = res.geoObjects.get(0);
-    const coords = firstGeoObject.geometry.getCoordinates();
-    setLocationResult(coords);
-  });
-
   const PhoneMask = "+{7} (000) 000-00-00";
   const phoneMask = [
     {
