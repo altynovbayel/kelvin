@@ -7,6 +7,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  margin-bottom: 24px;
+
+  transform: skew(0,0,10deg,10deg);
+
   .title {
     padding-top: 48px;
     padding-left: 48px;

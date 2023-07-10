@@ -1,38 +1,49 @@
 import React from 'react'
 import c from './Brand.module.scss'
 import shine from '../../img/shine.png'
-import { motion, useMotionValue, useScroll, useSpring, useTransform, useViewportScroll } from 'framer-motion'
+import AOS from 'aos'
 
 const Brand = () => {
-  const x = useMotionValue(0)
-  const y = useSpring(0)
-  
-  const z = useTransform(
-    [x, y],
-    ([latestX, latestY]) => latestX * latestY
-  )
+  const [ scrollPixel, setScrollPixel ] = React.useState(0)
+
+  window.onscroll = () => {
+    setScrollPixel(window.scrollY); // Value of scroll Y in px
+  };
+
+  AOS.init()
   return (
     <div className={c.brand}>
       <div className={c.line}></div>
       <div className={c.container}>
         <div className={c.brand_text}>
-          <div
-          >
-            <motion.p
-              style={{z, x, y}}
+          <div>
+            <p
+              data-aos="fade-up"         
             >
               бренд
-            <span className={c.mr}></span></motion.p> 
+            <span className={c.mr}></span></p> 
           </div>
           <div>
-            <p>который</p>
+            <p
+              data-aos="fade-up"         
+            >
+              который
+            </p>
           </div>
           <div>
-            <p className={c.text_left}><span className={c.grey}>ценят за</span> уникальность</p>
+            <p 
+              data-aos="fade-up"         
+              className={c.text_left}
+            >
+              <span className={c.grey}>ценят за</span> уникальность
+            </p>
           </div>
         </div>
       </div>
-      <div className={c.brand_shine}>
+      <div 
+        data-aos="fade-up" 
+        className={c.brand_shine}
+      >
         <img src={shine} alt="" />
         <div className={c.shine_text}>
           <p>

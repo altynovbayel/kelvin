@@ -7,8 +7,20 @@
     padding: 24px;
     position: relative;
     @media (max-width: 768px) {
-        width: 90%;
+        width: 660px;
         padding: 18px;
+    }
+    @media (max-width: 634px) {
+        width: 90%;
+    }
+    @media (max-width: 600px) {
+        width: 343px;
+    }
+    @media (max-width: 375px) {
+        width: 310px;
+    }
+    @media (max-width: 320px) {
+        width: 255px;
     }
     .main{
         display: flex;

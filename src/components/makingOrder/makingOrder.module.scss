@@ -1,29 +1,25 @@
 .makingOrder{
+    width: 100%;
     background: rgba($color: white, $alpha: 10%);
     border-radius: 24px;
     display: flex;
     flex-direction: column;
     padding: 24px;
+    @media (min-width: 1269px) {
+        width: 390px;
+    }
     @media (max-width: 1268px) {
         width: 660px;
         align-items: center;
     }
     @media (max-width: 768px) {
-        width: 432px;
+        width: 100%;
         flex-direction: column-reverse;
     }
-    @media (max-width: 513px) {
-        width: 346px;
+    
+    @media (max-width: 634px) {
+        width: 84%;
     }
-
-    @media (max-width: 375px) {
-        width: 300px;
-    }
-    @media (max-width: 320px) {
-        width: 250px;
-    }
-
-
     button{
         width: 384px;
         height: 56px;

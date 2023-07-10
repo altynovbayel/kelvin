@@ -20,10 +20,7 @@
     width: 660px;
   }
   @media (max-width: 768px) {
-    width: 90%;
-  }
-  @media (max-width: 767px) {
-    width: 94%;
+    width: 92%;
   }
   @media (max-width: 542px) {
       width: 88%;
@@ -84,6 +81,7 @@
       border: 0;
       outline: 0;
       display: none;
+    
     }
     button{
       width: 100%;
@@ -118,21 +116,38 @@
       color: white;
       font-size: 16px;
       font-weight: bold;
+      border: 1px solid none;
       border-radius: 50px;
       border: 0;
       outline: 0;
+      &.active{
+        border: 1px solid #FFFFFF
+      }
+    }
+    p{
+      width: 100%;
+      color: #FE2C2C;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0;
+      margin-top: 8px;
+      display: flex;
+      justify-content: flex-start;
     }
     button{
       width: 100%;
       height: 56px;
       border-radius: 50px;
-      margin-top: 16px;
+      margin-top: 24px;
       background-color: white;
       color: #141212;
       font-size: 16px;
       font-weight: bold;
       border: 0;
       cursor: pointer;
+      &.success{
+        background: #13ED29;
+      }
     }
   }
 }

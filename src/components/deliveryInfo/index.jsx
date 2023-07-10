@@ -2,10 +2,10 @@ import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { Components } from '..'
 import { IMaskInput, IMaskMixin } from 'react-imask';
+import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
 
 const DeliveryInfo = () => {
-  const [ location, setLocation ] = React.useState([])
-  const mapState = { center: location, zoom: 9 };
+  const location = JSON.parse(localStorage.getItem('location'))
 
   const width = window.innerWidth
 
@@ -18,9 +18,7 @@ const DeliveryInfo = () => {
   })
 
 
-  navigator.geolocation.getCurrentPosition(location => {
-    setLocation([location.coords.latitude, location.coords.longitude])
-  })
+
 
   const PhoneMask = "+{7} (000) 000-00-00";
   const phoneMask = [
@@ -28,7 +26,6 @@ const DeliveryInfo = () => {
       mask: PhoneMask,
     }
   ];
-    
 
   return (
     <div className={c.deliveryInfo}>
@@ -149,23 +146,28 @@ const DeliveryInfo = () => {
             height: '302px'
           }}
         >
-          {/* {
+          {
             width >= 426 ?
             <YMaps>
               <Map 
                 style={{height: '302px', marginTop: '8px'}}  
-                state={{
+                defaultState={{
                   center: location,
-                  zoom: 10,
+                  zoom: 10
                 }}
               >
                 <Placemark
                   geometry={location}
+                  options={{
+                    iconLayout: 'default#image',
+                    iconImageHref: 'icon.svg',
+                    iconImageSize: [98, 60]
+                  }} 
                 />
               </Map>
             </YMaps> :
             null
-          } */}
+          }
         </div>
       </div>
     </div>

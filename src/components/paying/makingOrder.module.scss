@@ -9,11 +9,8 @@
         align-items: center;
     }
     @media (max-width: 768px) {
-        width: 100%;
+        width: 92%;
         flex-direction: column-reverse;
-    }
-    @media (max-width: 767px) {
-        width: 94%;
     }
     @media (max-width: 542px) {
         width: 88%;

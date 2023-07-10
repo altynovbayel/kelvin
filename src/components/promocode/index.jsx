@@ -7,9 +7,11 @@ import { useForm } from 'react-hook-form'
 
 const Promocode = () => {
   const [ active, setActive ] = React.useState(false)
+  const [ code, setCode ] = React.useState('')
+  const [ success, setSuccess ] = React.useState('')
+  const [ error, setError ] = React.useState('')
 
   const { promocodes } = GetPromocodes()
-
 
   const {
     register,
@@ -17,23 +19,25 @@ const Promocode = () => {
     reset
   } = useForm()
 
-  const getDiscount = (code) => {
+  const getDiscount = () => {
     const dis = promocodes?.find(item => item.code === code)
     const discount = dis?.discount?.slice(0, dis.discount.length - 3)
 
     if(code.length === 6) {
       if(dis && dis?.is_active) {
         localStorage.setItem('discount', discount)
-        alert('Промокод рабочий!')
+        setCode('')
+        setError('')
+        setSuccess('Промокод успешно применен')
       }else if(dis?.is_active !== true){
-        alert('Промокод устарелый, или неправильно указанный!')
+        setError('Такого промокода мы не знаем')
         localStorage.setItem('discount', 0)
       }else{
-        alert('Промокод устарелый, или неправильно указанный!')
+        setError('Такого промокода мы не знаем')
         localStorage.setItem('discount', 0)
       }
     }else{
-      alert('Введите 6-значный промокод')
+      setError('Заполните поле')
     }
     reset()
   }  
@@ -41,7 +45,10 @@ const Promocode = () => {
   return (
     <div className={c.promocode}>
       <div
-        onClick={() => setActive(!active)}
+        onClick={() => {
+         setError('')
+          setActive(!active)
+        }}
       >
         <div className={c.left}>
           <li>
@@ -57,15 +64,24 @@ const Promocode = () => {
       </div>
       <form 
         className={active ? c.active : c.disactive}
-        onSubmit={handleSubmit(data => getDiscount(data.code))}
       >
         <input 
           type="text"
           placeholder='Промокод'
           maxLength={6}
-          {...register('code')}
+          className={code.length >= 1 ? c.active : ''}
+          onChange={e => setCode(e.target.value)}
         />
-        <button type='submit'>Применить промокод</button>
+        {error.length >= 1 ? <p>{error}</p> : null}
+        <button 
+          className={success.length >= 1 ? c.success : ''}
+          onClick={e => {
+            e.preventDefault()
+            getDiscount()
+          }}
+        >
+          {success.length >= 1 ? 'Промокод успешно применен' : 'Применить'}
+        </button>
       </form>  
     </div>
   )

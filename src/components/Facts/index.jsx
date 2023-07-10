@@ -7,6 +7,8 @@ const Facts = () => {
     <div className={c.facts}>
       <div className={c.container}>
         <FactsCard/>
+        <FactsCard/>
+        <FactsCard/>
       </div>
     </div>
   )
