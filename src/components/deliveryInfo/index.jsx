@@ -7,8 +7,6 @@ import icon from './icon.svg'
 
 const DeliveryInfo = () => {
   const location = JSON.parse(localStorage.getItem('location'))
-  const [ searchMap, setSearchMap ] = React.useState('') 
-  const [ locationResult, setLocationResult ] = React.useState(null) 
 
   const width = window.innerWidth
 
@@ -123,7 +121,6 @@ const DeliveryInfo = () => {
             className={active.fifth ? c.active : null}
             id={'suggest'}
             onChange={e => {
-              setSearchMap(e.target.value)
               if(e.target.value.length !== 0 ){
                 setActive({
                   ...active,
@@ -154,12 +151,12 @@ const DeliveryInfo = () => {
               <Map 
                 style={{height: '302px', marginTop: '8px'}}  
                 defaultState={{
-                  center: locationResult,
+                  center: location,
                   zoom: 10
                 }}
               >
                   <Placemark
-                    geometry={locationResult}
+                    geometry={location}
                     options={{
                       iconLayout: 'default#image',
                       iconImageHref: icon,
