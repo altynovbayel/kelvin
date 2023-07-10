@@ -10,6 +10,8 @@ import AboutBlock from "./AboutBlock";
 import Brand from "./Brand";
 import Products from "./Products";
 import Facts from "./Facts";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 
 
@@ -26,4 +28,6 @@ export const Components = {
     Brand,
     Products,
     Facts,
+    Footer,
+    Navbar
 }

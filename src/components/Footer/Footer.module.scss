@@ -1,0 +1,39 @@
+.footer {
+  width: 95%;
+  margin: 80px auto 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .email {
+      margin-left: 140px;
+      p {
+        margin: 0;
+        padding: 0;
+        color: #FFF;
+        font-family: Manrope;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+      }
+    }
+
+    .links {
+      display: flex;
+      gap: 24px;
+      a {
+        color: #FFF;
+        font-family: Manrope;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+      }
+    }
+  }
+}
