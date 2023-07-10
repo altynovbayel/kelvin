@@ -18,7 +18,9 @@ const DeliveryInfo = () => {
   })
 
 
-
+  React.useEffect(() => {
+    fetch('https://geocode.search.hereapi.com/v1/geocode?q=Russia&apiKey=wOnjAI89_M2K_xTWk_AuC-MEUlbs05Wj4T644C5XdSE',).then(r => console.log(r.json()))
+  }, [])
 
   const PhoneMask = "+{7} (000) 000-00-00";
   const phoneMask = [
