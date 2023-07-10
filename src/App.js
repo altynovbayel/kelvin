@@ -1,7 +1,7 @@
 import React from 'react'
 import MainRoutes from './routes'
 
-import Navbar from './components/Navbar'
+import { Components } from './components'
 import './App.scss'
 import Lenis from '@studio-freight/lenis'
 
@@ -34,8 +34,9 @@ function App() {
   
   return (
     <div>
-      <Navbar />
+      <Components.Navbar />
       <MainRoutes />
+      <Components.Footer/>
     </div>
   )
 }
