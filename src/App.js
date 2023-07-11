@@ -37,7 +37,7 @@ function App() {
     <div>
       <Components.Navbar />
       <MainRoutes />
-      <Components.Footer/>
+      
     </div>
   )
 }

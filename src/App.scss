@@ -1,7 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@font-face {
+  font-family: 'Onest Medium';
+  src: url('./fonts/Onest-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Onest Regular';
+  src: url('./fonts/Onest-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Onest Thin';
+  src: url('./fonts/Onest-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Onest Extra-Bold';
+  src: url('./fonts/Onest-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'Onest Bold';
+  src: url('./fonts/Onest-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Onest Black';
+  src: url('./fonts/Onest-Black.ttf');
+}
 
 * {
-  font-family: Manrope;
+  font-family: Onest Regular;
 }
 
 body {

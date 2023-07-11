@@ -10,8 +10,7 @@
       text-align: right;
       color: #fff;
       font-size: 81px;
-      font-family: Manrope;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 88px;
 
       @media (max-width: 897px) {
@@ -30,6 +29,9 @@
         margin-left: 245px;
         @media (max-width: 897px) {
           margin-left: 130px;
+        }
+        @media (max-width: 320px) {
+          margin-left: 100px;
         }
       }
     }
@@ -70,8 +72,7 @@
       p {
         color: #FFF;
         font-size: 24px;
-        font-family: Manrope;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 28px;
       }
     }

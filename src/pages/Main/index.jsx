@@ -22,10 +22,10 @@ const Main = () => {
         className={c.scroll}
       >
         <Components.AboutBlock/>
-        <LottieAnimation />
+        {/* <LottieAnimation /> */}
         <Components.Brand/>
         <Components.Products/>
-        <Components.Facts/>
+        {/* <Components.Facts/> */}
       </motion.div>
       
     </div>

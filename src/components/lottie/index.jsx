@@ -1,6 +1,7 @@
 import React from 'react'
 import Lottie from "lottie-react";
 import furniture from "./furniture.json";
+import c from './lottie.module.scss'
 
 const style = {
   height: 800,
@@ -30,8 +31,9 @@ const interactivity = {
 const LottieAnimation = () => {
   
   return (
-    <div>
+    <div className={c.animation}>
       <Lottie
+        className={c.lottie}
         animationData={furniture}
         style={style}
         interactivity={interactivity}
