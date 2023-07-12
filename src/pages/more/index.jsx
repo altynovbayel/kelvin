@@ -62,7 +62,7 @@ const More = () => {
 
   React.useEffect(() => ScrollTop() , [])
 
-  // console.log(activeImg);
+
   if(!product) return <h1>Loading...</h1>
   return (
     <div className={c.more}>
