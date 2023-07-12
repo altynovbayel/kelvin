@@ -14,7 +14,10 @@ const DeliveryInfo = () => {
     second: false,
     third: false,
     fourth: false,
-    fifth: false
+    fifth: false,
+    sixth: false,
+    sixth: false,
+    sixth: false,
   })
 
 
@@ -116,57 +119,115 @@ const DeliveryInfo = () => {
         <h3>Адрес доставки</h3>
         <p>Выберите удобное отделение почты для вас и заберите свой заказ там</p>
         <div className={c.inputForm}>
-          <input 
-            type="text"
-            className={active.fifth ? c.active : null}
-            id={'suggest'}
-            onChange={e => {
-              if(e.target.value.length !== 0 ){
-                setActive({
-                  ...active,
-                  fifth: true
-                })
-              }else{
-                setActive({
-                  ...active,
-                  fifth: false
-                })
-              }
-            }}
-          />
-          <span className={active.fifth ? c.active : null}>Город, улица, дом, квартира</span>
-        </div>
-        <div 
-          style={{
-            position: 'relative',
-            overflow: 'hidden',
-            borderRadius: '24px',
-            width: '100%',
-            height: '302px'
-          }}
-        >
-          {
-            width >= 426 ?
-            <YMaps>
-              <Map 
-                style={{height: '302px', marginTop: '8px'}}  
-                defaultState={{
-                  center: location,
-                  zoom: 10
+          <div className={c.up}>
+            <div>
+              <input 
+                type="text"
+                className={active.fifth ? c.active : null}
+                id={'suggest'}
+                onChange={e => {
+                  if(e.target.value.length !== 0 ){
+                    setActive({
+                      ...active,
+                      fifth: true
+                    })
+                  }else{
+                    setActive({
+                      ...active,
+                      fifth: false
+                    })
+                  }
                 }}
-              >
-                  <Placemark
-                    geometry={location}
-                    options={{
-                      iconLayout: 'default#image',
-                      iconImageHref: icon,
-                      iconImageSize: [98, 60]
-                    }} 
-                  />
-              </Map>
-            </YMaps> :
-            null
-          }
+              />  
+              <span className={active.fifth ? c.active : null}>Город</span>
+            </div>
+            <div>
+              <input 
+                type="text"
+                className={active.sixth ? c.active : null}
+                id={'suggest'}
+                onChange={e => {
+                  if(e.target.value.length !== 0 ){
+                    setActive({
+                      ...active,
+                      sixth: true
+                    })
+                  }else{
+                    setActive({
+                      ...active,
+                      sixth: false
+                    })
+                  }
+                }}
+              />  
+              <span className={active.sixth ? c.active : null}>Название улицы и номер дома </span>
+            </div>
+          </div>
+          <div className={c.down}>
+            <div>
+              <input 
+                type="text"
+                className={active.seventh ? c.active : null}
+                id={'suggest'}
+                onChange={e => {
+                  if(e.target.value.length !== 0 ){
+                    setActive({
+                      ...active,
+                      seventh: true
+                    })
+                  }else{
+                    setActive({
+                      ...active,
+                      seventh: false
+                    })
+                  }
+                }}
+              />  
+              <span className={active.seventh ? c.active : null}>Дом</span>
+            </div>
+            <div>
+              <input 
+                type="text"
+                className={active.eighth ? c.active : null}
+                id={'suggest'}
+                onChange={e => {
+                  if(e.target.value.length !== 0 ){
+                    setActive({
+                      ...active,
+                      eighth: true
+                    })
+                  }else{
+                    setActive({
+                      ...active,
+                      eighth: false
+                    })
+                  }
+                }}
+              />  
+              <span className={active.eighth ? c.active : null}>Квартира / Оффис</span>
+            </div>
+            <div>
+              <input 
+                type="text"
+                className={active.ninth ? c.active : null}
+                id={'suggest'}
+                onChange={e => {
+                  if(e.target.value.length !== 0 ){
+                    setActive({
+                      ...active,
+                      ninth: true
+                    })
+                  }else{
+                    setActive({
+                      ...active,
+                      ninth: false
+                    })
+                  }
+                }}
+              />  
+              <span className={active.ninth ? c.active : null}>Индекс </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
