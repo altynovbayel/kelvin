@@ -33,7 +33,7 @@
     }
     div{
       position: relative;
-      @media (max-width: 748px) {
+      @media (max-width: 768px) {
         width: 94%;
       }
       input{
@@ -50,6 +50,9 @@
         transition: .2s;
         border: 1px solid rgba($color: white, $alpha: 0%);
         visibility: visible;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
         &:focus{
           border: 1px solid white;
           transition: .3s;
@@ -59,9 +62,6 @@
         }
         &.active{
           border: 1px solid white;
-        }
-        @media (max-width: 748px) {
-          width: 94%;
         }
       }
       span{
@@ -108,74 +108,173 @@
       @media (max-width: 748px) {
         width: 94%;
       }
-      input{
-        width: 628px;
-        height: 34px;
-        padding: 0 16px;
-        padding-top: 14px;
-        border-radius: 12px;
-        border: 0;
-        background: rgba($color: white, $alpha: 10%);
-        outline: none;
-        font-size: 14px;
-        color: white;
-        font-weight: 500;
-        color: white;
-        transition: .2s;
-        border: 1px solid rgba($color: white, $alpha: 0%);
-        visibility: visible;
-        &:focus{
-          border: 1px solid white;
-          transition: .3s;
+      .up{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        gap: 8px;
+        @media (max-width: 768px) {
+          width: 93%;
+          flex-direction: column;          
         }
-        &:hover{
-          border: 1px solid rgba($color: white, $alpha: 20%);
+        @media (max-width: 750px) {
+          width: 100%;
         }
-        &.active{
-          border: 1px solid white;
-        }
-        letter-spacing: 0.5px;
-        @media (max-width: 748px) {
-          width: 94%;
+        @media (max-width: 570px) {
+          width: 98%;
         }
         div{
-          @media (max-width: 748px) {
-            width: 90%;
-          }
-          @media (max-width: 425px) {
-            display: none;
-          }
-          .map{
-            @media (max-width: 748px) {
-              width: 98%;
+          width: 100%;
+          position: relative;
+          input{
+            @media (max-width: 768px) {
+              width: 100%;
             }
-            @media (max-width: 425px) {
-              display: none;
+            width: 90%;
+            height: 34px;
+            padding: 0 16px;
+            padding-top: 14px;
+            border-radius: 12px;
+            border: 0;
+            background: rgba($color: white, $alpha: 10%);
+            outline: none;
+            font-size: 14px;
+            color: white;
+            font-weight: 500;
+            color: white;
+            transition: .2s;
+            border: 1px solid rgba($color: white, $alpha: 0%);
+            visibility: visible;
+            &:focus{
+              border: 1px solid white;
+              transition: .3s;
+            }
+            &:hover{
+              border: 1px solid rgba($color: white, $alpha: 20%);
+            }
+            &.active{
+              border: 1px solid white;
+            }
+            letter-spacing: 0.5px;
+          }
+          
+          span{
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba($color: white, $alpha: 60%);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            transition: .3s;
+            &.active{
+              transform: translateY(-32%);
+              position: absolute;
+              left: 16px;
+              top: 14px;
+              font-size: 11px;
+              font-weight: 600;
+              color: rgba($color: white, $alpha: 60%);
+              line-height: 18px;
+              transition: .3s;
             }
           }
         }
       }
-      
-      span{
-        position: absolute;
-        left: 16px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: rgba($color: white, $alpha: 60%);
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 18px;
-        transition: .3s;
-        &.active{
-          transform: translateY(-32%);
-          position: absolute;
-          left: 16px;
-          top: 14px;
-          font-size: 11px;
-          font-weight: 600;
-          color: rgba($color: white, $alpha: 60%);
-          line-height: 18px;
-          transition: .3s;
+      .down{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        gap: 8px;
+        margin-top: 8px;
+        @media (max-width: 768px) {
+          width: 93%;
+          flex-direction: column;          
+        }
+        @media (max-width: 750px) {
+          width: 100%;
+        }
+        @media (max-width: 570px) {
+          width: 98%;
+        }
+        div{
+          width: 100%;
+          position: relative;
+          input{
+            @media (max-width: 768px) {
+              width: 100%;
+            }
+            width: 86%;
+            height: 34px;
+            padding: 0 16px;
+            padding-top: 14px;
+            border-radius: 12px;
+            border: 0;
+            background: rgba($color: white, $alpha: 10%);
+            outline: none;
+            font-size: 14px;
+            color: white;
+            font-weight: 500;
+            color: white;
+            transition: .2s;
+            border: 1px solid rgba($color: white, $alpha: 0%);
+            visibility: visible;
+            &:focus{
+              border: 1px solid white;
+              transition: .3s;
+            }
+            &:hover{
+              border: 1px solid rgba($color: white, $alpha: 20%);
+            }
+            &.active{
+              border: 1px solid white;
+            }
+            letter-spacing: 0.5px;
+            div{
+              @media (max-width: 748px) {
+                width: 90%;
+              }
+              @media (max-width: 425px) {
+                display: none;
+              }
+              .map{
+                @media (max-width: 748px) {
+                  width: 98%;
+                }
+                @media (max-width: 425px) {
+                  display: none;
+                }
+              }
+            }
+          }
+          
+          span{
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba($color: white, $alpha: 60%);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            transition: .3s;
+            &.active{
+              transform: translateY(-32%);
+              position: absolute;
+              left: 16px;
+              top: 14px;
+              font-size: 11px;
+              font-weight: 600;
+              color: rgba($color: white, $alpha: 60%);
+              line-height: 18px;
+              transition: .3s;
+            }
+          }
         }
       }
     }
