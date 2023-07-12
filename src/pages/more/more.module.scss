@@ -6,6 +6,7 @@
   @media (max-width: 1366px) {
     width: 95%;
   }
+
   @media (max-width:768px) {
     margin-top: 120px;
     width: 100vw;
@@ -134,9 +135,11 @@
         width: 80%;
         height: 475px;
         padding-bottom: 21px;
-        @media (max-width: 425px){
+
+        @media (max-width: 425px) {
           width: 90%;
         }
+
         :global(.swiper-slide) {
           display: flex;
           justify-content: center;
@@ -284,8 +287,9 @@
             font-weight: 700;
             line-height: 24px;
 
-            @media (max-width: 1024px) {
-              margin-left: 10px;
+            @media (max-width: 320px) {
+              font-size: 15px;
+              line-height: 20px;
             }
 
           }
@@ -300,6 +304,11 @@
               font-style: normal;
               font-weight: 600;
               line-height: 24px;
+
+              @media (max-width: 320px) {
+                font-size: 15px;
+                line-height: 20px;
+              }
             }
           }
         }
@@ -351,12 +360,20 @@
           transition: .5s;
           left: 0;
           border-radius: 0 0 12px 12px;
+
           @media (max-width: 1024px) {
             top: 56%;
           }
-          @media (max-width: 768px){
+
+          @media (max-width: 768px) {
             top: 50%;
+            padding-top: 16px;
           }
+
+          @media (max-width: 320px) {
+            top: 55%;
+          }
+
           &::after {
             content: '';
             position: absolute;
@@ -365,8 +382,13 @@
             width: 392px;
             height: 1px;
             background-color: rgba(255, 255, 255, 0.10);
+
             @media (max-width: 1024px) {
               width: 90%;
+            }
+
+            @media (max-width: 768px) {
+              margin-top: 12px;
             }
           }
 
@@ -457,6 +479,11 @@
             font-style: normal;
             font-weight: 700;
             line-height: 32px;
+
+            @media (max-width: 425px) {
+              font-size: 15px;
+              line-height: 20px;
+            }
           }
 
           .counter {
