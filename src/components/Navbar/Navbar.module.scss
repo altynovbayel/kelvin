@@ -7,10 +7,11 @@
   left: 0;
   top: 0;
   z-index: 100;
-  // backdrop-filter: blur(76px);
+
   @media (max-width:320px) {
     width: 320px;
   }
+
   background: #14121270;
   padding: 36px 0;
 
@@ -59,6 +60,12 @@
           z-index: 10;
           margin-top: 100px;
 
+          @media (max-width: 790px) {
+            margin-bottom: 50px;
+            margin-top: initial;
+            
+          }
+
           li {
             color: #fff;
             font-size: 35px;
@@ -68,6 +75,11 @@
             position: relative;
             text-align: center;
             transition: .5s;
+
+            @media (max-width: 790px) {
+              font-size: 30px;
+              width: 100%;
+            }
 
             p {
               cursor: pointer;
@@ -112,6 +124,11 @@
           z-index: 10;
           margin-top: 100px;
 
+          @media (max-width: 790px) {
+            margin-bottom: 50px;
+            margin-top: initial;
+          }
+
           li {
             color: #fff;
             font-size: 35px;
@@ -122,6 +139,11 @@
             text-align: center;
             transition: .5s;
 
+            @media (max-width: 790px) {
+              font-size: 30px;
+              width: 100%;
+            }
+
             p {
               cursor: pointer;
               padding: 0;
@@ -131,6 +153,10 @@
               right: 0;
               top: -40px;
               transition: .4s cubic-bezier(.85, 0, .79, .99) 0s;
+
+              @media (max-width: 790px) {
+                transition: .2s cubic-bezier(.85, 0, .79, .99) 0s;
+              }
 
             }
           }
@@ -162,6 +188,10 @@
             &::after,
             &::before {
               width: 130px;
+
+              @media (max-width: 768px) {
+                width: 90px;
+              }
             }
           }
         }
@@ -179,6 +209,10 @@
             background-color: #fff;
             transition: width 0.3s ease;
             border-radius: 12px;
+
+            @media (max-width: 768px) {
+              width: 80px;
+            }
           }
 
           &::after {
