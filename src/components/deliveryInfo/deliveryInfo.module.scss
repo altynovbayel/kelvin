@@ -132,6 +132,12 @@
             @media (max-width: 768px) {
               width: 100%;
             }
+            @media (max-width: 750px) {
+              width: 93%;
+            }
+            @media (max-width: 748px) {
+              width: 100%;
+            }
             width: 90%;
             height: 34px;
             padding: 0 16px;
@@ -207,6 +213,12 @@
           position: relative;
           input{
             @media (max-width: 768px) {
+              width: 100%;
+            }
+            @media (max-width: 750px) {
+              width: 93%;
+            }
+            @media (max-width: 748px) {
               width: 100%;
             }
             width: 86%;

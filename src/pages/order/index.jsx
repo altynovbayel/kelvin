@@ -1,6 +1,7 @@
 import React from 'react'
 import c from './order.module.scss'
 import { Components } from '../../components'
+import OrderCard from './orderCard'
   
 const Order = () => {
   const [ cart, setCart ] = React.useState(null)
@@ -36,7 +37,7 @@ const Order = () => {
               {
                 cart?.length !== 0 ?
                 cart?.map((item, i) => (
-                  <Components.CartCard 
+                  <OrderCard
                     key={i}
                     id={item.id}
                     image={item.product_images[0].image}

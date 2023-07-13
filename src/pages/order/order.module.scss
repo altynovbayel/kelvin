@@ -3,19 +3,47 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 320px) {
+    width: 320px;
+  }
+  @media (max-width: 524px) {
+    width: 524px;
+  }
+  @media (max-width: 500px) {
+    width: 500px;
+  }
   .make{
-    width: 1116px;
     margin: 12px 0;
     display: flex;
     align-items: flex-start;
     @media (max-width: 444px) {
       align-items: center;
     }
+    @media (max-width: 588px) {
+      width: 500px
+    }
     @media (max-width: 1268px) {
       width: 100%;
       flex-direction: column;
       align-items: center;
     }
+    @media (max-width: 320px) {
+      width: 320px;
+    }
+    @media (max-width: 768px) {
+      width: 670px;
+      padding: 18px;
+    }
+    @media (max-width: 748px) {
+      width: 540px;
+    }
+    @media (max-width: 662px) {
+      width: 535px;
+    }
+    @media (max-width: 634px) {
+      width: 500px;
+    }
+    
     .left{
       @media (max-width: 1024px) {
         display: flex;
@@ -32,12 +60,39 @@
           align-items: flex-start;
           flex-direction: column;
         }
+        @media (max-width: 748px) {
+          width: 620px;
+        }
+        @media (max-width: 588px) {
+          width: 90%;
+        }
+        @media (max-width: 320px) {
+          width: 320px;
+        }
         h1{
           color: white;
           font-size: 32px;
           margin: 24px 0;
           @media (max-width: 768px) {
             margin: 12px 0;
+          }
+          @media (max-width: 756px) {
+            margin-left: 50px;
+          }
+          @media (max-width: 634px) {
+            margin-left: 0;
+          }
+        }
+        .cards{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          @media (max-width: 748px) {
+            width: 700  px;
+          }
+          @media (max-width: 320px) {
+            width: 320px;
           }
         }
       }
@@ -50,8 +105,14 @@
         margin-left: 0;
       }
       @media (max-width: 768px) {
-        width: 100%;
+        flex-direction: column-reverse;
+        width: 84%;
       }
+      @media (max-width: 1268px) {
+        width: 320px;
+        align-items: center;
+      }
+    
     }
   }
 }

@@ -12,9 +12,19 @@
         width: 92%;
         flex-direction: column-reverse;
     }
-    @media (max-width: 542px) {
-        width: 88%;
+    @media (max-width: 1268px) {
+        width: 660px;
+      }
+    @media (max-width: 756px) {
+        width: 530px;
     }
+    @media (max-width: 634px) {
+        width: 480px;
+    }
+    @media (max-width: 554px) {
+        width: 400px;
+      } 
+    
     button{
         width: 384px;
         height: 56px;
@@ -72,6 +82,9 @@
     h3{
         @media (max-width: 1268px) {
             width: 100%;
+        }
+        @media (max-width: 768px) {
+            margin-bottom: 14px;
         }
         width: 384px;
         margin: 0;
