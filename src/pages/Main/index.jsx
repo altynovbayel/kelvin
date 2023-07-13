@@ -25,7 +25,7 @@ const Main = () => {
         {/* <LottieAnimation /> */}
         <Components.Brand/>
         <Components.Products/>
-        {/* <Components.Facts/> */}
+        <Components.Facts/>
       </motion.div>
       
     </div>
