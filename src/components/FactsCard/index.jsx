@@ -15,6 +15,9 @@ const FactsCard = () => {
       }}
     >
       <div className={c.title}>
+        <div>
+          1
+        </div>
         <h1>Вдохновение через инновации</h1>
       </div>
       <div className={c.text}>
