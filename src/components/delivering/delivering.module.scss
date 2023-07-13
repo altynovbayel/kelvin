@@ -9,6 +9,15 @@
   @media (max-width: 542px) {
     width: 78%;
   }
+  @media (max-width: 500px) {
+    width: 68%;
+  }
+  @media (max-width: 400px) {
+    width: 300px;
+  }
+  @media (max-width: 360px) {
+    width: 250px;
+  }
   h3{
     color: white;
     font-family: 20px;
@@ -91,7 +100,7 @@
           @media (max-width: 428px) {
             font-size: 14px;
           }
-          @media (max-width: 320px) {
+          @media (max-width: 360px) {
             font-size: 11px;
           }
         }
@@ -101,7 +110,7 @@
           color: white;
           font-size: 16px;
           margin-right: 8px;
-          @media (max-width: 320px) {
+          @media (max-width: 360px) {
             font-size: 11px;
           }
         }

@@ -20,13 +20,22 @@
     width: 660px;
   }
   @media (max-width: 756px) {
-    width: 530px;
+    width: 560px;
   }
-  @media (max-width: 634px) {
+  @media (max-width: 748px) {
     width: 480px;
   }
-  @media (max-width: 554px) {
-    width: 400px;
+  @media (max-width: 624px) {
+    width: 420px;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  @media (max-width: 400px) {
+    width: 300px;
+  }
+  @media (max-width: 360px) {
+    width: 250px;
   }
   // @media (max-width: 1252px) {
   //   width: 90%;

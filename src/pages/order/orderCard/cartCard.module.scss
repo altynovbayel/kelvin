@@ -19,6 +19,18 @@
     @media (max-width: 634px) {
         width: 420px;
     }
+    @media (max-width: 472px) {
+        width: 400px;
+    }
+    @media (max-width: 500px) {
+        width: 74%;
+    }
+    @media (max-width: 400px) {
+        width: 310px;
+    }
+    @media (max-width: 360px) {
+        width: 260px;
+    }
     .main{
         display: flex;
         align-items: center;
@@ -26,6 +38,7 @@
         @media (max-width: 634px) {
             align-items: flex-start;
         }
+        
         .left{
             width: 204px;
             height: 250px;
