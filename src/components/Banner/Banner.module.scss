@@ -1,9 +1,10 @@
 .banner {
   width: 100%;
   margin-top: 100px;
+  position: relative;
+  
   .top_text {
     width: 98%;
-    height: 100%;
     margin-right: auto;
 
     h1 {
@@ -56,13 +57,18 @@
       margin-left: 10px;
     }
     
-    img{
-      width: 100%;
-      @media (max-width: 1000px) {
-        margin-top: 50px;
-      }
-      @media (max-width: 425px) {
-        margin-top: 100px;
+    div{
+      img{
+        width: 94%;
+        max-width: 1440px;
+        position: absolute;
+
+        @media (max-width: 1000px) {
+          margin-top: 50px;
+        }
+        @media (max-width: 425px) {
+          margin-top: 100px;
+        }
       }
     }
     
