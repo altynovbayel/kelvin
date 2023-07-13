@@ -11,6 +11,10 @@
   }
   @media (max-width: 500px) {
     width: 400px;
+    overflow-x: hidden;
+  }
+  @media (max-width: 410px) {
+    width: 380px;
   }
   @media (max-width: 375px) {
     width: 375px;
@@ -18,7 +22,6 @@
   @media (max-width: 360px) {
     width: 320px;
   }
-  overflow-x: hidden;
   .make{
     margin: 12px 0;
     display: flex;
@@ -72,6 +75,9 @@
       }
       @media (max-width: 500px) {
         width: 520px;
+      }
+      @media (max-width: 410px) {
+        width: 100%;
       }
       .goods{
         @media (max-width: 768px) {
