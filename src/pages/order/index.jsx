@@ -2,6 +2,8 @@ import React from 'react'
 import c from './order.module.scss'
 import { Components } from '../../components'
 import OrderCard from './orderCard'
+import { API } from '../../api'
+import DeliveryInfo from '../../components/deliveryInfo'
   
 const Order = () => {
   const [ cart, setCart ] = React.useState(null)
@@ -9,6 +11,7 @@ const Order = () => {
   const [ discount, setDiscount ] = React.useState(0)
   const [ deliverType, setDeliverType ] = React.useState('mail')
   const [ dep, setDep ] = React.useState(null)
+  const [cityName, setCityName] = React.useState(null)
 
   React.useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
@@ -24,13 +27,19 @@ const Order = () => {
     }, 100);
   }, [dep])
 
+
+  React.useEffect(() => {
+    API.getCity().then(r => setCityName(r.data))
+  }, [])
+
+  
   return (
     <div className={c.container}>
       <Components.Title text={'оформление заказа'}/>
       <div className={c.make}>
         <div className={c.left}>
           <Components.Delivering />
-          <Components.DeliveryInfo />
+          <DeliveryInfo city={cityName}/>
           <div className={c.goods}>
             <h1>Мои товары</h1>
             <div className={c.cards}>

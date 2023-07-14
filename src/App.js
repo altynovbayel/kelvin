@@ -36,7 +36,12 @@ function App() {
   return (
     <div>
       <Components.Navbar />
-      <MainRoutes />
+      <div style={{
+        minHeight: 'calc(100vh - 80px)'
+      }}>
+        <MainRoutes />
+      </div>
+      
       <Components.Footer/>
     </div>
   )

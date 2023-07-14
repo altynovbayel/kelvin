@@ -12,6 +12,7 @@ import Products from "./Products";
 import Facts from "./Facts";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import Logo from "./Logo";
 
 
 
@@ -29,5 +30,6 @@ export const Components = {
     Products,
     Facts,
     Footer,
-    Navbar
+    Navbar,
+    Logo
 }

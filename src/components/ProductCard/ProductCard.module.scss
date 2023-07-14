@@ -5,6 +5,10 @@
     width: 356px;
   }
 
+  @media (max-width: 320px) {
+    width: 310px;
+  }
+
   p {
     margin: 0;
     padding: 0;
