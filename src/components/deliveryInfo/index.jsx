@@ -6,9 +6,7 @@ import { IMaskInput } from 'react-imask';
 const DeliveryInfo = ({city}) => {
   const [cityName, setCityName] = React.useState('')
   const [cityResult, setCityResult] = React.useState('')
-  const location = JSON.parse(localStorage.getItem('location'))
-
-  const width = window.innerWidth
+  const [ activeRes, setActiveRes ] = React.useState(false)
 
   const [ active, setActive ] = React.useState({
     first: false,
@@ -28,6 +26,9 @@ const DeliveryInfo = ({city}) => {
       mask: PhoneMask,
     }
   ];
+
+  
+
 
   React.useEffect(() => {
     const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLocaleLowerCase()))
@@ -132,31 +133,43 @@ const DeliveryInfo = ({city}) => {
                 type="text"
                 className={active.fifth ? c.active : null}
                 id={'suggest'}
+                value={cityName}
                 onChange={e => {
+                  setCityName(e.target.value)
                   if(e.target.value.length !== 0 ){
                     setActive({
                       ...active,
                       fifth: true
                     })
-                    setCityName(e.target.value)
+                    setActiveRes(true)
                   }else{
                     setActive({
                       ...active,
                       fifth: false
                     })
+                    setActiveRes(false)
                   }
                 }}
               />  
               <span className={active.fifth ? c.active : null}>Город</span>
               {
-                cityResult?.length !== 0 &&
+                activeRes ?
                   <div className={c.cityRes}>
                     {
-                      cityResult?.map(item => (
-                        <p>{item.city}</p>
+                      cityResult?.map((item, i) => (
+                        <p 
+                          key={i}
+                          onClick={() => {
+                            setCityName(item.city)
+                            setActiveRes(false)
+                          }}
+                        >
+                          {item.city}
+                        </p>
                       ))
                     }
-                  </div>
+                  </div> :
+                null
               }
             </div>
             <div>

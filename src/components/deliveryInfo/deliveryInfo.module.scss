@@ -201,12 +201,14 @@
             height: auto;
             max-height: 250px;
             overflow-y: scroll;
-            background: #2C2A2A;
+            background: #373535;
             position: absolute;
             top: 50px;
             left: 0;
             z-index: 1  ;
             border-radius: 12px;
+            box-shadow:  0px 4px 16px 0px rgba(0, 0, 0, 0.16);
+            margin-top: 8px;
             &::-webkit-scrollbar{
               width: 4px;
               background: rgba(255, 255, 255, 0.15);
@@ -219,8 +221,9 @@
               border-radius: 50px;
             }
             p{
-              padding: 10px;
+              padding: 20px 12px;
               border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+              cursor: pointer;
             }
           }
           span{
