@@ -31,7 +31,7 @@ const MakingOrder = () => {
                   `${summa?.slice(0, 3)} ${summa?.slice(3, summa?.length )}` : 
                   summa?.length === 1 ? 
                   summa :
-                  summa?.slice(0, summa?.length - 3 )
+                  summa
                 } ₽
             </h3>
         </div>

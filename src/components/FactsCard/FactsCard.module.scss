@@ -9,7 +9,8 @@
 
   margin-bottom: 24px;
 
-  transform: skew(0, 0, 10deg, 10deg);
+  position: sticky;
+  top: 120px;
 
   @media (max-width: 768px) {
     height: initial;
@@ -42,7 +43,7 @@
     }
 
     div {
-      color: #F4BB62;
+      color: #f4bb62;
       font-size: 285px;
       font-style: normal;
       font-weight: 600;
@@ -54,7 +55,6 @@
       @media (max-width: 768px) {
         font-size: 80px;
         display: block;
-
       }
     }
   }
@@ -77,11 +77,10 @@
 
     @media (max-width: 560px) {
       height: auto;
-
     }
 
     div {
-      color: #F4BB62;
+      color: #f4bb62;
       font-size: 285px;
       font-style: normal;
       font-weight: 600;
@@ -107,5 +106,14 @@
         width: 100%;
       }
     }
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0) translateZ(0) rotateX(0deg);
+  }
+  100% {
+    transform: translateY(-150px) translateZ(-130px) rotateX(-90deg) scale(.8);
   }
 }

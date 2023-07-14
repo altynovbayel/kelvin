@@ -2,17 +2,14 @@ import React from 'react'
 import c from './FactsCard.module.scss'
 import { motion } from 'framer-motion'
 
+
 const FactsCard = () => {
+
+  const [ active, setActive ] = React.useState(1)
+
   return (
     <motion.div
       className={c.card}
-      style={{
-        scale: 0.9,
-      }}
-      whileInView={{
-        scale: 1,
-        translateY: 0
-      }}
     >
       <div className={c.title}>
         <div>

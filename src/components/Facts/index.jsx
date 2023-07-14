@@ -3,6 +3,7 @@ import c from './Facts.module.scss'
 import FactsCard from '../FactsCard'
 
 const Facts = () => {
+
   return (
     <div className={c.facts}>
       <div className={c.container}>

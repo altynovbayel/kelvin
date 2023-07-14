@@ -79,6 +79,7 @@ const Promocode = () => {
             e.preventDefault()
             getDiscount()
           }}
+          disabled={success.length >= 1 ? true : false}
         >
           {success.length >= 1 ? 'Промокод успешно применен' : 'Применить'}
         </button>

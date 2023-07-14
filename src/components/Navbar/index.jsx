@@ -3,11 +3,12 @@ import c from './Navbar.module.scss'
 import logo from '../../img/logo.svg'
 import cartLogo from '../../img/cart.svg'
 import { navList } from '../../utils'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = React.useState(false)
   const [ dep, setDep ] = React.useState('')
+  const [ idNav, setIdNav ] = React.useState(0)
 
   const Navigate = useNavigate()
 
@@ -27,18 +28,26 @@ const Navbar = () => {
     }
   }
 
+  const path = useLocation().pathname
+  
   return (
     <div className={c.header}>
-      <div className={c.container}>
+      <div className={c.container} style={path === '/' ? {maxWidth: '2560px'} : {maxWidth: '1440px'}}>
         <div className={c.logo} onClick={() => Navigate('/')}>
           <img src={logo} alt="logo" />
         </div>
         <div className={c.navbar}>
           <div className={activeNav ? c.navlist : c.disActive}>
-            <ul >
+            <ul>
               {
                 navList.map(item => (
-                  <li key={item.id}>
+                  <li
+                    key={item.id} 
+                    onMouseOver={() => setIdNav(item.id)}
+                    onMouseLeave={() => setIdNav(0)}
+                    className={item.id === idNav ? c.active : c.disactive}
+                    id={idNav === 0 ? c.activationFederation : ''}
+                  >
                     <p>
                       {item.title}
                     </p>

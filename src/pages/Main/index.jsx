@@ -11,6 +11,7 @@ const Main = () => {
   window.onscroll = () => {
     setScrollPixel(window.scrollY); // Value of scroll Y in px
   };
+
   return (
     <div className={c.container}>
       <div className={c.main}>
@@ -21,7 +22,7 @@ const Main = () => {
             top: `-${scrollPixel+400}px`
           }} 
           className={c.scroll}
-        >
+          >
           <Components.AboutBlock/>
           {/* <LottieAnimation /> */}
           <Components.Brand/>

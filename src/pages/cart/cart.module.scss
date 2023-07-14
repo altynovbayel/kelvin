@@ -51,13 +51,10 @@
             }
         }
         .right{
-            width: 104%;
             display: flex;
             align-items: center;
             flex-direction: column;
-            @media (max-width: 1450px) {
-                margin-left: 0;
-            }
+            
             .info{
                 width: 414px;
                 @media (max-width: 1350px) {

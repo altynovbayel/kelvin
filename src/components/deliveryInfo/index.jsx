@@ -16,8 +16,8 @@ const DeliveryInfo = () => {
     fourth: false,
     fifth: false,
     sixth: false,
-    sixth: false,
-    sixth: false,
+    seventh: false,
+    eighth: false,
   })
 
 
