@@ -32,7 +32,6 @@ const DeliveryInfo = ({city}) => {
   React.useEffect(() => {
     const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLocaleLowerCase()))
     setCityResult(citySearch)
-    console.log(citySearch);
   }, [cityName])
 
   
@@ -149,8 +148,7 @@ const DeliveryInfo = ({city}) => {
                 }}
               />  
               <span className={active.fifth ? c.active : null}>Город</span>
-              {/* здесь надо разобраться. когда инпут пустой то появляются все города */}
-              {/* {
+              {
                 cityResult?.length !== 0 &&
                   <div className={c.cityRes}>
                     {
@@ -159,7 +157,7 @@ const DeliveryInfo = ({city}) => {
                       ))
                     }
                   </div>
-              } */}
+              }
             </div>
             <div>
               <input 

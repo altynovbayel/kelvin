@@ -180,6 +180,49 @@
             letter-spacing: 0.5px;
           }
           
+          .cityRes{
+            width: 100%;
+            @media (max-width: 768px) {
+              width: 106%;
+            }
+            @media (max-width: 768px) {
+              width: 106%;
+            }
+            @media (max-width: 750px) {
+              width: 100%;
+            }
+            @media (max-width: 746px) {
+              width: 109%;
+            }
+            @media (max-width: 358px) {
+              width: 114%;
+            }
+        
+            height: auto;
+            max-height: 250px;
+            overflow-y: scroll;
+            background: #2C2A2A;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            z-index: 1  ;
+            border-radius: 12px;
+            &::-webkit-scrollbar{
+              width: 4px;
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 50px;
+
+            }
+            &::-webkit-scrollbar-thumb{
+              width: 4px;
+              background: white;
+              border-radius: 50px;
+            }
+            p{
+              padding: 10px;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            }
+          }
           span{
             position: absolute;
             left: 16px;
