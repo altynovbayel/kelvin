@@ -1,10 +1,11 @@
 import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { IMaskInput } from 'react-imask';
-import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
-import icon from './icon.svg'
 
-const DeliveryInfo = () => {
+
+const DeliveryInfo = ({city}) => {
+  const [cityName, setCityName] = React.useState('')
+  const [cityResult, setCityResult] = React.useState('')
   const location = JSON.parse(localStorage.getItem('location'))
 
   const width = window.innerWidth
@@ -28,6 +29,13 @@ const DeliveryInfo = () => {
     }
   ];
 
+  React.useEffect(() => {
+    const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLocaleLowerCase()))
+    setCityResult(citySearch)
+    console.log(citySearch);
+  }, [cityName])
+
+  
   return (
     <div className={c.deliveryInfo}>
       <h3>Ваши данные для доставки</h3>
@@ -131,6 +139,7 @@ const DeliveryInfo = () => {
                       ...active,
                       fifth: true
                     })
+                    setCityName(e.target.value)
                   }else{
                     setActive({
                       ...active,
@@ -140,6 +149,17 @@ const DeliveryInfo = () => {
                 }}
               />  
               <span className={active.fifth ? c.active : null}>Город</span>
+              {/* здесь надо разобраться. когда инпут пустой то появляются все города */}
+              {/* {
+                cityResult?.length !== 0 &&
+                  <div className={c.cityRes}>
+                    {
+                      cityResult?.map(item => (
+                        <p>{item.city}</p>
+                      ))
+                    }
+                  </div>
+              } */}
             </div>
             <div>
               <input 
