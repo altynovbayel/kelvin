@@ -27,6 +27,10 @@
       gap: 140px;
     }
 
+    @media (max-width: 320px) {
+      gap: 50px;
+    }
+
     >div:nth-child(even) {
       margin-top: 50px;
     }

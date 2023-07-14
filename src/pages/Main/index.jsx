@@ -27,6 +27,7 @@ const Main = () => {
           <Components.Brand/>
           <Components.Products/>
           <Components.Facts/>
+          <Components.Logo/>
         </motion.div>
         
       </div>
