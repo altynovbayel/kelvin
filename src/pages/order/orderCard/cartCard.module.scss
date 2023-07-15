@@ -1,53 +1,18 @@
 .card{
-    width: 660px;
     max-height: 298px;
     border-radius: 24px;
     background: rgba($color: #fff, $alpha: 10%);
     margin-bottom: 12px;
     padding: 24px;
     position: relative;
-    @media (max-width: 768px) {
-        width: 670px;
-        padding: 18px;
-    }
-    @media (max-width: 756px) {
-        width: 570px;
-    }
-    @media (max-width: 748px) {
-        width: 480px;
-    }
-    @media (max-width: 634px) {
-        width: 420px;
-    }
-    @media (max-width: 472px) {
-        width: 400px;
-    }
-    @media (max-width: 500px) {
-        width: 74%;
-    }
-    @media (max-width: 410px) {
-        width: 310px;
-    }
-    @media (max-width: 360px) {
-        width: 260px;
-    }
+    width: 94%;
     .main{
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        @media (max-width: 634px) {
-            align-items: flex-start;
-        }
-        
         .left{
             width: 204px;
             height: 250px;
-            @media (max-width: 634px) {
-                height: 200px;
-            }
-            @media (max-width: 550px) {
-                height: 143px;
-            }
             img{
                 width: 204px;
                 height: 250px;
@@ -57,15 +22,6 @@
                 margin: 0;
                 padding: 0;
                 cursor: pointer;
-                @media (max-width: 634px) {
-                    width: 160px;
-                    height: 200px;
-                }
-                @media (max-width: 550px) {
-                    width: 100px;
-                    height: 143px;
-                    border-radius: 12px;
-                }
             }
         }
         .right{
@@ -76,12 +32,6 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-direction: column;
-            @media (max-width: 634px) {
-                height: 200px;
-            }
-            @media (max-width: 550px) {
-                height: 143px;
-            }
             .up{
                 overflow: hidden;
                 h3,
@@ -131,9 +81,6 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: flex-end;
-                    @media (max-width: 634px) {
-                        display: none;
-                    }
                     .count{
                         display: flex;
                         align-items: center;

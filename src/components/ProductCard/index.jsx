@@ -1,6 +1,7 @@
 import React from 'react'
 import c from './ProductCard.module.scss'
 import arrow from '../../img/arrow-right.svg'
+import arrowActive from '../../img/arrow-right-active.svg'
 import { useNavigate } from 'react-router-dom'
 
 const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
@@ -32,13 +33,12 @@ const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
       <div className={c.card_down}>
         <div className={c.card_btn}>
           <button
-            onClick={() => postToCart()}
-            disabled={check?.id === id ? true : false}
+            onClick={() => check?.id === id ? navigate('/order/') : postToCart()}
             className={check?.id === id ? c.added : ''}
           >
             {check?.id === id ? 'Добавлено в корзину' : 'Добавить в корзину'}
           </button>
-          <img src={arrow} alt="" />
+          <img src={check?.id === id ? arrowActive : arrow} alt="" />
         </div>
         <div className={c.price}>
           <p>

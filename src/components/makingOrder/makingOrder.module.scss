@@ -1,16 +1,18 @@
 .makingOrder{
-    width: 414px;
+    max-width: 384px;
     background: rgba($color: white, $alpha: 10%);
     border-radius: 24px;
     display: flex;
     flex-direction: column;
     padding: 24px;
     @media (max-width: 1350px) {
-        width: 100%;
+        width: 670px;
     }
-    @media (max-width: 768px) {
-        width: 84%;
+    
+    @media (max-width: 776px) {
+        width: 90%;
     }
+    
     // @media (max-width: 1268px) {
     //     width: 660px;
     //     align-items: center;

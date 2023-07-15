@@ -4,21 +4,19 @@
     justify-content: center;
     margin-top: 120px;
     .title{
-        width: 1180px;
+        width: 100%;
+        max-width: 1116px;
         display: flex;
         justify-content: center;
         align-items: flex-end;
         margin: 0 24px 0 40px;
         position: relative;
-        @media (max-width: 1024px) {
-            width: 100%;
-        }
         p{
             position: absolute;
             left: 0;
             color: rgba($color: white, $alpha: 60%);
             cursor: pointer;
-            @media (max-width: 768px) {
+            @media (max-width: 1224px) {
                 display: none;
             }
         }

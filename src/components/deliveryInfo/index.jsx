@@ -157,15 +157,18 @@ const DeliveryInfo = ({city}) => {
                   <div className={c.cityRes}>
                     {
                       cityResult?.map((item, i) => (
-                        <p 
+                        <div
                           key={i}
                           onClick={() => {
                             setCityName(item.city)
                             setActiveRes(false)
                           }}
                         >
-                          {item.city}
-                        </p>
+                          <p>
+                            {item.city}
+                          </p>
+                          <span></span>
+                        </div>
                       ))
                     }
                   </div> :

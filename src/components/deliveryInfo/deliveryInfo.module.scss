@@ -3,26 +3,24 @@
   background: #2C2A2A;
   border-radius: 24px;
   width: 660px;
-  margin-right: 24px;
   margin-top: 24px;
-  @media (max-width: 1268px) {
-    margin-right: 0;
+  @media (max-width: 490px) {
+    width: 80%;
   }
-  @media (max-width: 756px) {
+  @media (max-width: 1242px) {
+    width: 95%;
+    max-width: none;
+  } 
+  @media (max-width: 1130px) {
+    width: 90%;
+  } 
+
+  @media (max-width: 762px) {
     width: 84%;
-  }
-  @media (max-width: 542px) {
-    width: 78%;
-  }
-  @media (max-width: 500px) {
-    width: 68%;
-  }
-  @media (max-width: 410px) {
-    width: 300px;
-  }  
-  @media (max-width: 360px) {
-    width: 250px;
-  }
+  } 
+  @media (max-width: 416px) {
+    width: 76%;
+  } 
   h3{
     color: white;
     font-size: 20px;
@@ -31,26 +29,26 @@
     margin: 0;
   }
   form{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 8px 38px;
     margin-top: 16px;
-    @media (max-width: 748px) {
-      width: 100%;
+    @media (max-width: 654px) {
       flex-direction: column;
-      align-items: flex-start;
     }
     div{
+      width: 45%;
       position: relative;
-      @media (max-width: 768px) {
-        width: 94%;
+      @media (max-width: 654px) {
+        width: 95%;
       }
       input{
-        width: 298px;
+        width: 302px;
         height: 32px;
+        outline: none;
         padding: 0 12px;
         padding-top: 14px;
-        outline: none;
         background: rgba($color: white, $alpha: 5%);
         border-radius: 12px;
         font-size: 14px;
@@ -59,11 +57,8 @@
         transition: .2s;
         border: 1px solid rgba($color: white, $alpha: 0%);
         visibility: visible;
-        @media (max-width: 768px) {
+        @media (max-width: 1240px) {
           width: 100%;
-        }
-        @media (max-width: 410px) {
-          width: 98%;
         }
         &:focus{
           border: 1px solid white;
@@ -86,6 +81,7 @@
         font-weight: 500;
         line-height: 18px;
         transition: .3s;
+        pointer-events: none;
         &.active{
           transform: translateY(-32%);
           position: absolute;
@@ -115,58 +111,40 @@
       font-size: 16px;
     }
     .inputForm{
+      width: 100%;
       position: relative;
-      @media (max-width: 748px) {
-        width: 94%;
-      }
       .up{
         width: 100%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        gap: 8px;
-        @media (max-width: 768px) {
-          width: 93%;
-          flex-direction: column;          
-        }
-        @media (max-width: 750px) {
-          width: 100%;
-        }
-        @media (max-width: 570px) {
-          width: 98%;
+        flex-wrap: wrap;
+        gap: 8px 38px;
+        margin-top: 16px;
+        @media (max-width: 654px) {
+          flex-direction: column;
         }
         div{
-          width: 100%;
+          width: 45%;
           position: relative;
+          @media (max-width: 654px) {
+            width: 95%;
+          }
           input{
-            @media (max-width: 768px) {
-              width: 100%;
-            }
-            @media (max-width: 750px) {
-              width: 93%;
-            }
-            @media (max-width: 748px) {
-              width: 100%;
-            }
-            @media (max-width: 400px) {
-              width: 98%;
-            }
-            width: 90%;
-            height: 34px;
-            padding: 0 16px;
-            padding-top: 14px;
-            border-radius: 12px;
-            border: 0;
-            background: rgba($color: white, $alpha: 10%);
+            width: 302px;
+            height: 32px;
             outline: none;
+            padding: 0 12px;
+            padding-top: 14px;
+            background: rgba($color: white, $alpha: 5%);
+            border-radius: 12px;
             font-size: 14px;
-            color: white;
             font-weight: 500;
             color: white;
             transition: .2s;
             border: 1px solid rgba($color: white, $alpha: 0%);
             visibility: visible;
+            @media (max-width: 1240px) {
+              width: 100%;
+            }
             &:focus{
               border: 1px solid white;
               transition: .3s;
@@ -177,58 +155,10 @@
             &.active{
               border: 1px solid white;
             }
-            letter-spacing: 0.5px;
-          }
-          
-          .cityRes{
-            width: 100%;
-            @media (max-width: 768px) {
-              width: 106%;
-            }
-            @media (max-width: 768px) {
-              width: 106%;
-            }
-            @media (max-width: 750px) {
-              width: 100%;
-            }
-            @media (max-width: 746px) {
-              width: 109%;
-            }
-            @media (max-width: 358px) {
-              width: 114%;
-            }
-        
-            height: auto;
-            max-height: 250px;
-            overflow-y: scroll;
-            background: #373535;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            z-index: 1  ;
-            border-radius: 12px;
-            box-shadow:  0px 4px 16px 0px rgba(0, 0, 0, 0.16);
-            margin-top: 8px;
-            &::-webkit-scrollbar{
-              width: 4px;
-              background: rgba(255, 255, 255, 0.15);
-              border-radius: 50px;
-
-            }
-            &::-webkit-scrollbar-thumb{
-              width: 4px;
-              background: white;
-              border-radius: 50px;
-            }
-            p{
-              padding: 20px 12px;
-              border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-              cursor: pointer;
-            }
           }
           span{
             position: absolute;
-            left: 16px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             color: rgba($color: white, $alpha: 60%);
@@ -236,10 +166,11 @@
             font-weight: 500;
             line-height: 18px;
             transition: .3s;
+            pointer-events: none;
             &.active{
               transform: translateY(-32%);
               position: absolute;
-              left: 16px;
+              left: 13px;
               top: 14px;
               font-size: 11px;
               color: rgba($color: white, $alpha: 60%);
@@ -248,56 +179,89 @@
             }
           }
         }
+        .cityRes{
+          width: 328px;
+          height: auto;
+          max-height: 256px;
+          margin-top: 8px;
+          border-radius: 12px;
+          @media (max-width: 1240px) {
+            width: 100%;
+          }
+          background-color: #373535;
+          position: absolute;
+          left: 0;
+          z-index: 1;
+          overflow-y: scroll;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 12px;
+          div{
+            border-bottom: 1px solid #FFFFFF26;
+            width: 90%;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            p{
+              padding: 12px 0;
+              margin: 0;
+            }
+            
+          }
+        }
       }
       .down{
         width: 100%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        gap: 8px;
+        flex-wrap: wrap;
+        gap: 8px 38px;
         margin-top: 8px;
-        @media (max-width: 768px) {
-          width: 93%;
-          flex-direction: column;          
+        @media (max-width: 654px) {
+          flex-direction: column;
         }
-        @media (max-width: 750px) {
-          width: 100%;
+        @media (max-width: 1237px) {
+          gap: 8px 46px;
         }
-        @media (max-width: 570px) {
-          width: 98%;
+        @media (max-width: 874px) {
+          gap: 8px 40px;
         }
-        @media (max-width: 410px) {
-          width: 96%;
-        }
+
+
         div{
-          width: 100%;
+          width: 28%;
           position: relative;
+          @media (max-width: 654px) {
+            width: 95%;
+          }
           input{
-            @media (max-width: 768px) {
-              width: 100%;
-            }
-            @media (max-width: 750px) {
-              width: 93%;
-            }
-            @media (max-width: 748px) {
-              width: 100%;
-            }
-            width: 86%;
-            height: 34px;
-            padding: 0 16px;
-            padding-top: 14px;
-            border-radius: 12px;
-            border: 0;
-            background: rgba($color: white, $alpha: 10%);
+            width: 192px;
+            height: 32px;
             outline: none;
+            padding: 0 12px;
+            padding-top: 14px;
+            background: rgba($color: white, $alpha: 5%);
+            border-radius: 12px;
             font-size: 14px;
-            color: white;
             font-weight: 500;
             color: white;
             transition: .2s;
             border: 1px solid rgba($color: white, $alpha: 0%);
             visibility: visible;
+            @media (max-width: 1240px) {
+              width: 100%;
+            }
+            @media (max-width: 1237px) {
+              width: 104%;
+            }
+            @media (max-width: 900px) {
+              width: 102%;
+            }
+            @media (max-width: 700px) {
+              width: 100%;
+            }
             &:focus{
               border: 1px solid white;
               transition: .3s;
@@ -308,28 +272,10 @@
             &.active{
               border: 1px solid white;
             }
-            letter-spacing: 0.5px;
-            div{
-              @media (max-width: 748px) {
-                width: 90%;
-              }
-              @media (max-width: 425px) {
-                display: none;
-              }
-              .map{
-                @media (max-width: 748px) {
-                  width: 98%;
-                }
-                @media (max-width: 425px) {
-                  display: none;
-                }
-              }
-            }
           }
-          
           span{
             position: absolute;
-            left: 16px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             color: rgba($color: white, $alpha: 60%);
@@ -337,10 +283,11 @@
             font-weight: 500;
             line-height: 18px;
             transition: .3s;
+            pointer-events: none;
             &.active{
               transform: translateY(-32%);
               position: absolute;
-              left: 16px;
+              left: 13px;
               top: 14px;
               font-size: 11px;
               color: rgba($color: white, $alpha: 60%);
