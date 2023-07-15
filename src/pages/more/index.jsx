@@ -159,7 +159,10 @@ const More = () => {
               <div className={activeDropdown ? c.active_dropdown : c.disactive_dropdown}>
                 {
                   Array(6).fill(1).map((_, id) => (
-                    <div onClick={() => setChoosenSize(id)} key={id}>
+                    <div onClick={() => {
+                      setChoosenSize(id)
+                      setActiveDropdown(!activeDropdown)
+                    }} key={id}>
                       {product?.size}
                       {id === choosenSize ? <img src={checkImg} alt='' /> : ''}
                     </div>
