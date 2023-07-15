@@ -18,17 +18,20 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        gap: 24px;
+        gap: 48px;
         margin-top: 12px;
+        margin-bottom: 50px;
         @media (max-width: 1350px) {
             align-items: center;
             flex-direction: column;
+            gap: 24px;
         }
         .cards{
             display: flex;
             align-items: center;
             flex-direction: column;
-            @media (max-width: 1024px) {
+            gap: 24px;
+            @media (max-width: 1350px) {
                 width: 100%;
             } 
         }
@@ -54,20 +57,22 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            width: 414px;
+            max-width: 384px;
             margin-left: 24px;
             @media (max-width: 1350px) {
                 width: 100%;
+                max-width: none;
                 margin: 0;
             }
             .info{
-                width: 414px;
+                width: 100%;
+                max-width: 432px;
+
                 @media (max-width: 1350px) {
-                    width: 670px;
-                }
-                @media (max-width: 776px) {
-                    width: 90%;
-                }
+                    width: 95%;
+                    display: none;
+                } 
+                
 
                 // @media (max-width: 768px) {
                 // }

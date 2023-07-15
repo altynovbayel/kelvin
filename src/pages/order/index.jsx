@@ -40,7 +40,7 @@ const Order = () => {
         <div className={c.left}>
           <Components.Delivering />
           <DeliveryInfo city={cityName}/>
-          {/* <div className={c.goods}>
+          <div className={c.goods}>
             <h1>Мои товары</h1>
             <div className={c.cards}>
               {
@@ -60,7 +60,7 @@ const Order = () => {
                 <h3>Ничего нет</h3>
               }
             </div>
-          </div> */}
+          </div>
         </div>
         <div className={c.right}>
           <Components.Paying 

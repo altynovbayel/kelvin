@@ -1,11 +1,27 @@
 .card{
     max-height: 298px;
+    height: auto;
     border-radius: 24px;
     background: rgba($color: #fff, $alpha: 10%);
     margin-bottom: 12px;
     padding: 24px;
     position: relative;
-    width: 94%;
+    max-width: 660px;
+    width: 100%;
+    @media (max-width: 490px) {
+        width: 80%;
+    }
+    @media (max-width: 1242px) {
+        width: 97%;
+        max-width: none;
+    } 
+    @media (max-width: 1109px) {
+        width: 92%;
+    } 
+
+    @media (max-width: 416px) {
+        width: 86%;
+    } 
     .main{
         display: flex;
         align-items: center;
@@ -13,6 +29,10 @@
         .left{
             width: 204px;
             height: 250px;
+            @media (max-width: 618px) {
+                width: 100px;
+                height: 143px;
+            } 
             img{
                 width: 204px;
                 height: 250px;
@@ -22,6 +42,10 @@
                 margin: 0;
                 padding: 0;
                 cursor: pointer;
+                @media (max-width: 618px) {
+                    width: 100px;
+                    height: 143px;
+                } 
             }
         }
         .right{
@@ -32,8 +56,15 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-direction: column;
+            @media (max-width: 618px) {
+                height: 143px;
+            } 
             .up{
                 overflow: hidden;
+                @media (max-width: 618px) {
+                    height: 143px;
+                    justify-content: flex-start;
+                } 
                 h3,
                 p{
                     margin: 0;
@@ -44,11 +75,14 @@
                     font-size: 24px;
                     color: white;
                     -webkit-text-stroke-width: 10%;
-                    height: 53px;
                     overflow: hidden;
                     @media (max-width: 768px) {
                         font-size: 20px;
                     }
+                    @media (max-width: 478px) {
+                        height: 53px;
+                    }
+
                 }
                 p{
                     font-size: 20px;
@@ -81,6 +115,9 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: flex-end;
+                    @media (max-width: 634px) {
+                        display: none;
+                    }
                     .count{
                         display: flex;
                         align-items: center;

@@ -1,31 +1,37 @@
 .card{
-    width: 660px;
     max-height: 298px;
+    height: auto;
     border-radius: 24px;
     background: rgba($color: #fff, $alpha: 10%);
-    margin-bottom: 12px;
     padding: 24px;
     position: relative;
-    @media (max-width: 768px) {
+    width: 100%;
+    max-width: 660px;
+    
+    @media (max-width: 1350px) {
+        width: 98%;
+        max-width: none;
+    } 
+    @media (max-width: 1130px) {
         width: 90%;
-        padding: 18px;
+    } 
+    @media (max-width: 490px) {
+        width: 80%;
     }
+    @media (max-width: 416px) {
+        width: 86%;
+    } 
     .main{
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        @media (max-width: 634px) {
-            align-items: flex-start;
-        }
         .left{
             width: 204px;
             height: 250px;
-            @media (max-width: 634px) {
-                height: 200px;
-            }
-            @media (max-width: 550px) {
+            @media (max-width: 618px) {
+                width: 100px;
                 height: 143px;
-            }
+            } 
             img{
                 width: 204px;
                 height: 250px;
@@ -35,15 +41,10 @@
                 margin: 0;
                 padding: 0;
                 cursor: pointer;
-                @media (max-width: 634px) {
-                    width: 160px;
-                    height: 200px;
-                }
-                @media (max-width: 550px) {
+                @media (max-width: 618px) {
                     width: 100px;
                     height: 143px;
-                    border-radius: 12px;
-                }
+                } 
             }
         }
         .right{
@@ -54,14 +55,15 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-direction: column;
-            @media (max-width: 634px) {
-                height: 200px;
-            }
-            @media (max-width: 550px) {
+            @media (max-width: 618px) {
                 height: 143px;
-            }
+            } 
             .up{
                 overflow: hidden;
+                @media (max-width: 618px) {
+                    height: 143px;
+                    justify-content: flex-start;
+                } 
                 h3,
                 p{
                     margin: 0;
@@ -72,11 +74,14 @@
                     font-size: 24px;
                     color: white;
                     -webkit-text-stroke-width: 10%;
-                    height: 53px;
                     overflow: hidden;
                     @media (max-width: 768px) {
                         font-size: 20px;
                     }
+                    @media (max-width: 478px) {
+                        height: 53px;
+                    }
+
                 }
                 p{
                     font-size: 20px;
@@ -194,4 +199,4 @@
             cursor: pointer;
         }
     }
-}
+}   
