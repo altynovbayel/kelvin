@@ -148,21 +148,24 @@ const More = () => {
                 <span>Сетка размеров</span>
               </div>
             </div>
-            <div className={c.dropdown} onClick={() => setActiveDropdown(!activeDropdown)}>
-              <div>{product?.size}</div>
-              <span className={activeDropdown ? c.active_dropdown_arrow : ''}>
-                <IoIosArrowDown/>
-              </span>
-            </div>
-            <div className={activeDropdown ? c.active_dropdown : c.disactive_dropdown}>
-              {
-                Array(6).fill(1).map((_, id) => (
-                  <div onClick={() => setChoosenSize(id)}>
-                    {product?.size}
-                    {id === choosenSize ? <img src={checkImg} alt='' /> : ''}
-                  </div>
-                ))
-              }
+            <div className={c.dropdown} >
+              <div className={c.up} onClick={() => setActiveDropdown(!activeDropdown)}>
+                <div>{product?.size}</div>
+                <span className={activeDropdown ? c.active_dropdown_arrow : ''}>
+                  <IoIosArrowDown/>
+                </span>
+              </div>
+              
+              <div className={activeDropdown ? c.active_dropdown : c.disactive_dropdown}>
+                {
+                  Array(6).fill(1).map((_, id) => (
+                    <div onClick={() => setChoosenSize(id)} key={id}>
+                      {product?.size}
+                      {id === choosenSize ? <img src={checkImg} alt='' /> : ''}
+                    </div>
+                  ))
+                }
+              </div>
             </div>
             <div className={c.model}>
               <div className={c.model_text}>
