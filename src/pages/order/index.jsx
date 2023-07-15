@@ -4,6 +4,7 @@ import { Components } from '../../components'
 import OrderCard from './orderCard'
 import { API } from '../../api'
 import DeliveryInfo from '../../components/deliveryInfo'
+import { useNavigate } from 'react-router-dom'
   
 const Order = () => {
   const [ cart, setCart ] = React.useState(null)
@@ -32,6 +33,8 @@ const Order = () => {
     API.getCity().then(r => setCityName(r.data))
   }, [])
 
+  const navigate = useNavigate()
+
   
   return (
     <div className={c.container}>
@@ -57,7 +60,12 @@ const Order = () => {
                     obj={item}
                   />
                 )) :
-                <h3>Ничего нет</h3>
+                <div className={c.empty}>
+                  <h3>Ох, пусто в корзине... Надо срочно исправлять!</h3>
+                  <button onClick={() => navigate('/products/')}>
+                    Погнали выбирать крутые вещички
+                  </button>
+                </div>
               }
             </div>
           </div>

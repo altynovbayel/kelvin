@@ -153,6 +153,9 @@
             font-weight: 700;
             background: #13ED29;
             color: #141212;
+            @media (max-width: 380px) {
+                font-size: 12px;
+            }
             &:hover{
                 background: #31FF47;
             }
