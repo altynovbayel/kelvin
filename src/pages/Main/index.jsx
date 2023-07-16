@@ -16,7 +16,7 @@ const Main = () => {
     <div className={c.container}>
       <div className={c.main}>
         <Components.Banner/>
-        <motion.div
+        <div
           style={{
             position: 'relative',
             top: `-${scrollPixel+400}px`
@@ -29,7 +29,7 @@ const Main = () => {
           <Components.Products/>
           <Components.Facts/>
           <Components.Logo/>
-        </motion.div>
+        </div>
         
       </div>
     </div>

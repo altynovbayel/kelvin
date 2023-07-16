@@ -156,35 +156,35 @@ const More = () => {
                 <span>Сетка размеров</span>
               </div>
             </div>
-            <div className={c.promocode}>
-            <div
-              onClick={() => {
-                setActiveDropdown(!activeDropdown)
-              }}
-            >
-              <div className={c.left}>
-                <h3>{product.size}  </h3>
+            <div className={c.dropdown}>
+              <div
+                onClick={() => {
+                  setActiveDropdown(!activeDropdown)
+                }}
+              >
+                <div className={c.left}>
+                  <h3>{product.size}  </h3>
+                </div>
+                <div className={c.right}>
+                  <span>
+                    {activeDropdown ? <BiSolidChevronUp /> : <BiSolidChevronDown />}
+                  </span>
+                </div>
               </div>
-              <div className={c.right}>
-                <span>
-                  {activeDropdown ? <BiSolidChevronUp /> : <BiSolidChevronDown />}
-                </span>
+              <div className={activeDropdown ? c.active : c.disactive}>
+                {
+                  Array(6).fill(1).map((_, id) => (
+                    <div className={choosenSize === id ? c.active_drop : ''} onClick={() => {
+                      setChoosenSize(id)
+                      setActiveDropdown(false)
+                    }}>
+                      <h3>{product.size}</h3>
+                      {choosenSize === id ? <img src={checkImg} alt='' /> : ''}
+                    </div>
+                  ))
+                }
               </div>
             </div>
-            <div className={activeDropdown ? c.active : c.disactive}>
-              {
-                Array(6).fill(1).map((_, id) => (
-                  <div className={choosenSize === id ? c.active_drop : ''} onClick={() => {
-                    setChoosenSize(id)
-                    setActiveDropdown(false)
-                  }}>
-                    <h3>{product.size}</h3>
-                    {choosenSize === id ? <img src={checkImg} alt='' /> : ''}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
             {/* <div className={c.dropdown} >
               <div className={c.up} onClick={() => setActiveDropdown(!activeDropdown)}>
                 <div>{product?.size}</div>

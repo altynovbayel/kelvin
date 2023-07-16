@@ -41,9 +41,12 @@ const DeliveryInfo = ({city}) => {
   }, [cityName])
 
   const searchStreet = () => {
-    fetch(`https://data.pbprog.ru/api/address/full-address/parse?token=1d6cfceb2fd64ad8911dfed47fda09a02336e60e&addressText=${streetName.length < 1 ? 'М' : streetName}`)
-      .then(res => res.json())
-      .then(res => setStreetResult(res))
+    axios.post(`https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address`, {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": "b759ba8c0009a8a316048e2551da6a4ab727e57c"
+    }, {query: streetName})
+      .then(res => setStreetResult(res.data))
   }
   
   return (
