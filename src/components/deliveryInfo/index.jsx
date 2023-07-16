@@ -1,12 +1,15 @@
 import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { IMaskInput } from 'react-imask';
+import axios from 'axios';
 
 
 const DeliveryInfo = ({city}) => {
   const [cityName, setCityName] = React.useState('')
   const [cityResult, setCityResult] = React.useState('')
+  const [streetResult, setStreetResult] = React.useState(null)
   const [ activeRes, setActiveRes ] = React.useState(false)
+  const [ activeResStreet, setActiveResStreet ] = React.useState(false)
 
   const [ active, setActive ] = React.useState({
     first: false,
@@ -28,13 +31,18 @@ const DeliveryInfo = ({city}) => {
   ];
 
   
-
+  let timer;
+  const waitTime = 1000; 
 
   React.useEffect(() => {
     const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLocaleLowerCase()))
     setCityResult(citySearch)
   }, [cityName])
-
+  const searchStreet = (street) => {
+    fetch(`https://data.pbprog.ru/api/address/full-address/parse?token=1d6cfceb2fd64ad8911dfed47fda09a02336e60e&addressText=${street}`)
+      .then(res => res.json())
+      .then(res => setStreetResult(res))
+  }
   
   return (
     <div className={c.deliveryInfo}>
@@ -181,20 +189,45 @@ const DeliveryInfo = ({city}) => {
                 className={active.sixth ? c.active : null}
                 id={'suggest'}
                 onChange={e => {
+                  searchStreet(e.target.value);
                   if(e.target.value.length !== 0 ){
                     setActive({
                       ...active,
                       sixth: true
                     })
+                    setActiveResStreet(true)
                   }else{
                     setActive({
                       ...active,
                       sixth: false
                     })
+                    setActiveResStreet(false)
                   }
                 }}
               />  
               <span className={active.sixth ? c.active : null}>Название улицы и номер дома </span>
+              {
+                activeResStreet ?
+                  <div className={c.cityRes}>
+                    {
+                      streetResult?.map((item, i) => (
+                        <div
+                          key={i}
+                          onClick={() => {
+                            setCityName(item.city)
+                            setActiveRes(false)
+                          }}
+                        >
+                          <p>
+                            {item.value}
+                          </p>
+                          <span></span>
+                        </div>
+                      ))
+                    }
+                  </div> :
+                null
+              }
             </div>
           </div>
           <div className={c.down}>
