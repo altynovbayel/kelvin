@@ -7,6 +7,7 @@ export const PUBLIC_ROUTES = [
     {id: 3, path: "/more/:id", element: <Pages.More />},
     {id: 4, path: "/order/", element: <Pages.Order />},
     {id: 5, path: "/products/", element: <Pages.Products /> },
+    {id: 6, path: "/oneClick/", element: <Pages.OneClick /> },
 ];
 
 export const navList = [

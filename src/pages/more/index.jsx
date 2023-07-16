@@ -28,12 +28,19 @@ const More = () => {
   const [choosenSize, setChoosenSize] = React.useState(null)
   
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
+  const cartOne = JSON.parse(localStorage.getItem('kelvin_cart_one'))
   const check = cart?.find(item => item?.id === product?.id)
   const index = cart?.findIndex(obj => obj.id === product?.id);
   
   const postToCart = () => {
     cart?.push({...product, count: 1, image: product.product_images})
     localStorage.setItem('kelvin_cart', JSON.stringify(cart))
+  }
+  const postToCartOne = () => {
+    localStorage.setItem('kelvin_cart_one', JSON.stringify([]))
+    cartOne?.push({...product, count: 1, image: product.product_images})
+    localStorage.setItem('kelvin_cart_one', JSON.stringify(cartOne))
+    navigate('/oneClick/')
   }
   
   const increment = () => {
@@ -222,7 +229,7 @@ const More = () => {
                   </div>
                 </div>
             }
-            <button className={c.buy}>Купить в один клик</button>
+            <button className={c.buy} onClick={() => postToCartOne()}>Купить в один клик</button>
           </div>
           <div className={c.consist}>
             <p>
