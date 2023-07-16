@@ -6,6 +6,7 @@ import axios from 'axios';
 
 const DeliveryInfo = ({city}) => {
   const [cityName, setCityName] = React.useState('')
+  const [streetName, setStreetName] = React.useState('')
   const [cityResult, setCityResult] = React.useState('')
   const [streetResult, setStreetResult] = React.useState(null)
   const [ activeRes, setActiveRes ] = React.useState(false)
@@ -35,11 +36,12 @@ const DeliveryInfo = ({city}) => {
   const waitTime = 1000; 
 
   React.useEffect(() => {
-    const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLocaleLowerCase()))
+    const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
     setCityResult(citySearch)
   }, [cityName])
-  const searchStreet = (street) => {
-    fetch(`https://data.pbprog.ru/api/address/full-address/parse?token=1d6cfceb2fd64ad8911dfed47fda09a02336e60e&addressText=${street}`)
+
+  const searchStreet = () => {
+    fetch(`https://data.pbprog.ru/api/address/full-address/parse?token=1d6cfceb2fd64ad8911dfed47fda09a02336e60e&addressText=${streetName.length < 1 ? 'М' : streetName}`)
       .then(res => res.json())
       .then(res => setStreetResult(res))
   }
@@ -187,14 +189,16 @@ const DeliveryInfo = ({city}) => {
               <input 
                 type="text"
                 className={active.sixth ? c.active : null}
-                id={'suggest'}
+                value={streetName}
                 onChange={e => {
-                  searchStreet(e.target.value);
-                  if(e.target.value.length !== 0 ){
+                  setStreetName(e.target.value)
+                  searchStreet(e.target.value)
+                  if(e.target.value.length >= 1){
                     setActive({
                       ...active,
                       sixth: true
                     })
+                    searchStreet()
                     setActiveResStreet(true)
                   }else{
                     setActive({
@@ -207,19 +211,19 @@ const DeliveryInfo = ({city}) => {
               />  
               <span className={active.sixth ? c.active : null}>Название улицы и номер дома </span>
               {
-                activeResStreet ?
+                activeResStreet && streetResult?.length !== 0 ?
                   <div className={c.cityRes}>
                     {
                       streetResult?.map((item, i) => (
                         <div
                           key={i}
                           onClick={() => {
-                            setCityName(item.city)
-                            setActiveRes(false)
+                            setStreetName(item.value)
+                            setActiveResStreet(false)
                           }}
                         >
                           <p>
-                            {item.value}
+                            {item.value.length > 30 ? `${item.value.slice(0, 30)}...` : item.value}
                           </p>
                           <span></span>
                         </div>
