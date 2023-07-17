@@ -15,10 +15,16 @@
     @media (max-width: 1130px) {
         width: 90%;
     } 
-    @media (max-width: 375px) {
-        width: 311px;
+    @media (max-width: 500px) {
+        width: 345px;
         padding: 16px;
     }
+    @media (max-width: 375px) {
+        width: 311px;
+    }
+    @media (max-width: 320px) {
+        width: 270px;
+    } 
     .main{
         display: flex;
         align-items: center;
@@ -77,8 +83,8 @@
                     @media (max-width: 768px) {
                         font-size: 20px;
                     }
-                    @media (max-width: 478px) {
-                        height: 53px;
+                    @media (max-width: 500px) {
+                        height: 50px;
                     }
 
                 }

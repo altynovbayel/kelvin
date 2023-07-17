@@ -303,7 +303,7 @@ const DeliveryInfo = ({city}) => {
               />  
               <span className={active.ninth ? c.active : null}>Индекс </span>
             </div>
-            <div>
+            <div className={c.comment_div}>
               <textarea 
                 type="text"
                 id={c.comment}

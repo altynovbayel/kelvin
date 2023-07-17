@@ -30,6 +30,9 @@
     @media (max-width: 375px) {
         width: 311px;
     }
+    @media (max-width: 320px) {
+        width: 240px;
+    } 
     .main{
         display: flex;
         align-items: center;
@@ -90,6 +93,10 @@
                     @media (max-width: 500px) {
                         height: 50px;
                     }
+                    @media (max-width: 320px) {
+                        font-size: 16px;
+                        height: 45px;
+                    } 
 
                 }
                 p{
@@ -98,6 +105,9 @@
                     margin-top: 8px;
                     @media (max-width: 768px) {
                         font-size: 16px;
+                    }
+                    @media (max-width: 320px) {
+                        font-size: 14px;
                     }
                     span{
                         color: rgba($color: white, $alpha: 60%);
@@ -114,6 +124,9 @@
                     margin: 0;
                     @media (max-width: 768px) {
                         font-size: 20px;
+                    }
+                    @media (max-width: 320px) {
+                        font-size: 18px;
                     }
                     
                 }
@@ -165,7 +178,7 @@
         }
     }
     .floor{
-        width: 93%;
+        width: 100%;
         margin-top: 16px;
         display: none;
         justify-content: space-between;
@@ -189,7 +202,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
+                @media (max-width: 320px) {
+                    width: 46px;
+                    height: 30px;
+                    font-size: 18px;
+                }
                 &.disabled{
                     background: rgba($color: #141212, $alpha: 30%);
                     color: rgba($color: white, $alpha: 30%);
@@ -200,12 +217,18 @@
                 color: white;
                 font-size: 20px;
                 font-weight: bold;
+                @media (max-width: 320px) {
+                    font-size: 16px;
+                }
             }
         }
         p{
             margin: 0;
             color: rgba($color: white, $alpha: 60%);
             cursor: pointer;
+            @media (max-width: 320px) {
+                font-size: 14px;
+            }
         }
     }
 }

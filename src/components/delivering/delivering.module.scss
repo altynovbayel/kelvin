@@ -20,17 +20,23 @@
     width: 76%;
   } 
   @media (max-width: 500px) {
-    width: 329px;
+    width: 345px;
     padding: 16px;
   }
   @media (max-width: 375px) {
     width: 311px;
   } 
+  @media (max-width: 320px) {
+    width: 240px;
+  } 
   h3{
     color: white;
-    font-family: 20px;
+    font-size: 20px;
     font-weight: 500;
     margin: 0;
+    @media (max-width: 320px) {
+      font-size: 16px;
+    } 
   }
   form{
     width: 100%;
@@ -48,6 +54,9 @@
       
       @media (max-width: 375px) {
         width: 293px;
+      } 
+      @media (max-width: 320px) {
+        width: 222px;
       } 
       background: #252323;
       &.active{
@@ -109,6 +118,9 @@
           @media (max-width: 500px) {
             font-size: 14px;
           } 
+          @media (max-width: 320px) {
+            font-size: 11px;
+          } 
         }
       }
       .right{
@@ -118,6 +130,9 @@
           margin-right: 8px;
           @media (max-width: 500px) {
             font-size: 14px;
+          } 
+          @media (max-width: 320px) {
+            font-size: 11px;
           } 
         }
       }

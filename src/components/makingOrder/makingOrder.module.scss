@@ -20,12 +20,15 @@
     @media (max-width: 1109px) {
         width: 92%;
     } 
-
-    @media (max-width: 490px) {
-        width: 80%;
-    }
-    @media (max-width: 416px) {
-        width: 86%;
+    @media (max-width: 500px) {
+        width: 345px;
+        padding: 16px;
+    } 
+    @media (max-width: 375px) {
+        width: 311px;
+    } 
+    @media (max-width: 320px) {
+        width: 270px;
     } 
     button{
         width: 100%;
@@ -100,8 +103,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-weight: 800;
-            @media (max-width: 425px) {
+            font-weight: 550;
+            @media (max-width: 500px) {
                 font-size: 20px;
             }
             @media (max-width: 320px) {

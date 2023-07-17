@@ -42,6 +42,10 @@
         @media (max-width: 375px) {
           width: 343px;
         }
+
+        @media (max-width: 320px) {
+          width: 270px;
+        } 
         h1{
           width: 100%;
           color: white;

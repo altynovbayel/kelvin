@@ -28,13 +28,20 @@
   @media (max-width: 375px) {
     width: 311px;
   }
+  @media (max-width: 320px) {
+    width: 240px;
+  } 
   h3{
     color: white;
     font-size: 20px;
     line-height: 28px;
     font-weight: 500;
     margin: 0;
+    @media (max-width: 320px) {
+      font-size: 16px;
+    } 
   }
+  
   form{
     width: 100%;
     display: flex;
@@ -73,6 +80,9 @@
         @media (max-width: 375px) {
           width: 285px;
         }
+        @media (max-width: 320px) {
+          width: 214px;
+        } 
         &:focus{
           border: 1px solid white;
           transition: .3s;
@@ -117,12 +127,18 @@
       font-size: 20px;
       font-weight: 500;
       margin: 0;
+      @media (max-width: 320px) {
+        font-size: 16px;
+      }
     }
     p{
       margin: 8px 0 16px 0;
       color: rgba($color: white, $alpha: 60%);
       font-size: 16px;
       font-weight: 500;
+      @media (max-width: 320px) {
+        font-size: 14px;
+      }
     }
     .inputForm{
       width: 100%;
@@ -168,6 +184,9 @@
             @media (max-width: 375px) {
               width: 285px;
             }
+            @media (max-width: 320px) {
+              width: 214px;
+            } 
             &:focus{
               border: 1px solid white;
               transition: .3s;
@@ -294,6 +313,9 @@
             @media (max-width: 375px) {
               width: 285px;
             }
+            @media (max-width: 320px) {
+              width: 214px;
+            } 
             &:focus{
               border: 1px solid white;
               transition: .3s;
@@ -304,6 +326,36 @@
             &.active{
               border: 1px solid white;
             }
+          }
+          
+          span{
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba($color: white, $alpha: 60%);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            transition: .3s;
+            pointer-events: none;
+            &.active{
+              transform: translateY(-32%);
+              position: absolute;
+              left: 13px;
+              top: 14px;
+              font-size: 11px;
+              color: rgba($color: white, $alpha: 60%);
+              line-height: 18px;
+              transition: .3s;
+            }
+          }
+        }
+        .comment_div{
+          width: 199%;
+          position: relative;
+          @media (max-width: 654px) {
+            width: 95%;
           }
           #comment{
             width: 192px;
@@ -340,6 +392,9 @@
             @media (max-width: 375px) {
               width: 277px;
             }
+            @media (max-width: 320px) {
+              width: 206px;
+            } 
             &:focus{
               border: 1px solid white;
               transition: .3s;
@@ -375,28 +430,6 @@
             color: rgba($color: white, $alpha: 60%);
             line-height: 18px;
             transition: .3s;
-          }
-          span{
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba($color: white, $alpha: 60%);
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 18px;
-            transition: .3s;
-            pointer-events: none;
-            &.active{
-              transform: translateY(-32%);
-              position: absolute;
-              left: 13px;
-              top: 14px;
-              font-size: 11px;
-              color: rgba($color: white, $alpha: 60%);
-              line-height: 18px;
-              transition: .3s;
-            }
           }
         }
       }
