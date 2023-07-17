@@ -1,21 +1,20 @@
 .card1 {
   &:nth-child(1) {
-    background-color: rgb(217, 216, 216);
-    transform: translate3d(0px, 0px, 0px) rotateX(-6.5859deg) scale(0.8683, 0.8683);
+    background-color: #737171;
+    transform: translate3d(0px, 0px, 0px) rotateX(-25deg) scale(0.8);
   }
 
 }
 
 .card2 {
   &:nth-child(1) {
-    background-color: rgb(161, 160, 160);
-    transform: translate3d(0px, 0px, 0px) rotateX(-6.7096deg) scale(0.8658, 0.8658);
+    background-color: #737171;
+    transform: translate3d(0px, 0px, 0px) rotateX(-25deg) scale(0.8);
   }
 
   &:nth-child(2) {
-    background-color: rgb(217, 216, 216);
-    transform: translate3d(0px, 40px, 0px) rotateX(-7.4013deg) scale(0.889, 0.889);
-    top: 200px;
+    background-color: #949393;
+    transform: translate3d(0px, 50px, 0px) rotateX(-25deg) scale(0.85);
 
     @media (max-width: 1024px) {
       top: 40px;
@@ -25,20 +24,18 @@
 
 .card3 {
   &:nth-child(1) {
-    background-color: rgb(127, 125, 125);
-    transform: translate3d(0px, 0px, 0px) rotateX(-9.5974deg) scale(0.8081, 0.8081);
+    background-color: rgb(80, 80, 80);
+    transform: translate3d(0px, 0px, 0px) rotateX(-25deg) scale(0.8);
   }
 
   &:nth-child(2) {
-    background-color: rgb(176, 175, 175);
-    transform: translate3d(0px, 40px, 0px) rotateX(-8.7886deg) scale(0.8682, 0.8682);
-    top: 200px;
+    background-color: #737171;
+    transform: translate3d(0px, 50px, 0px) rotateX(-25deg) scale(0.85);
   }
 
   &:nth-child(3) {
-    background-color: rgb(161, 160, 160);
-    transform: translate3d(0px, 80px, 0px) rotateX(-3.1679deg) scale(0.9683, 0.9683);
-    top: 200px;
+    background-color: #949393;
+    transform: translate3d(0px, 100px, 0px) rotateX(-25deg) scale(0.9);
   }
 }
 
