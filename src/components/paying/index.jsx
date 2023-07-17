@@ -6,15 +6,29 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
   const allSumma = String(summaWithDelivering - withPercent)
   return (
     <div className={c.makingOrder}>
-        <button
-            className={c.disabled}
-            disabled
-        >
-            Оплатить картой онлайн
-        </button>
-        <div className={c.line}></div>
+        <div className={c.up}>
+            <button
+                className={c.disabled}
+                disabled
+            >
+                Оплатить картой онлайн
+            </button>
+            <h3>
+                <span>Общая стоимость</span>
+                {
+                    allSumma?.length === 4 ? 
+                    `${allSumma?.slice(0, 1)} ${allSumma?.slice(1, allSumma?.length)}` 
+                    : allSumma?.length === 5 ?
+                    `${allSumma?.slice(0, 2)} ${allSumma?.slice(2, allSumma?.length )}` 
+                    : allSumma?.length === 6 ?
+                    `${allSumma?.slice(0, 3)} ${allSumma?.slice(3, allSumma?.length )}` : 
+                    allSumma
+                } ₽
+            </h3>
+        </div>
+        <div className={c.line1}></div>
         <div className={c.cart}>
-            <h3>Ваша корзина</h3>
+            <h3 className={c.title}>Ваша корзина</h3>
             <div className={c.prices}>
                 <p>
                     <span>Товары</span>

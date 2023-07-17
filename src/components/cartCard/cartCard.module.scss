@@ -15,12 +15,10 @@
     @media (max-width: 1130px) {
         width: 90%;
     } 
-    @media (max-width: 490px) {
-        width: 80%;
+    @media (max-width: 375px) {
+        width: 311px;
+        padding: 16px;
     }
-    @media (max-width: 416px) {
-        width: 86%;
-    } 
     .main{
         display: flex;
         align-items: center;

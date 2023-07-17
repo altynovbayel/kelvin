@@ -43,6 +43,9 @@
           margin: 24px 0;
         }
         
+        @media (max-width: 375px) {
+          width: 343px;
+        }
         .cards{
           width: 100%;
           display: flex;

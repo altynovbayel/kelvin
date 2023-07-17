@@ -21,6 +21,10 @@
   @media (max-width: 416px) {
     width: 76%;
   } 
+  @media (max-width: 375px) {
+    width: 311px;
+    padding: 16px;
+  }
   h3{
     color: white;
     font-size: 20px;
@@ -62,6 +66,9 @@
         }
         @media (max-width: 632px) {
           width: 95%;
+        }
+        @media (max-width: 375px) {
+          width: 285px;
         }
         &:focus{
           border: 1px solid white;
@@ -150,6 +157,9 @@
             }
             @media (max-width: 632px) {
               width: 95%;
+            }
+            @media (max-width: 375px) {
+              width: 285px;
             }
             &:focus{
               border: 1px solid white;
@@ -270,6 +280,9 @@
             }
             @media (max-width: 632px) {
               width: 95%;
+            }
+            @media (max-width: 375px) {
+              width: 285px;
             }
             &:focus{
               border: 1px solid white;
