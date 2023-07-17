@@ -23,6 +23,9 @@
     width: 311px;
     padding: 16px;
   } 
+  @media (max-width: 500px) {
+    width: 329px;
+  }
   h3{
     color: white;
     font-family: 20px;

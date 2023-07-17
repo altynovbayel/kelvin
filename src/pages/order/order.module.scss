@@ -36,15 +36,18 @@
         @media (max-width: 762px) {
           width: 90%;
         } 
+        @media (max-width: 500px) {
+          width: 377px;
+        }
+        
+        @media (max-width: 375px) {
+          width: 343px;
+        }
         h1{
           width: 100%;
           color: white;
           font-size: 32px;
           margin: 24px 0;
-        }
-        
-        @media (max-width: 375px) {
-          width: 343px;
         }
         .cards{
           width: 100%;
