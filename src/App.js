@@ -42,7 +42,6 @@ function App() {
         <MainRoutes />
       </div>
       
-      <Components.Footer/>
     </div>
   )
 }

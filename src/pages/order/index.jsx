@@ -36,6 +36,7 @@ const Order = () => {
   const navigate = useNavigate()
 
   
+  const width = window.innerWidth
   return (
     <div className={c.container}>
       <Components.Title text={'оформление заказа'}/>
@@ -80,6 +81,7 @@ const Order = () => {
           <Components.Promocode />  
         </div>
       </div>
+      {width <= 500 ? <Components.Policy /> : <Components.Footer />}
     </div>
   )
 }

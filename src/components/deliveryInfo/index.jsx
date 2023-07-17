@@ -21,6 +21,8 @@ const DeliveryInfo = ({city}) => {
     sixth: false,
     seventh: false,
     eighth: false,
+    ninth: false,
+    tenth: false,
   })
 
 
@@ -300,6 +302,27 @@ const DeliveryInfo = ({city}) => {
                 }}
               />  
               <span className={active.ninth ? c.active : null}>Индекс </span>
+            </div>
+            <div>
+              <textarea 
+                type="text"
+                id={c.comment}
+                className={active.tenth ? c.active_comment : c.comment}
+                onChange={e => {
+                  if(e.target.value.length !== 0 ){
+                    setActive({
+                      ...active,
+                      tenth: true
+                    })
+                  }else{
+                    setActive({
+                      ...active,
+                      tenth: false
+                    })
+                  }
+                }}
+              />  
+              <span className={active.tenth ? c.active_text : c.comment_text}>Комментарий к заказу </span>
             </div>
           </div>
         </div>

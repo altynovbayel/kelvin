@@ -13,6 +13,7 @@ import Facts from "./Facts";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Logo from "./Logo";
+import Policy from "./policy";
 
 
 
@@ -31,5 +32,6 @@ export const Components = {
     Facts,
     Footer,
     Navbar,
-    Logo
+    Logo,
+    Policy
 }

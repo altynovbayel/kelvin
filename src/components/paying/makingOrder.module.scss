@@ -14,15 +14,12 @@
     @media (max-width: 762px) {
         width: 84%;
     } 
-    @media (max-width: 416px) {
-        width: 76%;
-    } 
-    @media (max-width: 375px) {
-        width: 311px;
+    @media (max-width: 500px) {
+        width: 345px;
         padding: 16px;
     }
-    @media (max-width: 500px) {
-        width: 329px;
+    @media (max-width: 375px) {
+        width: 311px;
     }
     .up{
         display: flex;

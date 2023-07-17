@@ -21,18 +21,18 @@
   @media (max-width: 416px) {
     width: 76%;
   } 
-  @media (max-width: 375px) {
-    width: 311px;
+  @media (max-width: 500px) {
+    width: 345px;
     padding: 16px;
   }
-  @media (max-width: 500px) {
-    width: 329px;
+  @media (max-width: 375px) {
+    width: 311px;
   }
   h3{
     color: white;
     font-size: 20px;
     line-height: 28px;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0;
   }
   form{
@@ -48,7 +48,7 @@
       width: 45%;
       position: relative;
       @media (max-width: 654px) {
-        width: 95%;
+        width: 97.3%;
       }
       input{
         width: 302px;
@@ -115,13 +115,14 @@
     } 
     h3{
       font-size: 20px;
-      font-weight: bold;
+      font-weight: 500;
       margin: 0;
     }
     p{
       margin: 8px 0 16px 0;
       color: rgba($color: white, $alpha: 60%);
       font-size: 16px;
+      font-weight: 500;
     }
     .inputForm{
       width: 100%;
@@ -160,6 +161,9 @@
             }
             @media (max-width: 632px) {
               width: 95%;
+            }
+            @media (max-width: 500px) {
+              width: 319px;
             }
             @media (max-width: 375px) {
               width: 285px;
@@ -284,6 +288,9 @@
             @media (max-width: 632px) {
               width: 95%;
             }
+            @media (max-width: 500px) {
+              width: 319px;
+            }
             @media (max-width: 375px) {
               width: 285px;
             }
@@ -298,9 +305,80 @@
               border: 1px solid white;
             }
           }
+          #comment{
+            width: 192px;
+            height: 86px;
+            outline: none;
+            padding: 0 16px;
+            padding-top: 24px;
+            background: rgba($color: white, $alpha: 5%);
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            transition: .2s;
+            border: 1px solid rgba($color: white, $alpha: 0%);
+            visibility: visible;
+            @media (max-width: 1240px) {
+              width: 100%;
+            }
+            @media (max-width: 1237px) {
+              width: 104%;
+            }
+            @media (max-width: 900px) {
+              width: 102%;
+            }
+            @media (max-width: 700px) {
+              width: 100%;
+            }
+            @media (max-width: 632px) {
+              width: 95%;
+            }
+            @media (max-width: 500px) {
+              width: 311px;
+            }
+            @media (max-width: 375px) {
+              width: 277px;
+            }
+            &:focus{
+              border: 1px solid white;
+              transition: .3s;
+            }
+            &:hover{
+              border: 1px solid rgba($color: white, $alpha: 20%);
+            }
+            &.active{
+              border: 1px solid white;
+            }
+            &.active_comment{
+              border: 1px solid white;
+            }
+          }
+          .comment_text{
+            position: absolute;
+            left: 16px;
+            top: 20px;
+            transform: translateY(-50%);
+            color: rgba($color: white, $alpha: 60%);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            transition: .3s;
+            pointer-events: none;
+          }
+          .active_text{
+            transform: translateY(-32%);
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            font-size: 11px;
+            color: rgba($color: white, $alpha: 60%);
+            line-height: 18px;
+            transition: .3s;
+          }
           span{
             position: absolute;
-            left: 12px;
+            left: 16px;
             top: 50%;
             transform: translateY(-50%);
             color: rgba($color: white, $alpha: 60%);
