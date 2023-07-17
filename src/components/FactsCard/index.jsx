@@ -14,15 +14,15 @@ const FactsCard = () => {
       // Вычисляем положение, до которого нужно прокрутиться
       const targetPosition1 = window.innerWidth <= 768 ? 5000 : // Задайте желаемое значение положения
       window.innerWidth <= 1024 ? 5300 :  
-      4000; 
+      4050; 
 
       const targetPosition2 = window.innerWidth <= 768 ? 5300 : 
       window.innerWidth <= 1024 ? 6000 : 
-      4540;
+      4600;
 
       const targetPosition3 = window.innerWidth <= 768 ? 5800 :  
       window.innerWidth <= 1024 ? 6450 : 
-      5000;
+      5150;
 
       // Получаем текущую позицию прокрутки
       const scrollPosition = window.scrollY || document.documentElement.scrollTop;
