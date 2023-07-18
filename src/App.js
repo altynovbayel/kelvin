@@ -6,6 +6,7 @@ import './App.scss'
 import Lenis from '@studio-freight/lenis'
 
 import axios from 'axios'
+import { useLocation } from 'react-router-dom'
 
 axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 
@@ -13,9 +14,10 @@ axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 function App() {
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const location = JSON.parse(localStorage.getItem('location'))
-
+  const path = useLocation().pathname
   const lenis = new Lenis()
-
+  const [footerState, setFooterState] = React.useState(false)
+ 
   function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
@@ -32,6 +34,14 @@ function App() {
       localStorage.setItem('location', JSON.stringify([location.coords.latitude, location.coords.longitude]))
     })
   }, [])
+
+  React.useEffect(() => {
+    if (path === '/' && window.innerWidth <= 500) {
+      setFooterState(true)
+    } else if (window.innerWidth <= 500){
+      setFooterState(false)
+    }
+  }, [path])
   
   return (
     <div>
@@ -41,12 +51,11 @@ function App() {
       }}>
         <MainRoutes />
       </div>
-      
+      {
+        footerState ? <Components.Footer /> : window.innerWidth >= 500 ? <Components.Footer /> : null
+      }
     </div>
   )
 }
 
 export default App
-
-
-// кто прочитает тот лох :)

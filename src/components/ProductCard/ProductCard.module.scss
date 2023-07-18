@@ -22,6 +22,9 @@
     @media (max-width: 790px) {
       height: 450px;
     }
+    @media (max-width: 375px) {
+      height: 433px;
+    }
     &::after{
       content: '';
       position: absolute;
@@ -64,9 +67,9 @@
     justify-content: space-between;
     margin-top: 24px;
 
-    @media (max-width: 790px) {
-      flex-direction: column;
-    }
+    // @media (max-width: 790px) {
+    //   flex-direction: column;
+    // }
 
     .card_btn {
       display: flex;
@@ -79,9 +82,17 @@
         font-style: normal;
         font-weight: 700;
         line-height: 32px;
-        @media (max-width: 320px) {
+        @media (max-width: 790px){
           font-size: 20px;
+          line-height: 25px;
         }
+        @media (max-width: 425px){
+          font-size: 16px;
+          line-height: 25px;
+        }
+        // @media (max-width: 320px) {
+        //   font-size: 20px;
+        // }
 
         &.added {
           color: #13ED29;
@@ -90,11 +101,11 @@
     }
 
     .price {
-      @media (max-width: 790px) {
-        text-align: right;
-        width: 100%;
-        margin-top: 50px;
-      }
+      // @media (max-width: 790px) {
+      //   text-align: right;
+      //   width: 100%;
+      //   margin-top: 50px;
+      // }
 
       p {
         color: #FFF;
@@ -103,6 +114,10 @@
         font-weight: 700;
         line-height: 32px;
         margin: 0;
+        @media (max-width: 425px){
+          font-size: 16px;
+          line-height: 25px;
+        }
       }
     }
   }
