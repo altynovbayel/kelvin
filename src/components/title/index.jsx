@@ -7,17 +7,17 @@ const Title = ({text}) => {
   const Navigate = useNavigate()
   return (
     <div className={c.container}>
-        <div className={c.title}>
-            {
-                path === '/order/' ?
-                <p onClick={() => Navigate('/cart/')}>
-                    Вернуться в корзину
-                </p>
-                :
-                null
-            }
-            <h1>{text}</h1>
-        </div>
+      <div className={c.title}>
+        {
+          path === '/order/' ?
+            <p onClick={()=> Navigate('/cart/')}>
+              Вернуться в корзину
+            </p>
+          :
+          null
+        }
+        <h1>{text}</h1>
+      </div>
     </div>
   )
 }

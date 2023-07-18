@@ -12,16 +12,27 @@ const FactsCard = () => {
   React.useEffect(() => {
     const handleScroll = () => {
       // Вычисляем положение, до которого нужно прокрутиться
-      const targetPosition1 = window.innerWidth <= 768 ? 5000 : // Задайте желаемое значение положения
-      window.innerWidth <= 1024 ? 5300 :  
+
+      // Задайте желаемое значение положения
+      const targetPosition1 = 
+      window.innerWidth <= 425 ? 4445 : 
+      window.innerWidth <= 768 ? 5000 : 
+      window.innerWidth <= 1024 ? 5300 : 
+      window.innerWidth <= 1366 ? 3900 :
       4050; 
 
-      const targetPosition2 = window.innerWidth <= 768 ? 5300 : 
-      window.innerWidth <= 1024 ? 6000 : 
+      const targetPosition2 = 
+      window.innerWidth <= 425 ? 4850 : 
+      window.innerWidth <= 768 ? 5300 : 
+      window.innerWidth <= 1024 ? 6000 :
+      window.innerWidth <= 1366 ? 4450 : 
       4600;
 
-      const targetPosition3 = window.innerWidth <= 768 ? 5800 :  
+      const targetPosition3 = 
+      window.innerWidth <= 425 ? 5300 : 
+      window.innerWidth <= 768 ? 5800 :  
       window.innerWidth <= 1024 ? 6450 : 
+      window.innerWidth <= 1366 ? 4950 :
       5150;
 
       // Получаем текущую позицию прокрутки
@@ -61,6 +72,7 @@ const FactsCard = () => {
   return (
     <motion.div
       className={ 
+        window.innerWidth <= 500 ? c.card :
         card1 ? `${c.card1} ${c.card}` : 
         card2 ? `${c.card2} ${c.card}` : 
         card3 ? `${c.card3} ${c.card}` :  

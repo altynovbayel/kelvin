@@ -41,6 +41,8 @@ const Banner = () => {
         {
           scrollPix > 600 ? 
           <img src={banner} alt="kelvin" className={c.imageBanner} /> : 
+          window.innerWidth <= 500 ? 
+          <img src={banner} alt="kelvin" className={c.imageBanner} /> :
           <motion.img 
             src={banner} 
             style={{scale}}

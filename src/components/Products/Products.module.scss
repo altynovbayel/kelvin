@@ -5,10 +5,13 @@
   align-items: center;
   flex-direction: column;
   margin: 100px 0;
+
   .title {
     text-align: center;
     margin-bottom: 72px;
-
+    @media (max-width: 425px) {
+      margin-bottom: 40px;
+    }
     h1 {
       color: #FFF;
       font-size: 32px;
@@ -30,8 +33,16 @@
       gap: 140px;
     }
 
+    @media (max-width: 425px) {
+      gap: 40px;
+    }
+
     >div:nth-child(even) {
       margin-top: 50px;
+
+      @media (max-width: 425px) {
+        margin-top: 0;
+      }
     }
   }
 }

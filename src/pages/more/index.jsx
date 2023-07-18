@@ -25,7 +25,7 @@ const More = () => {
   const [activeDropdown, setActiveDropdown] = React.useState(false)
   const [activeImg, setActiveImg] = React.useState(0)
   const [dep, setDep] = React.useState('')
-  const [choosenSize, setChoosenSize] = React.useState(null)
+  const [choosenSize, setChoosenSize] = React.useState(0)
   
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const cartOne = JSON.parse(localStorage.getItem('kelvin_cart_one'))
@@ -163,50 +163,31 @@ const More = () => {
                 }}
               >
                 <div className={c.left}>
-                  <h3>{product.size}  </h3>
+                  <h3>{product.product_sizes[choosenSize].name}</h3>
                 </div>
                 <div className={c.right}>
-                  <span>
-                    {activeDropdown ? <BiSolidChevronUp /> : <BiSolidChevronDown />}
+                  <span className={ activeDropdown ? c.active_arrow : ''}>
+                    <BiSolidChevronDown />
                   </span>
                 </div>
               </div>
               <div className={activeDropdown ? c.active : c.disactive}>
                 {
-                  Array(6).fill(1).map((_, id) => (
-                    <div className={choosenSize === id ? c.active_drop : ''} onClick={() => {
-                      setChoosenSize(id)
-                      setActiveDropdown(false)
+                  product?.product_sizes.map((item, id) => (
+                    <div 
+                      key={id}
+                      className={choosenSize === id ? c.active_drop : ''} 
+                      onClick={() => {
+                        setChoosenSize(id)
+                        setActiveDropdown(false)
                     }}>
-                      <h3>{product.size}</h3>
+                      <h3>{item.name}</h3>
                       {choosenSize === id ? <img src={checkImg} alt='' /> : ''}
                     </div>
                   ))
                 }
               </div>
             </div>
-            {/* <div className={c.dropdown} >
-              <div className={c.up} onClick={() => setActiveDropdown(!activeDropdown)}>
-                <div>{product?.size}</div>
-                <span className={activeDropdown ? c.active_dropdown_arrow : ''}>
-                  <IoIosArrowDown/>
-                </span>
-              </div>
-              
-              <div className={activeDropdown ? c.active_dropdown : c.disactive_dropdown}>
-                {
-                  Array(6).fill(1).map((_, id) => (
-                    <div onClick={() => {
-                      setChoosenSize(id)
-                      setActiveDropdown(!activeDropdown)
-                    }} key={id}>
-                      {product?.size}
-                      {id === choosenSize ? <img src={checkImg} alt='' /> : ''}
-                    </div>
-                  ))
-                }
-              </div>
-            </div> */}
             <div className={c.model}>
               <div className={c.model_text}>
                 <img src={model} alt=""/>
