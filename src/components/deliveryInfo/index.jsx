@@ -24,8 +24,7 @@ const DeliveryInfo = ({city}) => {
     ninth: false,
     tenth: false,
   })
-
-
+  
   const PhoneMask = "+{7} (000) 000-00-00";
   const phoneMask = [
     {
@@ -33,14 +32,15 @@ const DeliveryInfo = ({city}) => {
     }
   ];
 
-  
-  let timer;
-  const waitTime = 1000; 
-
   React.useEffect(() => {
     const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
     setCityResult(citySearch)
   }, [cityName])
+
+  React.useEffect(() => {
+    const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
+    setCityResult(citySearch)
+  }, [streetName])
 
   const searchStreet = () => {
     axios.post(`https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address`, {

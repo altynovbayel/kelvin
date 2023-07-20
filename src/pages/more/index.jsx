@@ -171,6 +171,7 @@ const More = () => {
                   </span>
                 </div>
               </div>
+              {activeDropdown ? <div className={c.line}></div> : null}
               <div className={activeDropdown ? c.active : c.disactive}>
                 {
                   product?.product_sizes.map((item, id) => (

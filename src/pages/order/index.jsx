@@ -81,7 +81,7 @@ const Order = () => {
           <Components.Promocode />  
         </div>
       </div>
-      {width <= 500 ? <Components.Policy /> : <Components.Footer />}
+      {width <= 500 ? <Components.Policy /> : ''}
     </div>
   )
 }
