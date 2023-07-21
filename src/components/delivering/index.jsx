@@ -38,10 +38,10 @@ const Delivering = () => {
               src={ImagesDelivering.mail} 
               alt="Почта России" 
             /> 
-            <h3>Почта России, 7-14 дней</h3>
+            <h3 className={type === 'mail' ? c.active_text : ''}>Почта России, 7-14 дней</h3>
           </div>
           <div className={c.right}>
-            <h3>0 ₽</h3>
+            <h3 className={type === 'mail' ? c.active_text : ''}>0 ₽</h3>
           </div>
         </label>
         <label 
@@ -65,10 +65,12 @@ const Delivering = () => {
               src={ImagesDelivering.yandex} 
               alt="Яндекс ПВЗ" 
             /> 
-            <h3>Яндекс ПВЗ, 5-7 дней</h3>
+            <h3 className={type === 'yandex' ? c.active_text : ''}>
+              Яндекс ПВЗ, 5-7 дней
+            </h3>
           </div>
           <div className={c.right}>
-            <h3>340 ₽</h3>
+            <h3 className={type === 'yandex' ? c.active_text : ''}>340 ₽</h3>
           </div>
         </label>
       </form>
