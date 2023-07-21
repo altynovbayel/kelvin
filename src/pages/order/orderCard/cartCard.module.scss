@@ -81,7 +81,7 @@
                 p{
                     margin: 0;
                     padding: 0;
-                    font-weight: bold;
+                    font-family: 'Onest Bold';
                 }
                 h3{
                     font-size: 24px;
@@ -123,6 +123,7 @@
                     font-size: 24px;
                     letter-spacing: 0.6px;
                     margin: 0;
+                    font-family: 'Onest Bold';
                     @media (max-width: 768px) {
                         font-size: 20px;
                     }
@@ -166,13 +167,14 @@
                             margin: 0 16px;
                             color: white;
                             font-size: 20px;
-                            font-weight: bold;
+                            font-family: 'Onest Bold';
                         }
                     }
                     p{
                         margin: 0;
                         color: rgba($color: white, $alpha: 60%);
                         cursor: pointer;
+                        font-family: 'Onest Bold';
                     }
                 }
             }

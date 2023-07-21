@@ -37,6 +37,7 @@
             display: none;
             align-items: center;
             justify-content: space-between;
+            font-family: 'Onest Bold';
             font-weight: 500;
             @media (max-width: 320px) {
                 font-size: 16px;
@@ -58,6 +59,7 @@
             font-size: 16px;
             cursor: pointer;
             margin-bottom: 24px;
+            font-family: 'Onest Bold';
             @media (max-width: 1242px) {
                 width: 100%;
                 margin-bottom: 0;
@@ -104,18 +106,21 @@
             margin: 0;
             margin-bottom: 18px;
             display: block;
+            font-family: 'Onest Bold';
+
         }
         p{
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-weight: 500;
             color: white;
             padding: 0;
+            font-family: 'Onest Bold';
             margin: 12px 0;
             span{
                 color: rgba($color: white, $alpha: 60%);
+                font-family: 'Onest Bold';
             }
         }
     }
@@ -126,6 +131,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-family: 'Onest Bold';
+        span{
+            font-family: 'Onest Bold';
+        }
+
         @media (max-width: 1242px) {
             display: none;
         } 

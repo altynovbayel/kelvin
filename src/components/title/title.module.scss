@@ -15,6 +15,7 @@
             position: absolute;
             left: 0;
             color: rgba($color: white, $alpha: 60%);
+            font-family: 'Onest Bold';
             cursor: pointer;
             @media (max-width: 1224px) {
                 display: none;
@@ -23,6 +24,7 @@
         h1{
             color: white;
             text-transform: uppercase;
+            font-family: 'Onest Extra-Bold';
             @media (max-width: 768px) {
                 font-size: 24px;
                 margin-right: 5%;
