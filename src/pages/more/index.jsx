@@ -14,7 +14,7 @@ import checkImg from '../../img/check.svg'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { BiSolidChevronDown, BiSolidChevronUp } from 'react-icons/bi'
+import { BiSolidChevronDown } from 'react-icons/bi'
 
 const More = () => {
   const {id} = useParams()

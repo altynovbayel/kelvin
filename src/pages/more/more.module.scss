@@ -415,14 +415,26 @@
             left: 0;
             transition: .5s;
             opacity: 1;
-            height: 240px;
+            height: 250px;
+            position: relative;
+            padding-top: 8px;
+            &::after{
+              content: '';
+              width: 100%;
+              position: absolute;
+              height: 2px;
+              background-color: rgba(255, 255, 255, 0.10);
+              top: 9px;
+              left: 0;
+            }
             div {
               width: 100%;
               padding: 12px 8px;
               display: flex;
               justify-content: space-between;
               align-items: center;
-
+              transition: .2s;
+              border-radius: 12px;
               &.active_drop {
                 background: rgba(255, 255, 255, 0.10);
                 border-radius: 12px;
