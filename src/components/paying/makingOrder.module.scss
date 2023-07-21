@@ -38,7 +38,6 @@
             align-items: center;
             justify-content: space-between;
             font-family: 'Onest Bold';
-            font-weight: 500;
             @media (max-width: 320px) {
                 font-size: 16px;
             }
@@ -106,7 +105,8 @@
             margin: 0;
             margin-bottom: 18px;
             display: block;
-            font-family: 'Onest Bold';
+            font-family: 'Onest Regular';
+            font-weight: 500;
 
         }
         p{
@@ -116,11 +116,13 @@
             justify-content: space-between;
             color: white;
             padding: 0;
-            font-family: 'Onest Bold';
+            font-family: 'Onest Regular';
+            font-weight: 500;
             margin: 12px 0;
             span{
                 color: rgba($color: white, $alpha: 60%);
-                font-family: 'Onest Bold';
+                font-family: 'Onest Regular';
+                font-weight: 500;
             }
         }
     }

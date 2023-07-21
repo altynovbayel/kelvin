@@ -42,8 +42,8 @@ const Order = () => {
       <Components.Title text={'оформление заказа'}/>
       <div className={c.make}>
         <div className={c.left}>
-          <Components.Delivering />
           <DeliveryInfo city={cityName}/>
+          <Components.Delivering />
           <div className={c.goods}>
             <h1>Мои товары</h1>
             <div className={c.cards}>
