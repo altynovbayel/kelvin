@@ -14,7 +14,7 @@ import checkImg from '../../img/check.svg'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { BiSolidChevronDown, BiSolidChevronUp } from 'react-icons/bi'
+import { BiSolidChevronDown } from 'react-icons/bi'
 
 const More = () => {
   const {id} = useParams()
@@ -171,8 +171,10 @@ const More = () => {
                   </span>
                 </div>
               </div>
-              {activeDropdown ? <div className={c.line}></div> : null}
-              <div className={activeDropdown ? c.active : c.disactive}>
+              {/* {activeDropdown ? <div className={c.line}></div> : null} */}
+              <div 
+                className={activeDropdown ? c.active : c.disactive}
+                style={{height: `${activeDropdown ? product?.product_sizes.length * 50 : 0}px`}}>
                 {
                   product?.product_sizes.map((item, id) => (
                     <div 

@@ -7,16 +7,16 @@
     margin-top: 100px;
   }
 
-  @media (max-width: 768px) {
-    margin-top: 100px;
-  }
-
   @media (min-width: 1950px) {
     margin-bottom: 200px;
   }
 
-   @media (min-width: 2500px) {
+  @media (min-width: 2500px) {
     margin-bottom: 300px;
+  }
+
+  @media (max-width: 425px) {
+   display: none;
   }
 
   img {
@@ -30,5 +30,7 @@
     @media (max-width: 768px) {
       top: 120px;
     }
+
+
   }
 }
