@@ -41,11 +41,6 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
     setCityResult(citySearch)
   }, [cityName])
 
-  React.useEffect(() => {
-    API.getAddress(streetName)
-      .then(res => setStreetResult(res.data))
-  }, [streetName])
-  
   return (
     <div className={c.deliveryInfo}>
       <h3>Ваши данные для доставки</h3>
