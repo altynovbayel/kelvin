@@ -3,6 +3,12 @@
   height: 130vh;
   margin-top: 100px;
   position: relative;
+  @media (max-width: 500px) {
+    width: 377px;
+  }
+  @media (max-width: 320px) {
+    width: 300px;
+  }
 
   .top_text {
     width: 98%;
@@ -46,7 +52,6 @@
         @media (max-width: 897px) {
           margin-left: 130px;
         }
-
         @media (max-width: 320px) {
           margin-left: 100px;
         }
@@ -119,6 +124,10 @@
         font-weight: 500;
         line-height: 28px;
 
+        @media (max-width: 500px) {
+          margin-bottom: 50px;
+          font-size: 20.8px;
+        }
         @media (max-width: 430px) {
           font-size: 16px;
           line-height: 20px;

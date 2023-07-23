@@ -33,6 +33,18 @@
       gap: 40px;
     }
 
+    @media (max-width: 500px) {
+      width: 377px;
+    }
+
+    @media (max-width: 375px) {
+      width: 343px;
+    }
+    @media (max-width: 320px) {
+      width: 300px;
+    }
+    
+
     @media (max-width: 1050px) {
       flex-direction: column;
       gap: 0;

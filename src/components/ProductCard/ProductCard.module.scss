@@ -6,7 +6,7 @@
   }
 
   @media (max-width: 320px) {
-    width: 310px;
+    width: 300px;
   }
 
   p {
@@ -22,9 +22,7 @@
     @media (max-width: 790px) {
       height: 450px;
     }
-    @media (max-width: 375px) {
-      height: 433px;
-    }
+
     &::after{
       content: '';
       position: absolute;
@@ -45,6 +43,12 @@
       @media (max-width: 790px) {
         height: 434px;
       }
+
+
+      @media (max-width: 320px) {
+        width: 300px;
+      }
+    
     }
 
     p {

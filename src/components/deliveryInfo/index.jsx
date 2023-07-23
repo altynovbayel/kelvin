@@ -25,7 +25,19 @@ const DeliveryInfo = ({city}) => {
     tenth: false,
   })
 
-
+  const [ active2, setActive2 ] = React.useState({
+    first: false,
+    second: false,
+    third: false,
+    fourth: false,
+    fifth: false,
+    sixth: false,
+    seventh: false,
+    eighth: false,
+    ninth: false,
+    tenth: false,
+  })
+  
   const PhoneMask = "+{7} (000) 000-00-00";
   const phoneMask = [
     {
@@ -33,14 +45,15 @@ const DeliveryInfo = ({city}) => {
     }
   ];
 
-  
-  let timer;
-  const waitTime = 1000; 
-
   React.useEffect(() => {
     const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
     setCityResult(citySearch)
   }, [cityName])
+
+  React.useEffect(() => {
+    const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
+    setCityResult(citySearch)
+  }, [streetName])
 
   const searchStreet = () => {
     axios.post(`https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address`, {
@@ -57,9 +70,13 @@ const DeliveryInfo = ({city}) => {
       <form>
         <div>
           <input 
-            type="text" 
-            className={active.first ? c.active : null}
+            type="text"s
+            className={active2.first ? c.active : null}
             onChange={e => {
+              setActive2({
+                ...active==false,
+                first: true
+              })
               if(e.target.value.length !== 0 ){
                 setActive({
                   ...active,
@@ -78,8 +95,12 @@ const DeliveryInfo = ({city}) => {
         <div>
           <input 
             type="text" 
-            className={active.second ? c.active : null}
+            className={active2.second ? c.active : null}
             onChange={e => {
+              setActive2({
+                ...active==false,
+                second: true
+              })
               if(e.target.value.length !== 0 ){
                 setActive({
                   ...active,
@@ -90,6 +111,7 @@ const DeliveryInfo = ({city}) => {
                   ...active,
                   second: false
                 })
+        
               }
             }}
           />
@@ -98,8 +120,12 @@ const DeliveryInfo = ({city}) => {
         <div>
           <input 
             type="email" 
-            className={active.third ? c.active : null}
+            className={active2.third ? c.active : null}
             onChange={e => {
+              setActive2({
+                ...active==false,
+                third: true
+              })
               if(e.target.value.length !== 0 ){
                 setActive({
                   ...active,
@@ -117,10 +143,14 @@ const DeliveryInfo = ({city}) => {
         </div>
         <div>
           <IMaskInput
-            className={active.fourth ? c.active : null}
+            className={active2.fourth ? c.active : null}
             mask={phoneMask}
             id='phoneInput'
             onChange={e => {
+              setActive2({
+                ...active==false,
+                fourth: true
+              })
               if(e.target.value.length !== 0 ){
                 setActive({
                   ...active,
@@ -146,14 +176,18 @@ const DeliveryInfo = ({city}) => {
             <div>
               <input 
                 type="text"
-                className={active.fifth ? c.active : null}
+                className={active2.fifth ? c.active : null}
                 id={'suggest'}
                 value={cityName}
                 onChange={e => {
                   setCityName(e.target.value)
+                  setActive2({
+                    ...active==false,
+                    fifth: true
+                  })
                   if(e.target.value.length !== 0 ){
                     setActive({
-                      ...active,
+                      ...active == false,
                       fifth: true
                     })
                     setActiveRes(true)
@@ -193,11 +227,15 @@ const DeliveryInfo = ({city}) => {
             <div>
               <input 
                 type="text"
-                className={active.sixth ? c.active : null}
+                className={active2.sixth ? c.active : null}
                 value={streetName}
                 onChange={e => {
                   setStreetName(e.target.value)
                   searchStreet(e.target.value)
+                  setActive2({
+                    ...active==false,
+                    sixth: true
+                  })
                   if(e.target.value.length >= 1){
                     setActive({
                       ...active,
@@ -243,9 +281,13 @@ const DeliveryInfo = ({city}) => {
             <div>
               <input 
                 type="text"
-                className={active.seventh ? c.active : null}
+                className={active2.seventh ? c.active : null}
                 id={'suggest'}
                 onChange={e => {
+                  setActive2({
+                    ...active==false,
+                    seventh: true
+                  })
                   if(e.target.value.length !== 0 ){
                     setActive({
                       ...active,
@@ -264,9 +306,13 @@ const DeliveryInfo = ({city}) => {
             <div>
               <input 
                 type="text"
-                className={active.eighth ? c.active : null}
+                className={active2.eighth ? c.active : null}
                 id={'suggest'}
                 onChange={e => {
+                  setActive2({
+                    ...active==false,
+                    eighth: true
+                  })
                   if(e.target.value.length !== 0 ){
                     setActive({
                       ...active,
@@ -285,9 +331,13 @@ const DeliveryInfo = ({city}) => {
             <div>
               <input 
                 type="text"
-                className={active.ninth ? c.active : null}
+                className={active2.ninth ? c.active : null}
                 id={'suggest'}
                 onChange={e => {
+                  setActive2({
+                    ...active==false,
+                    ninth: true
+                  })
                   if(e.target.value.length !== 0 ){
                     setActive({
                       ...active,
@@ -307,8 +357,12 @@ const DeliveryInfo = ({city}) => {
               <textarea 
                 type="text"
                 id={c.comment}
-                className={active.tenth ? c.active_comment : c.comment}
+                className={active2.tenth ? c.active_comment : c.comment}
                 onChange={e => {
+                  setActive2({
+                    ...active==false,
+                    tenth: true
+                  })
                   if(e.target.value.length !== 0 ){
                     setActive({
                       ...active,

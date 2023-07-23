@@ -80,6 +80,7 @@
                     color: white;
                     -webkit-text-stroke-width: 10%;
                     overflow: hidden;
+                    font-family: 'Onest Medium';
                     @media (max-width: 768px) {
                         font-size: 20px;
                     }
@@ -161,7 +162,7 @@
         }
     }
     .floor{
-        width: 93%;
+        width: 100%;
         margin-top: 16px;
         display: none;
         justify-content: space-between;

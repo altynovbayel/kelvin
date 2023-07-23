@@ -42,8 +42,8 @@ const Order = () => {
       <Components.Title text={'оформление заказа'}/>
       <div className={c.make}>
         <div className={c.left}>
-          <Components.Delivering />
           <DeliveryInfo city={cityName}/>
+          <Components.Delivering />
           <div className={c.goods}>
             <h1>Мои товары</h1>
             <div className={c.cards}>
@@ -81,7 +81,7 @@ const Order = () => {
           <Components.Promocode />  
         </div>
       </div>
-      {width <= 500 ? <Components.Policy /> : <Components.Footer />}
+      {width <= 500 ? <Components.Policy /> : ''}
     </div>
   )
 }

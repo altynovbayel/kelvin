@@ -4,7 +4,8 @@ export const API = {
   getProducts: () => axios.get('/main/products/'),
   getPromocodes: () => axios.get('/promocode/'),
   getSingleProduct: (id) => axios.get(`/main/products/${id}`),
-  getCity: () => axios.get(`/main/address/`)
+  getCity: () => axios.get(`/main/address/`),
+  getAddresses: () => axios.get(`/main/address/`),
 }
 
 // export tMapApi = axios.get('https://api-developer.tech.yandex.net/projects/')
