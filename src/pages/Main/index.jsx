@@ -24,10 +24,10 @@ const Main = () => {
         <div
           style={{
             position: 'relative',
-            top: screenWidth <= 425 ? 0 : `-${scrollPixel+400}px`
+            top: scrollPixel === 0 ? 0 : `-${scrollPixel+400}px`
           }} 
           className={c.scroll}
-          >
+        >
           <Components.AboutBlock/>
           {/* <LottieAnimation /> */}
           <Components.Brand/>

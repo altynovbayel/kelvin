@@ -113,7 +113,8 @@
         left: 72px;
         color: #FFF;
         font-size: 12px;
-        font-family: 'Onest Medium';
+        font-family: 'Onest Regular';
+        font-weight: 500;
         margin: 0;
         line-height: 16px;
         text-transform: uppercase;
@@ -166,6 +167,7 @@
         line-height: 32px;
         margin: 0;
         font-family: 'Onest Regular';
+        font-weight: 500;
 
         @media (max-width: 1050px) {
           padding: 0 20px;
