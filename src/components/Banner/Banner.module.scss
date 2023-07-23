@@ -3,9 +3,12 @@
   height: 150vh;
   margin-top: 100px;
   position: relative;
-  @media (max-width: 500px) {
-    width: 377px;
+  @media (max-width: 505px) {
+    width: 100%;
     height: unset;
+  }
+  @media (max-width: 440px) {
+    width: 377px;
   }
   @media (max-width: 375px) {
     width: 350px;
@@ -16,14 +19,13 @@
 
   .top_text {
     width: 98%;
-    height: 100%;
     margin-right: auto;
 
     h1 {
       text-align: right;
       color: #fff;
       font-size: 81px;
-      font-family: 'Onest Medium';
+      font-family: 'Onest Regular';
       font-weight: 500;
       line-height: 88px;
       margin: 0;
@@ -44,7 +46,7 @@
         line-height: 50px;
       }
 
-      @media (max-width: 440px) {
+      @media (max-width: 500px) {
         font-size: 32px;
         font-weight: 700;
         font-style: normal;
@@ -80,7 +82,6 @@
 
     @media (max-width: 670px) {
       margin-left: 20px;
-      height: 360px;
     }
 
     @media (max-width: 430px) {
