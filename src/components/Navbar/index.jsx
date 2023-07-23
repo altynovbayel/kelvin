@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className={c.logo} onClick={() => Navigate('/')}>
           <img src={logo} alt="logo" />
         </div>
-        <div className={c.navbar}>
+        {/* <div className={c.navbar}>
           <div className={activeNav ? c.navlist : c.disActive}>
             <ul>
               {
@@ -63,7 +63,7 @@ const Navbar = () => {
             <div></div>
             <p>Меню</p>
           </div>
-        </div>
+        </div> */}
         <div className={c.products}>
           <button onClick={() => Navigate('/products')}>
             Перейти к товарам
