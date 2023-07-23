@@ -6,7 +6,7 @@ import './App.scss'
 import Lenis from '@studio-freight/lenis'
 
 import axios from 'axios'
-import { useLocation } from 'react-router-dom'
+import { json, useLocation } from 'react-router-dom'
 
 axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 
@@ -33,6 +33,8 @@ function App() {
     !location && navigator.geolocation.getCurrentPosition(location => {
       localStorage.setItem('location', JSON.stringify([location.coords.latitude, location.coords.longitude]))
     })
+    localStorage.setItem('scroll', false)
+
   }, [])
 
   React.useEffect(() => {
@@ -42,7 +44,8 @@ function App() {
       setFooterState(false)
     }
   }, [path])
-  
+
+
   return (
     <div>
       <Components.Navbar />

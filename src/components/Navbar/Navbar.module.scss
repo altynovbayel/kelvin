@@ -572,11 +572,11 @@
           p {
             color: #FFF;
             font-size: 16px;
-            font-weight: 800;
             line-height: 20px;
             text-transform: uppercase;
             text-align: center;
             margin-top: 12px;
+            font-family: 'Onest Bold';
 
           }
         }
@@ -593,10 +593,10 @@
           border: 1px solid #FFF;
           color: #FFF;
           font-size: 16px;
-          font-weight: 700;
           line-height: 32px;
           background-color: transparent;
           padding: 4px 16px;
+          font-family: 'Onest Bold';
 
           @media (max-width: 425px) {
             display: none;

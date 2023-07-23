@@ -56,10 +56,10 @@
             text-align: right;
             font-size: 96px;
             font-style: normal;
-            font-weight: 700;
             line-height: 128px;
             text-transform: uppercase;
-    
+            font-family: 'Onest Bold';
+
             @media (max-width: 1360px) {
               font-size: 70px;
             }
@@ -78,6 +78,7 @@
             }
     
             .grey {
+              font-family: 'Onest Bold';
               @media (max-width: 1243px) {
                 color: rgba(255, 255, 255, 0.60);
               }
@@ -89,6 +90,7 @@
           @media (max-width: 634px) {
             text-align: left;
           }
+          
         }
       }
     }
@@ -113,11 +115,11 @@
           span {
             color: rgba(255, 255, 255, 0.60);
           }
+          font-family: 'Onest Regular';
   
           color: #FFF;
           font-size: 16px;
           font-style: normal;
-          font-weight: 500;
           line-height: 24px;
         }
       }

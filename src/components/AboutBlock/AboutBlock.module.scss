@@ -69,10 +69,10 @@
 
       p {
         font-size: 24px;
-        font-weight: 700;
         line-height: 32px;
         text-transform: uppercase;
         padding-left: 72px;
+        font-family: 'Onest Medium';
 
         @media (max-width: 1230px) {
           padding-left: 36px;
@@ -113,13 +113,21 @@
         left: 72px;
         color: #FFF;
         font-size: 12px;
-        font-weight: 700;
+        font-family: 'Onest Medium';
+        margin: 0;
         line-height: 16px;
         text-transform: uppercase;
-
+        .gray{
+          margin-left: 100px;
+        }
         @media (max-width: 1050px) {
           bottom: 16px;
           left: 16px;
+          margin-top: 32px;
+        }
+        @media (max-width: 500px) {
+          bottom: 16px;
+          left: -54px;
           margin-top: 32px;
         }
       }
@@ -155,9 +163,9 @@
 
       p {
         font-size: 24px;
-        font-weight: 500;
         line-height: 32px;
         margin: 0;
+        font-family: 'Onest Regular';
 
         @media (max-width: 1050px) {
           padding: 0 20px;

@@ -2,15 +2,17 @@ import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { IMaskInput } from 'react-imask';
 import axios from 'axios';
+import { API } from '../../api';
 
 
-const DeliveryInfo = ({city}) => {
+const DeliveryInfo = ({city, streets, active2, setActive2}) => {
   const [cityName, setCityName] = React.useState('')
   const [streetName, setStreetName] = React.useState('')
   const [cityResult, setCityResult] = React.useState('')
   const [streetResult, setStreetResult] = React.useState(null)
   const [ activeRes, setActiveRes ] = React.useState(false)
   const [ activeResStreet, setActiveResStreet ] = React.useState(false)
+  const [ dep, setDep ] = React.useState(0)
 
   const [ active, setActive ] = React.useState({
     first: false,
@@ -25,18 +27,7 @@ const DeliveryInfo = ({city}) => {
     tenth: false,
   })
 
-  const [ active2, setActive2 ] = React.useState({
-    first: false,
-    second: false,
-    third: false,
-    fourth: false,
-    fifth: false,
-    sixth: false,
-    seventh: false,
-    eighth: false,
-    ninth: false,
-    tenth: false,
-  })
+  
   
   const PhoneMask = "+{7} (000) 000-00-00";
   const phoneMask = [
@@ -51,18 +42,9 @@ const DeliveryInfo = ({city}) => {
   }, [cityName])
 
   React.useEffect(() => {
-    const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
-    setCityResult(citySearch)
-  }, [streetName])
-
-  const searchStreet = () => {
-    axios.post(`https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address`, {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-      "Authorization": "b759ba8c0009a8a316048e2551da6a4ab727e57c"
-    }, {query: streetName})
+    API.getAddress(streetName)
       .then(res => setStreetResult(res.data))
-  }
+  }, [streetName])
   
   return (
     <div className={c.deliveryInfo}>
@@ -170,7 +152,7 @@ const DeliveryInfo = ({city}) => {
       </form>
       <div className={c.address}>
         <h3>Адрес доставки</h3>
-        <p>Выберите удобное отделение почты для вас и заберите свой заказ там</p>
+        <p className={c.parag}>Выберите удобное отделение почты для вас и заберите свой заказ там</p>
         <div className={c.inputForm}>
           <div className={c.up}>
             <div>
@@ -201,28 +183,30 @@ const DeliveryInfo = ({city}) => {
                 }}
               />  
               <span className={active.fifth ? c.active : null}>Город</span>
-              {
-                activeRes ?
-                  <div className={c.cityRes}>
-                    {
-                      cityResult?.map((item, i) => (
-                        <div
-                          key={i}
-                          onClick={() => {
-                            setCityName(item.city)
-                            setActiveRes(false)
-                          }}
-                        >
-                          <p>
-                            {item.city}
-                          </p>
-                          <span></span>
-                        </div>
-                      ))
-                    }
-                  </div> :
-                null
-              }
+              <div>
+                {
+                  activeRes ?
+                    <div className={c.cityRes}>
+                      {
+                        cityResult?.map((item, i) => (
+                          <div
+                            key={i}
+                            onClick={() => {
+                              setCityName(item.city)
+                              setActiveRes(false)
+                            }}
+                          >
+                            <p>
+                              {item.city}
+                            </p>
+                            <span></span>
+                          </div>
+                        ))
+                      }
+                    </div> :
+                  null
+                }
+              </div>
             </div>
             <div>
               <input 
@@ -231,7 +215,6 @@ const DeliveryInfo = ({city}) => {
                 value={streetName}
                 onChange={e => {
                   setStreetName(e.target.value)
-                  searchStreet(e.target.value)
                   setActive2({
                     ...active==false,
                     sixth: true
@@ -241,7 +224,6 @@ const DeliveryInfo = ({city}) => {
                       ...active,
                       sixth: true
                     })
-                    searchStreet()
                     setActiveResStreet(true)
                   }else{
                     setActive({
@@ -254,19 +236,19 @@ const DeliveryInfo = ({city}) => {
               />  
               <span className={active.sixth ? c.active : null}>Название улицы и номер дома </span>
               {
-                activeResStreet && streetResult?.length !== 0 ?
+                activeResStreet ?
                   <div className={c.cityRes}>
                     {
                       streetResult?.map((item, i) => (
                         <div
                           key={i}
                           onClick={() => {
-                            setStreetName(item.value)
+                            setStreetName(item.name)
                             setActiveResStreet(false)
                           }}
                         >
                           <p>
-                            {item.value.length > 30 ? `${item.value.slice(0, 30)}...` : item.value}
+                            {item.name.length > 30 ? `${item.name.slice(0, 30)}...` : item.name}
                           </p>
                           <span></span>
                         </div>

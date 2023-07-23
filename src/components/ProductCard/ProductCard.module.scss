@@ -58,8 +58,8 @@
       color: #FFF;
       font-size: 32px;
       font-style: normal;
-      font-weight: 800;
-      line-height: 32px;
+      line-height: 32px;          
+      font-family: 'Onest Bold';
       z-index: 2;
     }
 
@@ -84,8 +84,8 @@
         color: #FFF;
         font-size: 24px;
         font-style: normal;
-        font-weight: 700;
         line-height: 32px;
+        font-family: 'Onest Medium';
         @media (max-width: 790px){
           font-size: 20px;
           line-height: 25px;
@@ -115,8 +115,8 @@
         color: #FFF;
         font-size: 20px;
         font-style: normal;
-        font-weight: 700;
         line-height: 32px;
+        font-family: 'Onest Medium';
         margin: 0;
         @media (max-width: 425px){
           font-size: 16px;

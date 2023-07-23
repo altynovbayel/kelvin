@@ -57,7 +57,7 @@ const CartCard = ({id, image, title, size, price, count, obj}) => {
             </div>
             <div className={c.right}>
                 <div className={c.up}>
-                    <h3>
+                    <h3 >
                         {
                             title.length > 56 ? 
                             `${title.slice(0, 56)}...` : 

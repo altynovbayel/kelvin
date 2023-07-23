@@ -127,8 +127,8 @@
       background: rgba($color: white, $alpha: 10%);
       color: white;
       font-size: 16px;
-      font-weight: bold;
-      border: 1px solid none;
+      font-family: 'Onest Bold';
+      letter-spacing: 1px;
       border-radius: 50px;
       border: 0;
       outline: 0;
@@ -164,7 +164,7 @@
       background-color: white;
       color: #141212;
       font-size: 16px;
-      font-weight: bold;
+      font-family: 'Onest Bold';
       border: 0;
       cursor: pointer;
       &.success{

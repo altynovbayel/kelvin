@@ -1,10 +1,12 @@
 .container{
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   .make{
     width: 100%;
+    height: auto;
     max-width: 1116px;
     margin: 12px 0;
     display: flex;
@@ -15,6 +17,7 @@
     } 
     .left{
       width: 100%;
+      height: auto;
       display: flex;
       align-items: flex-start;
       flex-direction: column;
@@ -122,6 +125,7 @@
       display: flex;
       align-items: flex-start;
       flex-direction: column;
+      height: auto;
       @media (max-width: 1242px) {
         width: 100%;
         align-items: center;

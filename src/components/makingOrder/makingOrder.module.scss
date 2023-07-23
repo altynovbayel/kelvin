@@ -36,9 +36,9 @@
         border-radius: 50px;
         background: #13ED29;
         color: #141212;
-        font-weight: bold;
         border: 0;
         font-size: 16px;
+        font-family: 'Onest Bold';
         cursor: pointer;
         margin-bottom: 24px;
         @media (max-width: 1268px) {
@@ -102,6 +102,7 @@
             color: white;
             display: flex;
             align-items: center;
+            font-family: 'Onest Bold';
             justify-content: space-between;
             font-weight: 550;
             @media (max-width: 500px) {
@@ -111,7 +112,7 @@
                 font-size: 18px;
             }
             span{
-                font-weight: 500;
+                font-family: 'Onest Medium';
             }
         }
     }
