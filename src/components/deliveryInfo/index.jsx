@@ -336,7 +336,7 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
               <span className={active.ninth ? c.active : null}>Индекс </span>
             </div>
             <div className={c.comment_div}>
-              <textarea 
+              <input 
                 type="text"
                 id={c.comment}
                 className={active2.tenth ? c.active_comment : c.comment}
@@ -358,7 +358,7 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
                   }
                 }}
               />  
-              <span className={active.tenth ? c.active_text : c.comment_text}>Комментарий к заказу </span>
+              <span className={active.tenth ? c.active : ''}>Комментарий к заказу </span>
             </div>
           </div>
         </div>

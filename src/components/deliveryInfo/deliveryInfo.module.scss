@@ -383,11 +383,11 @@
             width: 95%;
           }
           #comment{
-            width: 95%;
-            height: 86px;
+            width: 97%;
+            height: 32px;
             outline: none;
-            padding: 0 16px;
-            padding-top: 24px;
+            padding: 0 12px;
+            padding-top: 14px;
             background: rgba($color: white, $alpha: 5%);
             border-radius: 12px;
             font-size: 14px;
@@ -396,18 +396,21 @@
             transition: .2s;
             border: 1px solid rgba($color: white, $alpha: 0%);
             visibility: visible;
-            @media (max-width: 1240px) {
-              width: 93%;
+            @media (max-width: 1230px) {
+              width: 94%;
             }
-            @media (max-width: 500px) {
-              width: 311px;
+            @media (max-width: 904px) {
+              width: 95%;
             }
-            @media (max-width: 375px) {
-              width: 277px;
+            @media (max-width: 710px) {
+              width: 97%;
             }
-            @media (max-width: 320px) {
-              width: 235px;
-            } 
+            @media (max-width: 636px) {
+              width: 100%;
+            }
+            @media (max-width: 590px) {
+              width: 95%;
+            }
             &:focus{
               border: 1px solid white;
               transition: .3s;
@@ -422,10 +425,10 @@
               border: 1px solid white;
             }
           }
-          .comment_text{
+          span{
             position: absolute;
-            left: 16px;
-            top: 20px;
+            left: 12px;
+            top: 50%;
             transform: translateY(-50%);
             color: rgba($color: white, $alpha: 60%);
             font-size: 14px;
@@ -433,16 +436,16 @@
             line-height: 18px;
             transition: .3s;
             pointer-events: none;
-          }
-          .active_text{
-            transform: translateY(-32%);
-            position: absolute;
-            left: 16px;
-            top: 14px;
-            font-size: 11px;
-            color: rgba($color: white, $alpha: 60%);
-            line-height: 18px;
-            transition: .3s;
+            &.active{
+              transform: translateY(-32%);
+              position: absolute;
+              left: 13px;
+              top: 14px;
+              font-size: 11px;
+              color: rgba($color: white, $alpha: 60%);
+              line-height: 18px;
+              transition: .3s;
+            }
           }
         }
       }
