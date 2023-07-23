@@ -69,6 +69,8 @@ const More = () => {
   }, [dep])
   
   React.useEffect(() => ScrollTop(), [])
+
+  const width = window.innerWidth
   
   
   if (!product) return <h1>Loading...</h1>
@@ -77,7 +79,7 @@ const More = () => {
       <div className={c.container}>
         <div className={c.pages}>
           <h3>
-            <span><p className={c.home} onClick={() => navigate('/')}><BiHome /></p> <span>/</span> <p onClick={() => navigate('/products/')}>Все товары</p> <span>/</span></span> {product?.title}
+            <span><p className={c.home} onClick={() => navigate('/')}><BiHome /></p> <span>/</span> <p onClick={() => navigate('/products/')}>Все товары</p> <span>/</span></span> { width < 500 || product?.title?.length < 16 ? `${product?.title?.slice(0, 16)}...` : product?.title }
           </h3>
         </div>
         <div className={c.cont}>
@@ -156,10 +158,6 @@ const More = () => {
             <div className={c.size}>
               <div className={c.choose_size}>
                 <div className={c.choose}>Выберите размер</div>
-                <div className={c.setka}>
-                  <img src={setka} alt=""/>
-                  <span>Сетка размеров</span>
-                </div>
               </div>
               <div className={c.dropdown}>
                 <div

@@ -16,7 +16,10 @@
 
   .container{
     .pages{
-      margin-left: 44px;
+      @media (max-width:768px) {
+        display: flex;
+        justify-content: center;
+      }
       h3{
         color: white;
         display: flex;
@@ -257,7 +260,7 @@
               color: #FFF;
               font-size: 32px;
               font-style: normal;
-              font-family: 'Onest Medium';
+              font-family: 'Onest Regular';
               font-weight: 600;
               line-height: 40px;
               margin: 0;
