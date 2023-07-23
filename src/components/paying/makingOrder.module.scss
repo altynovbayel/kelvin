@@ -37,7 +37,8 @@
             display: none;
             align-items: center;
             justify-content: space-between;
-            font-family: 'Onest Bold';
+            font-weight: 600;
+            font-family: 'Onest Medium';
             @media (max-width: 320px) {
                 font-size: 16px;
             }
@@ -53,12 +54,12 @@
             border-radius: 50px;
             background: #13ED29;
             color: #141212;
-            font-weight: bold;
+            font-weight: 600;
+            font-family: 'Onest Medium';
             border: 0;
             font-size: 16px;
             cursor: pointer;
             margin-bottom: 24px;
-            font-family: 'Onest Bold';
             @media (max-width: 1242px) {
                 width: 100%;
                 margin-bottom: 0;

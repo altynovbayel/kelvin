@@ -23,6 +23,7 @@
         align-items: center;
         font-family: 'Onest Regular';
         font-weight: 500;
+        font-size: 14px;
         span{
           display: flex;
           align-items: center;
@@ -256,7 +257,8 @@
               color: #FFF;
               font-size: 32px;
               font-style: normal;
-              font-family: 'Onest Bold';
+              font-family: 'Onest Medium';
+              font-weight: 600;
               line-height: 40px;
               margin: 0;
               padding: 0;
@@ -395,6 +397,7 @@
                 h3 {
                   color: white;
                   font-weight: 600;
+                  font-family: 'Onest Regular';
                   font-size: 20px;
                   margin-left: 8px;
                   margin: 0;
@@ -536,7 +539,7 @@
                 font-style: normal;
                 line-height: 24px;
                 font-family: 'Onest Medium';
-  
+                font-weight: 500;
                 span {
                   color: rgba(255, 255, 255, 0.60);
                 }
@@ -598,8 +601,9 @@
                 color: #FFF;
                 font-size: 20px;
                 font-style: normal;
-                font-weight: 700;
                 line-height: 32px;
+                font-family: 'Onest Regular';
+                font-weight: 600;
               }
             }
           }
@@ -642,8 +646,8 @@
             font-style: normal;
             line-height: 24px;
             margin-bottom: 8px;
-            font-family: 'Onest Medium';
-  
+            font-family: 'Onest Regular';
+            font-weight: 500;
             @media (max-width: 1024px) {
               font-size: 16px;
               line-height: 20px;
@@ -664,7 +668,7 @@
             font-style: normal;
             line-height: 24px;
             font-family: 'Onest Medium';
-  
+            font-weight: 500;
             @media (max-width: 1024px) {
               font-size: 16px;
               line-height: 20px;
