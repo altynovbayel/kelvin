@@ -7,10 +7,15 @@ import { motion } from 'framer-motion'
 
 const Main = () => {
   const [ scrollPixel, setScrollPixel ] = React.useState(0)
+  const [screenWidth, setScreenWidth] = React.useState(0)
 
   window.onscroll = () => {
     setScrollPixel(window.scrollY); // Value of scroll Y in px
   };
+
+  React.useEffect(() => {
+    setScreenWidth(window.innerWidth)
+  })
 
   return (
     <div className={c.container}>
@@ -19,7 +24,7 @@ const Main = () => {
         <div
           style={{
             position: 'relative',
-            top: `-${scrollPixel+400}px`
+            top: screenWidth <= 425 ? 0 : `-${scrollPixel+400}px`
           }} 
           className={c.scroll}
           >
