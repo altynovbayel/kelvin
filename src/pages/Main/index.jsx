@@ -33,7 +33,7 @@ const Main = () => {
           <Components.Brand/>
           <Components.Products/>
           <Components.Facts/>
-          <Components.Logo/>
+          {/* <Components.Logo/> */}
         </div>
         
       </div>

@@ -66,6 +66,9 @@
   }
   @media (max-width: 500px) {
     position: static;
+    width: 480px;
+  }
+  @media (max-width: 428px) {
     width: 377px;
   }
   @media (max-width: 375px) {

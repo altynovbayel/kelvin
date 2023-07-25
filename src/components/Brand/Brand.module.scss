@@ -7,8 +7,10 @@
     max-width: 100%;
     margin: 0 auto;
     position: relative;
-
     @media (max-width: 500px) {
+      width: 480px;
+    }
+    @media (max-width: 428px) {
       width: 377px;
     }
     @media (max-width: 375px) {

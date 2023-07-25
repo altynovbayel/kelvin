@@ -79,7 +79,7 @@ const More = () => {
       <div className={c.container}>
         <div className={c.pages}>
           <h3>
-            <span><p className={c.home} onClick={() => navigate('/')}><BiHome /></p> <span>/</span> <p onClick={() => navigate('/products/')}>Все товары</p> <span>/</span></span> { width < 500 || product?.title?.length < 16 ? `${product?.title?.slice(0, 16)}...` : product?.title }
+            <span><p className={c.home} onClick={() => navigate('/')}><BiHome /></p> <span>/</span> <p onClick={() => navigate('/products/')}>Все товары</p> <span>/</span></span> { width < 500 || product?.title?.length > 16 ? `${product?.title?.slice(0, 16)}...` : product?.title }
           </h3>
         </div>
         <div className={c.cont}>
