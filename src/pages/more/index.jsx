@@ -28,7 +28,6 @@ const More = () => {
   const [choosenSize, setChoosenSize] = React.useState(0)
   
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
-  const cartOne = JSON.parse(localStorage.getItem('kelvin_cart_one'))
   const check = cart?.find(item => item?.id === product?.id)
   const index = cart?.findIndex(obj => obj.id === product?.id);
   
@@ -38,6 +37,7 @@ const More = () => {
   }
   const postToCartOne = () => {
     localStorage.setItem('kelvin_cart_one', JSON.stringify([]))
+    const cartOne = JSON.parse(localStorage.getItem('kelvin_cart_one'))
     cartOne?.push({...product, count: 1, image: product.product_images})
     localStorage.setItem('kelvin_cart_one', JSON.stringify(cartOne))
     navigate('/oneClick/')

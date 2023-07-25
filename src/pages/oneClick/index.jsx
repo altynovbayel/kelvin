@@ -5,8 +5,9 @@ import OrderCard from './orderCard'
 import { API } from '../../api'
 import DeliveryInfo from '../../components/deliveryInfo'
 import { useNavigate } from 'react-router-dom'
+import { useClickAway } from '@uidotdev/usehooks'
   
-const OneClick = () => {
+const Order = () => {
   const [ cart, setCart ] = React.useState(null)
   const [ summa, setSumma ] = React.useState(null)
   const [ discount, setDiscount ] = React.useState(0)
@@ -28,6 +29,18 @@ const OneClick = () => {
     }, 100);
   }, [dep])
 
+  const [ active2, setActive2 ] = React.useState({
+    first: false,
+    second: false,
+    third: false,
+    fourth: false,
+    fifth: false,
+    sixth: false,
+    seventh: false,
+    eighth: false,
+    ninth: false,
+    tenth: false,
+  })
 
   React.useEffect(() => {
     API.getCity().then(r => setCityName(r.data))
@@ -35,19 +48,37 @@ const OneClick = () => {
 
   const navigate = useNavigate()
 
+
+  const ref = useClickAway(() => {
+    setActive2({
+      first: false,
+      second: false,
+      third: false,
+      fourth: false,
+      fifth: false,
+      sixth: false,
+      seventh: false,
+      eighth: false,
+      ninth: false,
+      tenth: false 
+    })
+  });
+
+
   
+  const width = window.innerWidth
   return (
-    <div className={c.container}>
+    <div className={c.container} ref={ref}>
       <Components.Title text={'оформление заказа'}/>
       <div className={c.make}>
         <div className={c.left}>
+          <DeliveryInfo city={cityName} active2={active2} setActive2={setActive2}/>
           <Components.Delivering />
-          <DeliveryInfo city={cityName}/>
           <div className={c.goods}>
             <h1>Мои товары</h1>
             <div className={c.cards}>
               {
-                cart?.length !== 0 ?
+                cart?.length !== 0 || !cart ?
                 cart?.map((item, i) => (
                   <OrderCard
                     key={i}
@@ -80,8 +111,9 @@ const OneClick = () => {
           <Components.Promocode />  
         </div>
       </div>
+      {width <= 500 ? <Components.Policy /> : ''}
     </div>
   )
 }
 
-export default OneClick
+export default Order

@@ -3,7 +3,7 @@ import c from './cartCard.module.scss'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 
-const OrderClickCard = ({id, image, title, size, price, count, obj}) => {
+const OrderCard = ({id, image, title, size, price, count, obj}) => {
     const [ active, setActive ] = React.useState(false)
     const [ activeCart, setActiveCart ] = React.useState(false)
     const [ dep, setDep ] = React.useState('')
@@ -31,11 +31,7 @@ const OrderClickCard = ({id, image, title, size, price, count, obj}) => {
     }  
 
     const deleteItem = () => {
-        const index = cart?.findIndex(item => item.id === obj.id);
-        if (index !== -1) {
-          cart?.splice(index, 1);
-        }
-        localStorage.setItem('kelvin_cart_one', JSON.stringify(cart));
+        localStorage.setItem('kelvin_cart_one', JSON.stringify([]));
     }
       
     const navigate = useNavigate()
@@ -123,10 +119,14 @@ const OrderClickCard = ({id, image, title, size, price, count, obj}) => {
                 </button>
                 
             </div>
-         
+            <p
+                onClick={() => deleteItem()}
+            >
+                Удалить
+            </p>
         </div>
     </div>
   )
 }
 
-export default OrderClickCard
+export default OrderCard
