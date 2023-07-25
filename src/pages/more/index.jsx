@@ -3,24 +3,20 @@ import c from './more.module.scss'
 import {useNavigate, useParams} from 'react-router-dom'
 import {BsCircleFill} from 'react-icons/bs'
 import {GetSingleProducts, ScrollTop} from '../../helpers'
-import setka from '../../img/setka.svg'
 import model from '../../img/model.svg'
 import {IoIosArrowDown} from 'react-icons/io'
-import {Swiper, SwiperSlide} from 'swiper/react'
-import {Navigation, Pagination} from 'swiper/modules';
-import {HiMinusSm, HiPlus} from 'react-icons/hi'
-import checkImg from '../../img/check.svg'
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import { BiHome, BiSolidChevronDown } from 'react-icons/bi'
+import AddToCart from './components/AddToCartBtn'
+import ModileSlider from './components/MobileSlider'
+import Slider from './components/Slider'
+import checkImg from '../../img/check.svg'
+import SizeSlider from './components/SizeSlider'
+
 
 const More = () => {
   const {id} = useParams()
   const {product} = GetSingleProducts(id)
   const navigate = useNavigate()
-  const navigateToCart = () => navigate(`/cart/`)
   
   const [activeDropdown, setActiveDropdown] = React.useState(false)
   const [activeImg, setActiveImg] = React.useState(0)
@@ -31,34 +27,12 @@ const More = () => {
   const check = cart?.find(item => item?.id === product?.id)
   const index = cart?.findIndex(obj => obj.id === product?.id);
   
-  const postToCart = () => {
-    cart?.push({...product, count: 1, image: product.product_images})
-    localStorage.setItem('kelvin_cart', JSON.stringify(cart))
-  }
   const postToCartOne = () => {
     localStorage.setItem('kelvin_cart_one', JSON.stringify([]))
     const cartOne = JSON.parse(localStorage.getItem('kelvin_cart_one'))
     cartOne?.push({...product, count: 1, image: product.product_images})
     localStorage.setItem('kelvin_cart_one', JSON.stringify(cartOne))
     navigate('/oneClick/')
-  }
-  
-  const increment = () => {
-    !check ? cart?.push({...product, count: 1}) : cart[index].count = cart[index].count + 1;
-    localStorage.setItem('kelvin_cart', JSON.stringify(cart))
-  }
-  
-  const decrement = () => {
-    !check ? cart?.push({...product, count: 1}) : cart[index].count = cart[index].count - 1;
-    localStorage.setItem('kelvin_cart', JSON.stringify(cart))
-  }
-  
-  const deleteItem = () => {
-    const index = cart?.findIndex(item => item.id === product.id);
-    if (index !== -1) {
-      cart?.splice(index, 1);
-    }
-    localStorage.setItem('kelvin_cart', JSON.stringify(cart));
   }
   
   React.useEffect(() => {
@@ -79,31 +53,22 @@ const More = () => {
       <div className={c.container}>
         <div className={c.pages}>
           <h3>
-            <span><p className={c.home} onClick={() => navigate('/')}><BiHome /></p> <span>/</span> <p onClick={() => navigate('/products/')}>Все товары</p> <span>/</span></span> { width < 500 || product?.title?.length > 16 ? `${product?.title?.slice(0, 16)}...` : product?.title }
+            <span>
+              <p className={c.home} onClick={() => navigate('/')}>
+                <BiHome />
+              </p> 
+              <span>/</span> 
+              <p onClick={() => navigate('/products/')}>
+                Все товары
+              </p> 
+              <span>/</span>
+            </span>{ width < 500 || product?.title?.length > 16 ? `${product?.title?.slice(0, 16)}...` : product?.title }
           </h3>
         </div>
+
         <div className={c.cont}>
           <div className={c.slider}>
-            <Swiper
-              direction={'vertical'}
-              slidesPerView={3}
-              navigation={
-                {
-                  prevEl: '.swiper-button-prev',
-                  nextEl: '.swiper-button-next',
-                }
-              }
-              modules={[Navigation]}
-              className={c.my_swiper}
-            >
-              {
-                product?.product_images.map((item, key) => (
-                  <SwiperSlide key={item.id}>
-                    <img className={c.slide_img} src={item.image} alt="" onClick={() => setActiveImg(key)}/>
-                  </SwiperSlide>
-                ))
-              }
-            </Swiper>
+            <Slider product={product} setActiveImg={setActiveImg}/>
             <div className="slider-buttons">
               <button className="swiper-button-prev"></button>
               <button className="swiper-button-next"></button>
@@ -115,20 +80,7 @@ const More = () => {
           </div>
           
           <div className={c.mobile_slider}>
-            <Swiper
-              pagination={true}
-              modules={[Pagination]}
-              className={c.mobile_my_swiper}
-              spaceBetween={30}
-            >
-              {
-                product?.product_images.map(item => (
-                  <SwiperSlide key={item.id}>
-                    <img className={c.mobile_slide_img} src={item.image} alt=""/>
-                  </SwiperSlide>
-                ))
-              }
-            </Swiper>
+            <ModileSlider product={product}/>
           </div>
           
           <div className={c.info}>
@@ -142,6 +94,7 @@ const More = () => {
               </div>
             
             </div>
+
             <div className={c.price}>
               <h1>
                 {
@@ -155,10 +108,12 @@ const More = () => {
                 } ₽
               </h1>
             </div>
+
             <div className={c.size}>
               <div className={c.choose_size}>
                 <div className={c.choose}>Выберите размер</div>
               </div>
+
               <div className={c.dropdown}>
                 <div
                   onClick={() => {
@@ -174,10 +129,13 @@ const More = () => {
                     </span>
                   </div>
                 </div>
-                {/* {activeDropdown ? <div className={c.line}></div> : null} */}
+                
                 <div 
                   className={activeDropdown ? c.active : c.disactive}
-                  style={{height: `${activeDropdown ? product?.product_sizes.length * 50 : 0}px`}}>
+                  style={{
+                      height: `${activeDropdown ? product?.product_sizes.length * 50 : 0}px`
+                    }}
+                  >
                   {
                     product?.product_sizes.map((item, id) => (
                       <div 
@@ -194,6 +152,13 @@ const More = () => {
                   }
                 </div>
               </div>
+              <div className={c.size_slider}>
+                <SizeSlider 
+                  product={product} 
+                  setChoosenSize={setChoosenSize} 
+                  choosenSize={choosenSize}
+                />
+              </div>
               <div className={c.model}>
                 <div className={c.model_text}>
                   <img src={model} alt=""/>
@@ -203,24 +168,18 @@ const More = () => {
                 </div>
               </div>
             </div>
+
             <div className={c.buttons}>
+              
               {
-                !check ? <button className={c.add_to_cart} onClick={postToCart}>Добавить в корзину</button>
-                  : <div className={c.go_to_cart}>
-                    <button onClick={navigateToCart}>Перейти в корзину</button>
-                    <div className={c.counter}>
-                      <button onClick={() => check.count === 1 ? deleteItem() : decrement()}>
-                        <HiMinusSm/>
-                      </button>
-                      <span>{check.count}</span>
-                      <button onClick={increment}>
-                        <HiPlus/>
-                      </button>
-                    </div>
-                  </div>
+                width >= 768 ? <AddToCart product={product}/> : ''
               }
-              <button className={c.buy} onClick={() => postToCartOne()}>Купить в один клик</button>
+
+              <button className={c.buy} onClick={() => postToCartOne()}>
+                Купить в один клик
+              </button>
             </div>
+
             <div className={c.consist}>
               <p>
                 92% хлопок, 8% лайкра
@@ -229,6 +188,7 @@ const More = () => {
                 Плотность ткани: 240 гр/м
               </p>
             </div>
+
             <div className={c.delivery_info}>
               <div>
                 Информация о доставке
@@ -236,6 +196,11 @@ const More = () => {
               <span>
                 <IoIosArrowDown/>
               </span>
+            </div>
+            <div className={c.add_to_cart_mob}>
+              {
+                width < 768 ? <AddToCart product={product}/> : ''
+              }
             </div>
           </div>
         </div>
