@@ -20,6 +20,9 @@
         display: flex;
         justify-content: center;
       }
+      @media (max-width:500px) {
+        display: none;
+      }
       h3{
         color: white;
         display: flex;
