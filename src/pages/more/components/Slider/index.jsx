@@ -28,6 +28,10 @@ const Slider = ({product, setActiveImg}) => {
           ))
         }
       </Swiper>
+      <div className="slider-buttons">
+        <button className="swiper-button-prev"></button>
+        <button className="swiper-button-next"></button>
+      </div>
     </>
   )
 }
