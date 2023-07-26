@@ -69,10 +69,7 @@ const More = () => {
         <div className={c.cont}>
           <div className={c.slider}>
             <Slider product={product} setActiveImg={setActiveImg}/>
-            <div className="slider-buttons">
-              <button className="swiper-button-prev"></button>
-              <button className="swiper-button-next"></button>
-            </div>
+            
           </div>
           
           <div className={c.active_img}>
