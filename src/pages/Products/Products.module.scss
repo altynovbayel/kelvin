@@ -28,12 +28,20 @@
       gap: 140px;
     }
 
+    @media (max-width: 500px) {
+      gap: 40px;
+    }
+
     @media (max-width: 320px) {
       gap: 50px;
     }
 
     >div:nth-child(even) {
       margin-top: 50px;
+
+      @media (max-width: 500px) {
+        margin-top: 0;
+      }
     }
   }
 }
