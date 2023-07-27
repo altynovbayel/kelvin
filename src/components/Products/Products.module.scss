@@ -41,7 +41,7 @@
     >div:nth-child(even) {
       margin-top: 50px;
 
-      @media (max-width: 425px) {
+      @media (max-width: 500px) {
         margin-top: 0;
       }
     }
