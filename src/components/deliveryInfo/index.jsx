@@ -8,11 +8,8 @@ import { API } from '../../api';
 const DeliveryInfo = ({city, streets, active2, setActive2}) => {
   const [cityName, setCityName] = React.useState('')
   const [streetName, setStreetName] = React.useState('')
-  const [cityResult, setCityResult] = React.useState('')
   const [streetResult, setStreetResult] = React.useState(null)
-  const [ activeRes, setActiveRes ] = React.useState(false)
   const [ activeResStreet, setActiveResStreet ] = React.useState(false)
-  const [ dep, setDep ] = React.useState(0)
 
   const [ active, setActive ] = React.useState({
     first: false,
@@ -26,7 +23,6 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
     ninth: false,
     tenth: false,
   })
-
   
   
   const PhoneMask = "+{7} (000) 000-00-00";
@@ -35,12 +31,6 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
       mask: PhoneMask,
     }
   ];
-
-  React.useEffect(() => {
-    const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
-    setCityResult(citySearch)
-  }, [cityName])
-
   return (
     <div className={c.deliveryInfo}>
       <h3>Ваши данные для доставки</h3>
@@ -164,44 +154,20 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
                   })
                   if(e.target.value.length !== 0 ){
                     setActive({
-                      ...active == false,
+                      ...active,
                       fifth: true
                     })
-                    setActiveRes(true)
                   }else{
                     setActive({
                       ...active,
                       fifth: false
                     })
-                    setActiveRes(false)
+            
                   }
+
                 }}
               />  
               <span className={active.fifth ? c.active : null}>Город</span>
-              <div>
-                {
-                  activeRes ?
-                    <div className={c.cityRes}>
-                      {
-                        cityResult?.map((item, i) => (
-                          <div
-                            key={i}
-                            onClick={() => {
-                              setCityName(item.city)
-                              setActiveRes(false)
-                            }}
-                          >
-                            <p>
-                              {item.city}
-                            </p>
-                            <span></span>
-                          </div>
-                        ))
-                      }
-                    </div> :
-                  null
-                }
-              </div>
             </div>
             <div>
               <input 

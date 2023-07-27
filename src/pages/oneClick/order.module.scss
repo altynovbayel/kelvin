@@ -29,6 +29,8 @@
       
       .goods{
         width: 95%;
+        display: flex;
+        align-items: center;
         @media (max-width: 1236px) {
           width: 100%;
         } 
@@ -54,8 +56,8 @@
           color: white;
           font-size: 32px;
           margin: 24px 0;
-          font-family: 'Onest Bold';
-          font-weight: 800;
+          font-weight: 600;
+          font-family: 'Onest Medium';
           @media (max-width: 500px) {
             font-size: 20px;
           }

@@ -30,11 +30,12 @@
       color: #fff;
       font-size: 81px;
       font-family: 'Onest Regular';
-      font-weight: 500;
+      font-weight: 600;
       line-height: 88px;
       margin: 0;
       margin-top: 24px;
       margin-bottom: 46px;
+      letter-spacing: -1px;
 
       @media (max-width: 1366px) {
         font-size: 65px;
@@ -97,6 +98,7 @@
       position: absolute;
       // top: 25%;
       width: 95%;
+      transform: scale(1.4);
       // margin-top: 100px;
 
       @media (max-width: 1366px) {

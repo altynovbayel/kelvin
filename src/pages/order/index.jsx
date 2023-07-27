@@ -67,10 +67,10 @@ const Order = () => {
   
   const width = window.innerWidth
   return (
-    <div className={c.container} ref={ref}>
+    <div className={c.container}>
       <Components.Title text={'оформление заказа'}/>
-      <div className={c.make}>
-        <div className={c.left}>
+      <div className={c.make} ref={ref}>
+        <div className={c.left} ref={ref}>
           <DeliveryInfo city={cityName} active2={active2} setActive2={setActive2}/>
           <Components.Delivering />
           <div className={c.goods}>
@@ -100,7 +100,7 @@ const Order = () => {
             </div>
           </div>
         </div>
-        <div className={c.right}>
+        <div className={c.right} ref={ref}>
           <Components.Paying 
             summa={summa}
             summaWithDelivering={deliverType === 'mail' ? summa : String(Number(summa) + 340)}
