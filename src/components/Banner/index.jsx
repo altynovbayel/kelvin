@@ -1,6 +1,6 @@
 import React from 'react'
 import c from './Banner.module.scss'
-import banner from '../../img/banner-2.svg'
+import banner from '../../img/banner-3.svg'
 import { useViewportScroll, motion, useTransform } from 'framer-motion';
 
 
@@ -27,11 +27,11 @@ const Banner = () => {
       className={c.banner}
     >
       <div className={c.top_text}>
-        <h1>
+        <p>
           БРЕНД КОТОРЫЙ
           <br />
           ИЗМЕНИТ ВСЁ <span></span>
-        </h1>
+        </p>
       </div>
       <div className={c.banner_title}>
         <div className={c.banner_subtitle}>

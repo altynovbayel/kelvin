@@ -3,8 +3,9 @@ import c from './ProductCard.module.scss'
 import arrow from '../../img/arrow-right.svg'
 import arrowActive from '../../img/arrow-right-active.svg'
 import { useNavigate } from 'react-router-dom'
+import SizeModal from '../SizeModal'
 
-const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
+const ProductCard = ({id, image, title, setModal, price, obj, setProductId, choosenSize}) => {
   const [ dep, setDep ] = React.useState('')
   const navigate =  useNavigate()
 
@@ -24,6 +25,11 @@ const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
     localStorage.setItem('kelvin_cart', JSON.stringify(cart))
   }
 
+  const chooseSize = () => {
+    setProductId(obj?.id)
+    setModal(true)
+  }
+
   return (
     <div className={c.card}>
       <div className={c.card_inner} onClick={() => navigate(`/more/${id}`)}>
@@ -33,7 +39,7 @@ const ProductCard = ({id, image, title, defaultPrice, price, obj}) => {
       <div className={c.card_down}>
         <div className={c.card_btn}>
           <button
-            onClick={() => check?.id === id ? navigate('/order/') : postToCart()}
+            onClick={() => check?.id === id ? navigate('/order/') : chooseSize()}
             className={check?.id === id ? c.added : ''}
           >
             {check?.id === id ? 'Добавлено в корзину' : 'Добавить в корзину'}

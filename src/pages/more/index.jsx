@@ -10,7 +10,7 @@ import AddToCart from './components/AddToCartBtn'
 import ModileSlider from './components/MobileSlider'
 import Slider from './components/Slider'
 import checkImg from '../../img/check.svg'
-import SizeSlider from './components/SizeSlider'
+import SizeSlider from '../../components/SizeSlider'
 
 
 const More = () => {
