@@ -40,6 +40,7 @@ const OrderCard = ({id, image, title, size, price, count, obj}) => {
       
     const navigate = useNavigate()
 
+
   return (
     <div className={c.card}>
         
