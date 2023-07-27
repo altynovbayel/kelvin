@@ -36,10 +36,10 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
     }
   ];
 
-  React.useEffect(() => {
-    const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
-    setCityResult(citySearch)
-  }, [cityName])
+  // React.useEffect(() => {
+  //   const citySearch = city?.filter(item => item.city.toLowerCase().includes(cityName.toLowerCase()))
+  //   setCityResult(citySearch)
+  // }, [cityName])
 
   return (
     <div className={c.deliveryInfo}>
@@ -147,7 +147,7 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
       </form>
       <div className={c.address}>
         <h3>Адрес доставки</h3>
-        <p className={c.parag}>Выберите удобное отделение почты для вас и заберите свой заказ там</p>
+        {/* <p className={c.parag}>Выберите удобное отделение почты для вас и заберите свой заказ там</p> */}
         <div className={c.inputForm}>
           <div className={c.up}>
             <div>

@@ -186,14 +186,14 @@ const More = () => {
               </p>
             </div>
 
-            <div className={c.delivery_info}>
+            {/* <div className={c.delivery_info}>
               <div>
                 Информация о доставке
               </div>
               <span>
                 <IoIosArrowDown/>
               </span>
-            </div>
+            </div> */}
             <div className={c.add_to_cart_mob}>
               {
                 width < 768 ? <AddToCart product={product}/> : ''

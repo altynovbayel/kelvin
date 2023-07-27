@@ -39,7 +39,7 @@ const ProductCard = ({id, image, title, setModal, price, obj, setProductId, choo
       <div className={c.card_down}>
         <div className={c.card_btn}>
           <button
-            onClick={() => check?.id === id ? navigate('/order/') : chooseSize()}
+            onClick={() => check?.id === id ? navigate('/cart/') : chooseSize()}
             className={check?.id === id ? c.added : ''}
           >
             {check?.id === id ? 'Добавлено в корзину' : 'Добавить в корзину'}
