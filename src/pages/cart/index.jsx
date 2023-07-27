@@ -32,7 +32,7 @@ const Cart = () => {
                   id={item.id}
                   image={item.product_images[0].image}
                   title={item.title}
-                  size={item.size}
+                  size={item.choosenSize}
                   price={item.price}
                   count={item.count}
                   obj={item}
