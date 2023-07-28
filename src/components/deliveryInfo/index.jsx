@@ -137,7 +137,7 @@ const DeliveryInfo = ({city, streets, active2, setActive2}) => {
       </form>
       <div className={c.address}>
         <h3>Адрес доставки</h3>
-        <p className={c.parag}>Выберите удобное отделение почты для вас и заберите свой заказ там</p>
+        {/* <p className={c.parag}>Выберите удобное отделение почты для вас и заберите свой заказ там</p> */}
         <div className={c.inputForm}>
           <div className={c.up}>
             <div>

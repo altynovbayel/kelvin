@@ -1,6 +1,5 @@
 .go_to_cart {
   display: flex;
-  justify-content: space-between;
   gap: 8px;
 
   > button {
@@ -10,6 +9,7 @@
     font-size: 16px;
     font-style: normal;
     line-height: 32px;
+    border-radius: 32px;
     font-family: 'Onest Medium';
 
     @media (max-width: 425px) {
@@ -52,17 +52,14 @@
   }
 }
 
-// button {
-//   border-radius: 32px;
-//   height: 56px;
-//   padding: 4px 16px;
-//   font-size: 16px;
-//   font-style: normal;
-//   line-height: 32px;
-//   font-family: 'Onest Medium';
-// }
-
 .add_to_cart {
   background: #13ED29;
   color: #141212;
+  border-radius: 32px;
+  height: 56px;
+  padding: 4px 16px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 32px;
+  font-family: 'Onest Medium';
 }

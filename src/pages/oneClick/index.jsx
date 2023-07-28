@@ -1,5 +1,5 @@
 import React from 'react'
-import c from './order.module.scss'
+import c from '../order/order.module.scss'
 import { Components } from '../../components'
 import OrderCard from './orderCard'
 import { API } from '../../api'

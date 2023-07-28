@@ -3,7 +3,7 @@ import c from './AddToCart.module.scss'
 import { useNavigate } from 'react-router-dom'
 import {HiMinusSm, HiPlus} from 'react-icons/hi'
 
-const AddToCart = ({product}) => {
+const AddToCart = ({product, choosenSize}) => {
   const navigate = useNavigate()
   const navigateToCart = () => navigate(`/cart/`)
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
@@ -11,7 +11,7 @@ const AddToCart = ({product}) => {
   const index = cart?.findIndex(obj => obj.id === product?.id);
   
   const postToCart = () => {
-    cart?.push({...product, count: 1, image: product.product_images})
+    cart?.push({...product, count: 1, choosenSize: choosenSize, image: product.product_images})
     localStorage.setItem('kelvin_cart', JSON.stringify(cart))
   }
   
