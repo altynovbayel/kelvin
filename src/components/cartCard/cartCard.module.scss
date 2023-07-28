@@ -19,6 +19,7 @@
   }
 
   @media (max-width: 500px) {
+    min-width: unset;
     width: 345px;
     padding: 16px;
   }

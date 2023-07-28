@@ -30,7 +30,7 @@ const More = () => {
   const postToCartOne = () => {
     localStorage.setItem('kelvin_cart_one', JSON.stringify([]))
     const cartOne = JSON.parse(localStorage.getItem('kelvin_cart_one'))
-    cartOne?.push({...product, count: 1, image: product.product_images})
+    cartOne?.push({...product, count: 1, choosenSize: choosenSize, image: product.product_images})
     localStorage.setItem('kelvin_cart_one', JSON.stringify(cartOne))
     navigate('/oneClick/')
   }
@@ -113,7 +113,7 @@ const More = () => {
 
               <div className={c.dropdown}>
                 <div className={c.up} onClick={() => setActiveDropdown(!activeDropdown)}>  
-                  <li>{choosenSize}</li> <span><BiSolidChevronDown /></span>
+                  <li>{choosenSize}</li> <span className={ activeDropdown ? c.active_arrow : '' }><BiSolidChevronDown /></span>
                 </div>
                 <div className={c.container}>
                   <div className={activeDropdown ? c.down_active : c.down_none}>
@@ -121,7 +121,10 @@ const More = () => {
                       product.product_sizes.map((item, i) => (
                         <li
                           key={i}
-                          onClick={() => setChoosenSize(item.name)}
+                          onClick={() => {
+                            setChoosenSize(item.name)
+                            setActiveDropdown(false)
+                          }}
                           className={item.name === choosenSize ? c.active : null}
                         >
                           {item.name} <span>{choosenSize === item.name ? <img src={checkImg} alt='check' /> : null}</span>
@@ -130,7 +133,10 @@ const More = () => {
                     }
                   </div>
                 </div>
+                {/* <SizeSelect/> */}
               </div>
+
+              
 
               <div className={c.size_slider}>
                 <SizeSlider 
@@ -152,7 +158,7 @@ const More = () => {
             <div className={c.buttons}>
               
               {
-                width >= 768 ? <AddToCart product={product}/> : ''
+                width >= 768 ? <AddToCart product={product} choosenSize={choosenSize}/> : ''
               }
 
               <button className={c.buy} onClick={() => postToCartOne()}>
@@ -179,7 +185,7 @@ const More = () => {
             </div> */}
             <div className={c.add_to_cart_mob}>
               {
-                width < 768 ? <AddToCart product={product}/> : ''
+                width < 768 ? <AddToCart product={product} choosenSize={choosenSize}/> : ''
               }
             </div>
           </div>

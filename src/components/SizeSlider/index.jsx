@@ -11,7 +11,7 @@ const SizeSlider = ({product, setChoosenSize, choosenSize}) => {
       <Swiper 
         className={c.size_swiper} 
         spaceBetween={8}
-        slidesPerView={window.innerWidth <= 390 ? 3 : 4}
+        slidesPerView={window.innerWidth <= 414 ? 3 : 4}
         freeMode={true}
         modules={[FreeMode]}
         
