@@ -15,7 +15,7 @@ const SizeModalMobile = ({item_id, setModal, choosenSize, setChoosenSize}) => {
 
   const postToCart = () => {
     setModal(false)
-    !check ? cart?.push({...product, choosenSize: product?.product_sizes[choosenSize].name ,count: 1, image: product?.product_images[0].image}) : cart[index].count = cart[index].count + 1;
+    !check ? cart?.push({...product, choosenSize: choosenSize ,count: 1, image: product?.product_images[0].image}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('kelvin_cart', JSON.stringify(cart))
   }
   return (

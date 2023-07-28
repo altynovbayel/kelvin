@@ -39,8 +39,8 @@ const Banner = () => {
         </div>
 
         {
-          scrollPix > 600 ? 
-          <img src={banner} alt="kelvin" className={c.imageBanner} /> : 
+          // scrollPix > 600 ? 
+          // <img src={banner} alt="kelvin" className={c.imageBanner} /> : 
           window.innerWidth <= 500 ? 
           <img src={banner} alt="kelvin" className={c.imageBanner} /> :
           <motion.img 

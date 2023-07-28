@@ -19,7 +19,7 @@ const SizeSlider = ({product, setChoosenSize, choosenSize}) => {
         {
           product?.product_sizes?.map((item, id) => (
             <SwiperSlide key={item.id}>
-              <div className={ choosenSize === id ? `${c.active} ${c.size}` : c.size} onClick={() => setChoosenSize(id)}>
+              <div className={ choosenSize === item.name ? `${c.active} ${c.size}` : c.size} onClick={() => setChoosenSize(item.name)}>
                 <p>{item.name}</p>
               </div>
             </SwiperSlide>
