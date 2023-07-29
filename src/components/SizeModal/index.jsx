@@ -15,7 +15,7 @@ const SizeModal = ({item_id, setModal, choosenSize, setChoosenSize}) => {
 
   const postToCart = () => {
     setModal(false)
-    !check ? cart?.push({...product, choosenSize: product?.product_sizes[choosenSize].name ,count: 1, image: product?.product_images[0].image}) : cart[index].count = cart[index].count + 1;
+    !check ? cart?.push({...product, choosenSize: choosenSize ,count: 1, image: product?.product_images[0].image}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('kelvin_cart', JSON.stringify(cart))
   }
   
@@ -29,36 +29,26 @@ const SizeModal = ({item_id, setModal, choosenSize, setChoosenSize}) => {
           </span>
         </div>
         <div className={c.dropdown}>
-          <div onClick={()=> {setActiveDropdown(!activeDropdown)}}>
-            <div className={c.left}>
-              <h3>{product?.product_sizes[choosenSize].name}</h3>
-            </div>
-            <div className={c.right}>
-              <span className={ activeDropdown ? c.active_arrow : '' }>
-                <BiSolidChevronDown />
-              </span>
-            </div>
+          <div className={c.up} onClick={() => setActiveDropdown(!activeDropdown)}>  
+            <li>{choosenSize}</li> <span className={ activeDropdown ? c.active_arrow : '' }><BiSolidChevronDown /></span>
           </div>
-
-          <div 
-            className={activeDropdown ? c.active : c.disactive} 
-            style={{height: `${activeDropdown ? product?.product_sizes.length * 50 : 0}px`}}
-          >
-            {
-              product?.product_sizes.map((item, id) => (
-                <div 
-                  key={id} 
-                  className={choosenSize===id ? c.active_drop : '' } 
-                  onClick={()=> {
-                    setChoosenSize(id)
-                    setActiveDropdown(false)
-                  }}
-                >
-                  <h3>{item.name}</h3>
-                  {choosenSize === id ? <img src={checkImg} alt='' /> : ''}
-                </div>
-              ))
-            }
+          <div className={c.container}>
+            <div className={activeDropdown ? c.down_active : c.down_none}>
+              {
+                product?.product_sizes.map((item, i) => (
+                  <li
+                    key={i}
+                    onClick={() => {
+                      setChoosenSize(item.name)
+                      setActiveDropdown(false)
+                    }}
+                    className={item.name === choosenSize ? c.active : null}
+                  >
+                    {item.name} <span>{choosenSize === item.name ? <img src={checkImg} alt='check' /> : null}</span>
+                  </li>
+                ))
+              }
+            </div>
           </div>
         </div>
         <div className={c.add_btn}>
