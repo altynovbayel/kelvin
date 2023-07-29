@@ -133,7 +133,6 @@ const More = () => {
                     }
                   </div>
                 </div>
-                {/* <SizeSelect/> */}
               </div>
 
               
