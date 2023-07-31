@@ -14,10 +14,6 @@ export const GetProducts = () => {
   }
 } 
 
-
-
-
-
 export const GetPromocodes = () => {
   const [ promocodes, setPromocodes ] = React.useState(null)
 
@@ -48,4 +44,15 @@ export const ScrollTop = () => {
   window.scrollTo({
     top: 0
   })
+}
+
+export const GetPolicy = () => {
+  const [data, setData] = React.useState(null)
+  React.useEffect(() => {
+    API.getPolicy().then(r => setData(r.data))
+  }, [])
+  
+  return {
+    data
+  }
 }

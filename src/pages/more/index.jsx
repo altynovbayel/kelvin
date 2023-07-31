@@ -4,13 +4,13 @@ import {useNavigate, useParams} from 'react-router-dom'
 import {BsCircleFill} from 'react-icons/bs'
 import {GetSingleProducts, ScrollTop} from '../../helpers'
 import model from '../../img/model.svg'
-import {IoIosArrowDown} from 'react-icons/io'
 import { BiHome, BiSolidChevronDown } from 'react-icons/bi'
 import AddToCart from './components/AddToCartBtn'
 import ModileSlider from './components/MobileSlider'
 import Slider from './components/Slider'
 import checkImg from '../../img/check.svg'
 import SizeSlider from '../../components/SizeSlider'
+import { productSizes } from '../../utils'
 
 
 const More = () => {
@@ -115,12 +115,12 @@ const More = () => {
 
               <div className={c.dropdown}>
                 <div className={c.up} onClick={() => setActiveDropdown(!activeDropdown)}>  
-                  <li>{choosenSize === 0 ? product?.product_sizes[0]?.name : choosenSize}</li> <span className={ activeDropdown ? c.active_arrow : '' }><BiSolidChevronDown /></span>
+                  <li>{choosenSize === 0 ? productSizes[0]?.name : choosenSize}</li> <span className={ activeDropdown ? c.active_arrow : '' }><BiSolidChevronDown /></span>
                 </div>
                 <div className={c.container}>
                   <div className={activeDropdown ? c.down_active : c.down_none}>
                     {
-                      product.product_sizes.map((item, i) => (
+                      productSizes.map((item, i) => (
                         <li
                           key={i}
                           onClick={() => {

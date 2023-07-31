@@ -8,6 +8,8 @@ export const PUBLIC_ROUTES = [
     {id: 4, path: "/order/", element: <Pages.Order />},
     {id: 5, path: "/products/", element: <Pages.Products /> },
     {id: 6, path: "/oneClick/", element: <Pages.OneClick /> },
+    {id: 7, path: "/privacy-policy/", element: <Pages.Policy /> },
+    {id: 8, path: "/confidentiality/", element: <Pages.Confidentiality /> },
 ];
 
 export const navList = [
@@ -30,5 +32,24 @@ export const navList = [
   {
     id: 5,
     title: 'CONTACT',
+  },
+]
+
+export const productSizes = [
+  {
+    id: 1,
+    name: 'S',
+  },
+  {
+    id: 2,
+    name: 'M',
+  },
+  {
+    id: 3,
+    name: 'L',
+  },
+  {
+    id: 4,
+    name: 'XL',
   },
 ]

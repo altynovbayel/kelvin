@@ -4,6 +4,7 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import { FreeMode } from 'swiper/modules';
+import { productSizes } from '../../utils'
 
 const SizeSlider = ({product, setChoosenSize, choosenSize}) => {
   return (
@@ -17,7 +18,7 @@ const SizeSlider = ({product, setChoosenSize, choosenSize}) => {
         
       >
         {
-          product?.product_sizes?.map((item, id) => (
+          productSizes?.map((item, id) => (
             <SwiperSlide key={item.id}>
               <div className={ choosenSize === item.name ? `${c.active} ${c.size}` : c.size} onClick={() => setChoosenSize(item.name)}>
                 <p>{item.name}</p>

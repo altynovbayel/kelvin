@@ -7,12 +7,12 @@ import SizeSlider from '../SizeSlider'
 
 const SizeModalMobile = ({item_id, setModal, choosenSize, setChoosenSize}) => {
   const {product} = GetSingleProducts(item_id)
-  const [activeDropdown, setActiveDropdown] = React.useState(false)
   
+ 
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const check = cart?.find(item => item?.id === item_id)
   const index = cart?.findIndex(obj => obj.id === item_id);
-
+  
   const postToCart = () => {
     setModal(false)
     !check ? cart?.push({...product, choosenSize: choosenSize ,count: 1, image: product?.product_images[0].image}) : cart[index].count = cart[index].count + 1;

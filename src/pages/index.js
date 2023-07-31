@@ -4,6 +4,8 @@ import Order from "./order";
 import Main from "./Main";
 import Products from "./Products";
 import OneClick from "./oneClick";
+import Policy from "./Policy";
+import Confidentiality from "./Сonfidentiality";
 
 export const Pages = {
     Cart,
@@ -11,5 +13,7 @@ export const Pages = {
     Order,
     Main,
     Products,
-    OneClick
+    OneClick,
+    Policy,
+    Confidentiality
 }

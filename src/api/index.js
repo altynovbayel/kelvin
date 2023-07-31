@@ -6,6 +6,7 @@ export const API = {
   getSingleProduct: (id) => axios.get(`/main/products/${id}`),
   getCity: () => axios.get(`/main/address/`),
   getAddress: (street) => axios.get(`/main/street/?search=${street}`),
+  getPolicy: () => axios.get('/setting'),
 }
 
 // export tMapApi = axios.get('https://api-developer.tech.yandex.net/projects/')

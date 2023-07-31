@@ -29,7 +29,6 @@ const AddToCart = ({product, choosenSize}) => {
   }
   
   const deleteItem = () => {
-    console.log(index);
     if (index !== -1) {
       cart?.splice(index, 1);
     }
