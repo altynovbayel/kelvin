@@ -30,10 +30,10 @@ function App() {
     !cart && localStorage.setItem('kelvin_cart', JSON.stringify([]))
     localStorage.setItem('discount', 0) 
 
-    !location && navigator.geolocation.getCurrentPosition(location => {
-      localStorage.setItem('location', JSON.stringify([location.coords.latitude, location.coords.longitude]))
-    })
-    localStorage.setItem('scroll', false)
+    // !location && navigator.geolocation.getCurrentPosition(location => {
+    //   localStorage.setItem('location', JSON.stringify([location.coords.latitude, location.coords.longitude]))
+    // })
+    // localStorage.setItem('scroll', false)
 
   }, [])
 

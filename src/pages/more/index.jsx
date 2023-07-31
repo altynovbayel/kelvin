@@ -23,6 +23,7 @@ const More = () => {
   const [dep, setDep] = React.useState('')
   const [choosenSize, setChoosenSize] = React.useState(0)
   
+  
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const check = cart?.find(item => item?.id === product?.id)
   const index = cart?.findIndex(obj => obj.id === product?.id);
@@ -30,7 +31,7 @@ const More = () => {
   const postToCartOne = () => {
     localStorage.setItem('kelvin_cart_one', JSON.stringify([]))
     const cartOne = JSON.parse(localStorage.getItem('kelvin_cart_one'))
-    cartOne?.push({...product, count: 1, choosenSize: choosenSize, image: product.product_images})
+    cartOne?.push({...product, count: 1, choosenSize: choosenSize === 0 ? product?.product_sizes[0]?.name : choosenSize, image: product.product_images})
     localStorage.setItem('kelvin_cart_one', JSON.stringify(cartOne))
     navigate('/oneClick/')
   }
@@ -42,10 +43,11 @@ const More = () => {
     }, 100)
   }, [dep])
   
-  React.useEffect(() => ScrollTop(), [])
+  React.useEffect(() => {
+    ScrollTop()
+  }, [])
 
   const width = window.innerWidth
-  
   
   if (!product) return <h1>Loading...</h1>
   return (
@@ -113,7 +115,7 @@ const More = () => {
 
               <div className={c.dropdown}>
                 <div className={c.up} onClick={() => setActiveDropdown(!activeDropdown)}>  
-                  <li>{choosenSize}</li> <span className={ activeDropdown ? c.active_arrow : '' }><BiSolidChevronDown /></span>
+                  <li>{choosenSize === 0 ? product?.product_sizes[0]?.name : choosenSize}</li> <span className={ activeDropdown ? c.active_arrow : '' }><BiSolidChevronDown /></span>
                 </div>
                 <div className={c.container}>
                   <div className={activeDropdown ? c.down_active : c.down_none}>
