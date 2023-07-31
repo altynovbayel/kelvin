@@ -4,6 +4,7 @@ import x from '../../img/X.svg'
 import { GetSingleProducts } from '../../helpers'
 import {BiSolidChevronDown } from 'react-icons/bi'
 import checkImg from '../../img/check.svg'
+import { productSizes } from '../../utils'
 
 const SizeModal = ({item_id, setModal, choosenSize, setChoosenSize}) => {
   const {product} = GetSingleProducts(item_id)
@@ -35,7 +36,7 @@ const SizeModal = ({item_id, setModal, choosenSize, setChoosenSize}) => {
           <div className={c.container}>
             <div className={activeDropdown ? c.down_active : c.down_none}>
               {
-                product?.product_sizes.map((item, i) => (
+                productSizes.map((item, i) => (
                   <li
                     key={i}
                     onClick={() => {

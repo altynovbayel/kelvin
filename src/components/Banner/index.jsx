@@ -1,6 +1,8 @@
 import React from 'react'
 import c from './Banner.module.scss'
 import banner from '../../img/banner-3.svg'
+import bannerMobile from '../../img/banner-mobile.svg'
+import bear from '../../img/bear-2.svg'
 import { useViewportScroll, motion, useTransform } from 'framer-motion';
 
 
@@ -42,7 +44,9 @@ const Banner = () => {
           // scrollPix > 600 ? 
           // <img src={banner} alt="kelvin" className={c.imageBanner} /> : 
           window.innerWidth <= 500 ? 
-          <img src={banner} alt="kelvin" className={c.imageBanner} /> :
+          <div>
+            <img src={banner} alt="kelvin" className={c.imageBanner} />
+          </div> :
           <motion.img 
             src={banner} 
             style={{scale}}

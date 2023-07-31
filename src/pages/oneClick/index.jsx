@@ -6,6 +6,7 @@ import { API } from '../../api'
 import DeliveryInfo from '../../components/deliveryInfo'
 import { useNavigate } from 'react-router-dom'
 import { useClickAway } from '@uidotdev/usehooks'
+import { ScrollTop } from '../../helpers'
   
 const Order = () => {
   const [ cart, setCart ] = React.useState(null)
@@ -44,6 +45,7 @@ const Order = () => {
 
   React.useEffect(() => {
     API.getCity().then(r => setCityName(r.data))
+    ScrollTop()
   }, [])
 
   const navigate = useNavigate()
