@@ -1,6 +1,5 @@
 import React from 'react'
 import c from './makingOrder.module.scss'
-import { CloudPayments } from 'cloudpayments/dist/Client';
 import axios from 'axios';
 
 const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
@@ -22,7 +21,7 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
     
           const response = await axios.post(`https://api.cloudpayments.ru/payments/cards/charge`, paymentData, {
             headers: {
-              Authorization: `Basic ${btoa(API_PUBLIC_ID)}`,
+              Authorization: `Basic ${btoa('3102ae7303514046638d2f09797310e2')}`,
             },
           });
     
