@@ -13,7 +13,6 @@ const Order = () => {
   const [ discount, setDiscount ] = React.useState(0)
   const [ deliverType, setDeliverType ] = React.useState('mail')
   const [ dep, setDep ] = React.useState(null)
-  const [cityName, setCityName] = React.useState(null)
 
   React.useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
@@ -42,9 +41,6 @@ const Order = () => {
     tenth: false,
   })
 
-  React.useEffect(() => {
-    API.getCity().then(r => setCityName(r.data))
-  }, [])
 
   const navigate = useNavigate()
 
@@ -71,7 +67,7 @@ const Order = () => {
       <Components.Title text={'оформление заказа'}/>
       <div className={c.make} ref={ref}>
         <div className={c.left} ref={ref}>
-          <DeliveryInfo city={cityName} active2={active2} setActive2={setActive2}/>
+          <DeliveryInfo active2={active2} setActive2={setActive2}/>
           <Components.Delivering />
           <div className={c.goods}>
             <h1>Мои товары</h1>

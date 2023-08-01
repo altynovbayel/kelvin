@@ -5,7 +5,7 @@ import axios from 'axios';
 import { API } from '../../api';
 
 
-const DeliveryInfo = ({city, streets, active2, setActive2}) => {
+const DeliveryInfo = ({active2, setActive2}) => {
   const [cityName, setCityName] = React.useState('')
   const [streetName, setStreetName] = React.useState('')
   const [streetResult, setStreetResult] = React.useState(null)
