@@ -1,6 +1,7 @@
 import React from 'react'
 import c from './makingOrder.module.scss'
-import axios from 'axios'
+import { CloudPayments } from 'cloudpayments/dist/Client';
+import axios from 'axios';
 
 const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
     const [ paymentStatus, setPaymentStatus ] = React.useState('')
@@ -8,33 +9,33 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
 //   const allSumma = String(summaWithDelivering - withPercent)
     const allSumma = 200
 
-    const pay = async () => {
+    const handlePayment = async () => {
         try {
-            const API_PUBLIC_ID = 'pk_a3aadf55a77fa83df968aba58d521';
-            const paymentData = {
-              amount: allSumma, // Сумма платежа
-              currency: 'RUB',
-              accountId: '3102ae7303514046638d2f09797310e2',
-              description: 'Описание платежа',
-              // Другие необходимые параметры для платежа...
-            };
-      
-            const response = await axios.post(`https://api.cloudpayments.ru/payments/cards/charge`, paymentData, {
-              headers: {
-                Authorization: `Basic ${btoa(API_PUBLIC_ID)}`,
-              },
-            });
-      
-            if (response.status === 200) {
-              setPaymentStatus('Платеж успешно проведен!');
-              // Обработка успешного платежа...
-            } else {
-              setPaymentStatus('Произошла ошибка при платеже.');
-              // Обработка ошибки платежа...
-            }
-          } catch (error) {
-            console.error('Ошибка при выполнении платежа:', error);
+          const API_PUBLIC_ID = 'pk_a3aadf55a77fa83df968aba58d521';
+          const paymentData = {
+            amount: allSumma, // Сумма платежа
+            currency: 'RUB',
+            accountId: '1',
+            description: 'Описание платежа',
+            // Другие необходимые параметры для платежа...
+          };
+    
+          const response = await axios.post(`https://api.cloudpayments.ru/payments/cards/charge`, paymentData, {
+            headers: {
+              Authorization: `Basic ${btoa(API_PUBLIC_ID)}`,
+            },
+          });
+    
+          if (response.status === 200) {
+            setPaymentStatus('Платеж успешно проведен!');
+            // Обработка успешного платежа...
+          } else {
+            setPaymentStatus('Произошла ошибка при платеже.');
+            // Обработка ошибки платежа...
           }
+        } catch (error) {
+          console.error('Ошибка при выполнении платежа:', error);
+        }
     };
 
   return (
