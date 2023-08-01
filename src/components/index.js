@@ -14,6 +14,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Logo from "./Logo";
 import Policy from "./policy";
+import PayingBlock from "./PayingBlock";
 
 
 
@@ -33,5 +34,6 @@ export const Components = {
     Footer,
     Navbar,
     Logo,
-    Policy
+    Policy,
+    PayingBlock,
 }

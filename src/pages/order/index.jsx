@@ -101,12 +101,14 @@ const Order = () => {
           </div>
         </div>
         <div className={c.right} ref={ref}>
+          {width <= 1242 ? <Components.PayingBlock/> : ''}
           <Components.Paying 
             summa={summa}
             summaWithDelivering={deliverType === 'mail' ? summa : String(Number(summa) + 340)}
             delivering={deliverType === 'mail' ? 0 : 340}
             discount={Number(discount)}
           />
+          {width >= 1242 ? <Components.PayingBlock/> : ''}
           <Components.Promocode />  
         </div>
       </div>
