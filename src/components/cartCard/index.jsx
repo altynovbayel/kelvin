@@ -3,42 +3,42 @@ import c from './cartCard.module.scss'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 
-const CartCard = ({id, image, title, size, price, count, obj}) => {
+const CartCard = ({id, image, title, size, price, count, obj, i}) => {
   const [ active, setActive ] = React.useState(false)
   const [ activeCart, setActiveCart ] = React.useState(false)
   const [ dep, setDep ] = React.useState('')
 
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const check = cart?.find(item => item?.id === obj?.id)
-  // const index = cart?.findIndex(obj => obj.id === id);
   const checkS = cart?.filter(item => item.id === obj?.id)
-  .filter(el => el.choosenSize.includes(obj?.choosenSize))
-  const index = cart?.findIndex(obj => obj.choosenSize === checkS[0]?.choosenSize);
+    .filter(el => el.choosenSize.includes(obj?.choosenSize))
+  // const index = cart?.findIndex(obj => obj.choosenSize === checkS[0]?.choosenSize);
 
   React.useEffect(() => {
-    console.log(image.product_images[0]?.image);
+    console.log(checkS);
   }, [])
   React.useEffect(() => {
-      setTimeout(() => {
-      const check = cart?.find(item => item?.id === obj?.id)
-      check ? setActive(true) : setActive(false)
-      setDep(Math.random())
-      }, 100)
+    setTimeout(() => {
+    const check = cart?.find(item => item?.id === obj?.id)
+    check ? setActive(true) : setActive(false)
+    setDep(Math.random())
+    }, 100)
   }, [dep])
 
   const increment = () => {
-      !check ? cart?.push({...obj, count: 1}) : checkS[0].count = checkS[0].count + 1;
-      localStorage.setItem('kelvin_cart', JSON.stringify(cart))
+    !check ? cart?.push({...obj, count: 1}) : checkS[0].count = checkS[0].count + 1;
+    localStorage.setItem('kelvin_cart', JSON.stringify(cart))
   }  
 
   const decrement = () => {
-      !check ? cart?.push({...obj, count: 1}) : checkS[0].count = checkS[0].count - 1;
-      localStorage.setItem('kelvin_cart', JSON.stringify(cart))
+    !check ? cart?.push({...obj, count: 1}) : checkS[0].count = checkS[0].count - 1;
+    localStorage.setItem('kelvin_cart', JSON.stringify(cart))
   }  
 
   const deleteItem = () => {
-    if (index !== -1) {
-      cart?.splice(index, 1);
+    console.log(i);
+    if (i !== -1) {
+      cart?.splice(i, 1);
     }
     localStorage.setItem('kelvin_cart', JSON.stringify(cart));
   }

@@ -14,7 +14,7 @@ const AddToCart = ({product, choosenSize}) => {
   const index = cart?.findIndex(obj => obj.choosenSize === checkS[0]?.choosenSize);
   
   const postToCart = () => {
-    cart?.push({...product, count: 1, choosenSize: choosenSize, image: product.product_images})
+    cart?.push({...product, count: 1, choosenSize: choosenSize, image: product?.product_images[0].image})
     localStorage.setItem('kelvin_cart', JSON.stringify(cart))
   }
   

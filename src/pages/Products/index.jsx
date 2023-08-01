@@ -9,7 +9,7 @@ const Products = () => {
   const { products } = GetProducts()
   const [modalWindow, setModalWindow] = React.useState(false)
   const [productId, setProductId] = React.useState(1)
-  const [choosenSize, setChoosenSize] = React.useState(0)
+  const [choosenSize, setChoosenSize] = React.useState('S')
   return (
     <div className={c.products}>
       {
