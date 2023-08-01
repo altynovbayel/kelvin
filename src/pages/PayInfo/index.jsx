@@ -17,7 +17,7 @@ const PayInfo = () => {
         <ul>
           {
             text3?.flat(1).map((item, i) => (
-              <>
+              <span key={i}>
                 {
                   <p>{item}</p> 
                 }
@@ -25,7 +25,7 @@ const PayInfo = () => {
                   item.length === 0 ? <br/>
                   : ''
                 }
-              </>
+              </span>
             ))
           }
         </ul>

@@ -21,14 +21,14 @@ const Confidentiality = () => {
         <ul>
           {
             text2?.flat(1).map((item, i) => (
-              <>
+              <span key={i}>
                 { 
                   check(item.charAt(0)) === true ? <p>{item}</p> 
                   : i === 0 ? <p>{item}</p> 
                   :item.length === 0 ? <br/>
                   : <li>{item}</li> 
                 }
-              </>
+              </span>
             ))
           }
         </ul>
