@@ -40,7 +40,13 @@ function App() {
   React.useEffect(() => {
     if (path === '/' && window.innerWidth <= 500) {
       setFooterState(true)
-    } else if (window.innerWidth <= 500){
+    } else if (path === '/pay-info' && window.innerWidth <= 500) {
+      setFooterState(true)
+    } else if (path === '/confidentiality' && window.innerWidth <= 500) {
+      setFooterState(true)
+    } else if (path === '/privacy-policy' && window.innerWidth <= 500) {
+      setFooterState(true)
+    }else if (window.innerWidth <= 500){
       setFooterState(false)
     }
   }, [path])

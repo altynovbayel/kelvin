@@ -10,7 +10,11 @@ const CartCard = ({id, image, title, size, price, count, obj}) => {
 
     const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
     const check = cart?.find(item => item?.id === obj?.id)
-    const index = cart?.findIndex(obj => obj.id === id);
+    // const index = cart?.findIndex(obj => obj.id === id);
+    const checkS = cart?.filter(item => item.id === obj?.id)
+    .filter(el => el.choosenSize.includes(obj?.choosenSize))
+  const index = cart?.findIndex(obj => obj.choosenSize === checkS[0]?.choosenSize);
+  
 
     React.useEffect(() => {
         setTimeout(() => {
@@ -21,21 +25,20 @@ const CartCard = ({id, image, title, size, price, count, obj}) => {
     }, [dep])
 
     const increment = () => {
-        !check ? cart?.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
+        !check ? cart?.push({...obj, count: 1}) : checkS[0].count = checkS[0].count + 1;
         localStorage.setItem('kelvin_cart', JSON.stringify(cart))
     }  
 
     const decrement = () => {
-        !check ? cart?.push({...obj, count: 1}) : cart[index].count = cart[index].count - 1;
+        !check ? cart?.push({...obj, count: 1}) : checkS[0].count = checkS[0].count - 1;
         localStorage.setItem('kelvin_cart', JSON.stringify(cart))
     }  
 
     const deleteItem = () => {
-        const index = cart?.findIndex(item => item.id === obj.id);
-        if (index !== -1) {
-          cart?.splice(index, 1);
-        }
-        localStorage.setItem('kelvin_cart', JSON.stringify(cart));
+      if (index !== -1) {
+        cart?.splice(index, 1);
+      }
+      localStorage.setItem('kelvin_cart', JSON.stringify(cart));
     }
       
     const navigate = useNavigate()

@@ -10,6 +10,7 @@ export const PUBLIC_ROUTES = [
     {id: 6, path: "/oneClick/", element: <Pages.OneClick /> },
     {id: 7, path: "/privacy-policy/", element: <Pages.Policy /> },
     {id: 8, path: "/confidentiality/", element: <Pages.Confidentiality /> },
+    {id: 9, path: "/pay-info/", element: <Pages.PayInfo /> },
 ];
 
 export const navList = [

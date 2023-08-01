@@ -7,6 +7,10 @@
     margin: 0 auto;
   }
 
+  @media (max-width:500px) {
+    margin-top: 50px;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
@@ -24,6 +28,9 @@
 
       @media (max-width: 768px) {
         margin-left: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       p {
