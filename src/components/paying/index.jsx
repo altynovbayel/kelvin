@@ -14,14 +14,13 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
           const paymentData = {
             amount: allSumma, // Сумма платежа
             currency: 'RUB',
-            accountId: '1',
             description: 'Описание платежа',
             // Другие необходимые параметры для платежа...
           };
     
           const response = await axios.post(`https://api.cloudpayments.ru/payments/cards/charge`, paymentData, {
             headers: {
-              Authorization: `Basic ${btoa('3102ae7303514046638d2f09797310e2')}`,
+              Authorization: `Basic ${API_PUBLIC_ID}`,
             },
           });
     
