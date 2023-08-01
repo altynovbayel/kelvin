@@ -9,7 +9,7 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
 //   const allSumma = String(summaWithDelivering - withPercent)
     const allSumma = 200
 
-    const handlePayment = async () => {
+    const pay = async () => {
         try {
           const API_PUBLIC_ID = 'pk_a3aadf55a77fa83df968aba58d521';
           const paymentData = {
