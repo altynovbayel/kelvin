@@ -14,7 +14,7 @@ const Footer = () => {
         <div className={c.email}>
           <p onClick={() => navigate('confidentiality')}>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</p>
           <p onClick={() => navigate('privacy-policy')}>ДОГОВОР ОФЕРТЫ</p>
-          <p>ДОСТАВКА & ВОЗВРАТ</p>
+          <p onClick={() => navigate('pay-info')}>ДОСТАВКА & ВОЗВРАТ</p>
         </div>
         <div className={c.links}>
           <a href="">INSTAGRAM</a>

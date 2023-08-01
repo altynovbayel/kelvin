@@ -31,7 +31,7 @@ const SizeModal = ({item_id, setModal, choosenSize, setChoosenSize}) => {
         </div>
         <div className={c.dropdown}>
           <div className={c.up} onClick={() => setActiveDropdown(!activeDropdown)}>  
-            <li>{choosenSize}</li> <span className={ activeDropdown ? c.active_arrow : '' }><BiSolidChevronDown /></span>
+            <li>{choosenSize === 0 ? productSizes[0]?.name : choosenSize}</li> <span className={ activeDropdown ? c.active_arrow : '' }><BiSolidChevronDown /></span>
           </div>
           <div className={c.container}>
             <div className={activeDropdown ? c.down_active : c.down_none}>
