@@ -20,10 +20,10 @@ const ProductCard = ({id, image, title, setModal, price, obj, setProductId, choo
     }, 100)
   }, [dep])
 
-  const postToCart = () => {
-    !check ? cart?.push({...obj, count: 1, image: image}) : cart[index].count = cart[index].count + 1;
-    localStorage.setItem('kelvin_cart', JSON.stringify(cart))
-  }
+  // const postToCart = () => {
+  //   !check ? cart?.push({...obj, count: 1, image: image}) : cart[index].count = cart[index].count + 1;
+  //   localStorage.setItem('kelvin_cart', JSON.stringify(cart))
+  // }
 
   const chooseSize = () => {
     setProductId(obj?.id)
