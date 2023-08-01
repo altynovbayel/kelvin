@@ -10,7 +10,7 @@ const AddToCart = ({product, choosenSize}) => {
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const check = cart?.find(item => item?.id === product?.id)
   const checkS = cart?.filter(item => item.id === product?.id)
-    .filter(el => el.choosenSize.includes(choosenSize))
+  .filter(el => el.choosenSize.includes(choosenSize))
   const index = cart?.findIndex(obj => obj.choosenSize === checkS[0]?.choosenSize);
   
   const postToCart = () => {
