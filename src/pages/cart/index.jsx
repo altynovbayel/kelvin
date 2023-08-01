@@ -3,10 +3,15 @@ import c from './cart.module.scss'
 import { Components } from '../../components'
 import deliver from '../../img/deliver.svg'
 import { useNavigate } from 'react-router-dom'
+import { ScrollTop } from '../../helpers'
 
 const Cart = () => {
   
   const [ cart, setCart ] = React.useState(null)
+
+  React.useEffect(() => {
+    ScrollTop()
+  }, [])
 
   React.useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
@@ -29,6 +34,7 @@ const Cart = () => {
               cart?.map((item, i) => (
                 <Components.CartCard 
                   key={i}
+                  i={i}
                   id={item.id}
                   image={item.image}
                   title={item.title}
