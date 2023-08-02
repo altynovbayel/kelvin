@@ -21,7 +21,7 @@ const More = () => {
   const [activeDropdown, setActiveDropdown] = React.useState(false)
   const [activeImg, setActiveImg] = React.useState(0)
   const [dep, setDep] = React.useState('')
-  const [choosenSize, setChoosenSize] = React.useState(0)
+  const [choosenSize, setChoosenSize] = React.useState('S')
   
   
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))

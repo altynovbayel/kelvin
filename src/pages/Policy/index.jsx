@@ -22,11 +22,11 @@ const Policy = () => {
       <div className={c.text}>
         <div>
           {
-            text1?.flat(1).map(item => (
-              <>
+            text1?.flat(1).map((item, i) => (
+              <span key={i}>
                 <p>{item}</p>
                 {item.length === 0 ? <br/> : ''}
-              </>
+              </span>
             ))
           }
         </div>
