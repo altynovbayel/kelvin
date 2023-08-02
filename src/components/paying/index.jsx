@@ -14,12 +14,16 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
           currency: 'RUB', // Валюта платежа
         });
       };
+
+      React.useEffect(() => {
+        console.log('HELLO');
+      }, [])
     return (
         <div className={c.makingOrder}>
             <div className={c.up}>
                 <button
                     className={c.disabled}
-                    onClick={() => pay()}
+                    onClick={() => pay()}   
                 >
                     Оплатить картой онлайн
                 </button>
