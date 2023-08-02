@@ -6,18 +6,16 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
     const withPercent = Number(summaWithDelivering) / 100 * Number(discount)
     const allSumma = String(summaWithDelivering - withPercent)
     const pay = () => {
-        // Замените 'your_public_id' на ваш Public ID из настроек проекта в личном кабинете CloudPayments
-        cp.pay('charge', {
-          publicId: 'pk_6b96625f554382a5ce187306849bc',
-          description: 'Оплата заказа',
-          amount: allSumma, // Сумма платежа в копейках или центах
-          currency: 'RUB', // Валюта платежа
-        });
+        // // Замените 'your_public_id' на ваш Public ID из настроек проекта в личном кабинете CloudPayments
+        console.log('HI');
+        // cp.pay('charge', {
+        //   publicId: 'pk_6b96625f554382a5ce187306849bc',
+        //   description: 'Оплата заказа',
+        //   amount: allSumma, // Сумма платежа в копейках или центах
+        //   currency: 'RUB', // Валюта платежа
+        // });
       };
 
-      React.useEffect(() => {
-        console.log('HELLO');
-      }, [])
     return (
         <div className={c.makingOrder}>
             <div className={c.up}>
