@@ -10,7 +10,7 @@ const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
         cp.pay('charge', {
           publicId: 'pk_6b96625f554382a5ce187306849bc',
           description: 'Оплата заказа',
-          amount: 100, // Сумма платежа в копейках или центах
+          amount: allSumma, // Сумма платежа в копейках или центах
           currency: 'RUB', // Валюта платежа
         });
       };
