@@ -1,5 +1,6 @@
 import React from 'react'
 import c from './makingOrder.module.scss'
+import cp from 'cloudpayments'
 
 const Paying = ({summa, summaWithDelivering, delivering, discount}) => {
     const withPercent = Number(summaWithDelivering) / 100 * Number(discount)
