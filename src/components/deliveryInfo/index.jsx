@@ -1,8 +1,6 @@
 import React from 'react'
 import c from './deliveryInfo.module.scss'
 import { IMaskInput } from 'react-imask';
-import axios from 'axios';
-import { API } from '../../api';
 
 
 const DeliveryInfo = ({active2, setActive2}) => {

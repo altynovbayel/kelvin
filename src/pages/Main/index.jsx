@@ -1,8 +1,6 @@
 import React from 'react'
 import c from './Main.module.scss'
 import { Components } from '../../components'
-import LottieAnimation from '../../components/lottie'
-import { motion } from 'framer-motion'
 
 
 const Main = () => {

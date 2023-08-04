@@ -2,13 +2,11 @@ import React from 'react'
 import c from './Navbar.module.scss'
 import logo from '../../img/logo.svg'
 import cartLogo from '../../img/cart.svg'
-import { navList } from '../../utils'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = React.useState(false)
   const [ dep, setDep ] = React.useState('')
-  const [ idNav, setIdNav ] = React.useState(0)
 
   const Navigate = useNavigate()
 
@@ -20,13 +18,7 @@ const Navbar = () => {
     }, 100)
   }, [dep])
 
-  const checkMenu = () => {
-    if(activeNav){
-      setActiveNav(false)
-    }else{
-      setActiveNav(true)
-    }
-  }
+
 
   const path = useLocation().pathname
   

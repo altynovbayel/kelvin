@@ -1,13 +1,11 @@
 import React from 'react'
 import c from './Banner.module.scss'
 import banner from '../../img/banner-3.svg'
-import bannerMobile from '../../img/banner-mobile.svg'
-import bear from '../../img/bear-2.svg'
 import { useViewportScroll, motion, useTransform } from 'framer-motion';
 
 
 const Banner = () => {
-  const [ scrollPix, setScrollPix ] = React.useState(0)
+  // const [ scrollPix, setScrollPix ] = React.useState(0)
   const [ dep, setDep ] = React.useState(0)
   const { scrollYProgress } = useViewportScroll()
   const scale = useTransform(scrollYProgress, [0, 1], [1, 4]);
@@ -17,8 +15,8 @@ const Banner = () => {
   };
 
   React.useEffect(() => {
-    const scroll = localStorage.getItem('scroll')
-    setScrollPix(Number(scroll))
+    // const scroll = localStorage.getItem('scroll')
+    // setScrollPix(Number(scroll))
     setTimeout(() => {
       setDep(Math.random())
     }, 100)
