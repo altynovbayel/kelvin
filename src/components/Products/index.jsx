@@ -2,7 +2,6 @@ import React from 'react'
 import c from './Products.module.scss'
 import ProductCard from '../ProductCard'
 import { GetProducts } from '../../helpers'
-import { useLocation } from 'react-router-dom'
 import SizeModal from '../SizeModal'
 import SizeModalMobile from '../SizeModalMobile'
 

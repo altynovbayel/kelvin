@@ -3,15 +3,14 @@ import c from './ProductCard.module.scss'
 import arrow from '../../img/arrow-right.svg'
 import arrowActive from '../../img/arrow-right-active.svg'
 import { useNavigate } from 'react-router-dom'
-import SizeModal from '../SizeModal'
 
-const ProductCard = ({id, image, title, setModal, price, obj, setProductId, choosenSize}) => {
+const ProductCard = ({id, image, title, setModal, price, obj, setProductId}) => {
   const [ dep, setDep ] = React.useState('')
   const navigate =  useNavigate()
 
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
   const check = cart?.find(item => item?.id === obj?.id)
-  const index = cart?.findIndex(obj => obj.id === id);
+  // const index = cart?.findIndex(obj => obj.id === id);
 
   React.useEffect(() => {
     setTimeout(() => {

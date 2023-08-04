@@ -6,14 +6,14 @@ import './App.scss'
 import Lenis from '@studio-freight/lenis'
 
 import axios from 'axios'
-import { json, useLocation } from 'react-router-dom'
+import {useLocation } from 'react-router-dom'
 
 axios.defaults.baseURL = 'https://kelvinsite.pythonanywhere.com'
 
 
 function App() {
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))
-  const location = JSON.parse(localStorage.getItem('location'))
+  // const location = JSON.parse(localStorage.getItem('location'))
   const path = useLocation().pathname
   const lenis = new Lenis()
   const [footerState, setFooterState] = React.useState(false)

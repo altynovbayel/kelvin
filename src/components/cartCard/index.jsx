@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const CartCard = ({id, image, title, size, price, count, obj, i}) => {
   const [ active, setActive ] = React.useState(false)
-  const [ activeCart, setActiveCart ] = React.useState(false)
+  // const [ activeCart, setActiveCart ] = React.useState(false)
   const [ dep, setDep ] = React.useState('')
 
   const cart = JSON.parse(localStorage.getItem('kelvin_cart'))

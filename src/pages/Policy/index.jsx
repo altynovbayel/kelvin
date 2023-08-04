@@ -1,6 +1,5 @@
 import React from 'react'
 import c from './Policy.module.scss'
-import { policyText1, policyText2, policyText3, policyText4 } from '../../utils'
 import { GetPolicy, ScrollTop } from '../../helpers'
 
 
